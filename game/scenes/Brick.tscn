@@ -20,7 +20,6 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 99.6602, 100 )
 texture = ExtResource( 1 )
 region_enabled = true

@@ -30,8 +30,7 @@ func _unhandled_input(event):
 
 func _on_ThrowBallTimer_timeout():
 	ball_captured = false
-	ball.velocity.y -=5
-	print('captured timeout')
+	ball.velocity.y -=10
 
 
 func respawn_ball():

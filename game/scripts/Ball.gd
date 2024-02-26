@@ -17,9 +17,11 @@ onready var respawn_timer = $RespawnTimer
 
 
 signal ball_respawned
+signal ball_colided
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	velocity = Vector2.UP.rotated(PI/4) * 5
+	pass
+	#velocity = Vector2.UP.rotated(PI/4) * 5
 	
 
 
@@ -34,6 +36,7 @@ func _physics_process(delta):
 		else:
 			velocity = velocity.bounce(collision.normal)
 			
+		emit_signal("ball_colided")
 
 
 func bounce_of_platform():

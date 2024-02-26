@@ -19,7 +19,6 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
-modulate = Color( 0.572549, 0.12549, 0.733333, 1 )
 scale = Vector2( 0.0703125, 0.0703125 )
 texture = ExtResource( 2 )
 __meta__ = {
