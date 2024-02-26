@@ -13,11 +13,13 @@ onready var platform_position_l = $"../Platform/Platform positions".get_child(0)
 onready var platform_position_r = $"../Platform/Platform positions".get_child(1)
 onready var platform_position_m = $"../Platform/Platform positions".get_child(2)
 onready var respawn_timer = $RespawnTimer
-
+onready var global_vars = get_node("/root/Global")
 
 
 signal ball_respawned
-signal ball_colided
+signal update_life
+signal update_bricks
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -33,10 +35,12 @@ func _physics_process(delta):
 		elif collision.get_collider().get_collision_layer() == 4: # Fun fact that collision layer returns not an actual number but his 2^number-1
 			velocity = velocity.bounce(collision.normal)
 			collision.get_collider().die()
+			
+			emit_signal("update_bricks")
 		else:
 			velocity = velocity.bounce(collision.normal)
 			
-		emit_signal("ball_colided")
+		#emit_signal("update_labels")
 
 
 func bounce_of_platform():
@@ -54,9 +58,14 @@ func bounce_of_platform():
 
 func die():
 	visible = false
+	$CollisionShape2D.set_deferred("disabled",true)
 	respawn_timer.start()
+	global_vars.life_count-=1
+	emit_signal("update_life")
+	
 
 
 func _on_RespawnTimer_timeout():
 	visible = true
+	$CollisionShape2D.set_deferred("disabled",false)
 	emit_signal("ball_respawned")
