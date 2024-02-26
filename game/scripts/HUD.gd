@@ -14,7 +14,7 @@ func _ready():
 	ball.connect("update_bricks",self,"update_bricks_label")
 	bricks_amount = $"../Bricks".get_child_count()
 	lifelabel.text = "Life: %d" % [global_vars.life_count]
-	brickslabel.text = "Brciks: %d" % [bricks_amount]
+	brickslabel.text = "Bricks: %d" % [bricks_amount]
 
 
 func update_life_label():
@@ -22,4 +22,4 @@ func update_life_label():
 	
 func update_bricks_label():
 	bricks_amount -=1
-	brickslabel.text = "Brciks: %d" % [bricks_amount]
+	brickslabel.text = "Bricks: %d" % [bricks_amount]

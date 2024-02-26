@@ -1,9 +1,7 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var velocity = Vector2.ZERO
 var speed = 5
 var lerp_speed = 1.0
@@ -59,9 +57,10 @@ func bounce_of_platform():
 func die():
 	visible = false
 	$CollisionShape2D.set_deferred("disabled",true)
-	respawn_timer.start()
-	global_vars.life_count-=1
-	emit_signal("update_life")
+	if global_vars.life_count  > 0 :
+		respawn_timer.start()
+		global_vars.life_count-=1
+		emit_signal("update_life")
 	
 
 
