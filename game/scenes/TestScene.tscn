@@ -1,283 +1,43 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://textures/Simple Shapes/Square.png" type="Texture" id=1]
-[ext_resource path="res://textures/Simple Shapes/Circle.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Platform.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Ball.gd" type="Script" id=4]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 40, 10 )
-
-[sub_resource type="CircleShape2D" id=3]
-radius = 18.0
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 50 )
+[ext_resource path="res://scenes/Brick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/DeadZone.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 256, 255 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 516, 44 )
 
 [node name="TestScene" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Platform" type="KinematicBody2D" parent="."]
-position = Vector2( 105, 519 )
-collision_layer = 2
-collision_mask = 12
-script = ExtResource( 3 )
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-scale = Vector2( 2, 1 )
-shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Control" type="Control" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 
-[node name="Sprite" type="Sprite" parent="Platform/CollisionShape2D"]
-scale = Vector2( 80, 20 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 46.772, 2.623, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Label" type="Label" parent="HUD/Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "LIFE:
 
-[node name="ThrowBallTimer" type="Timer" parent="Platform"]
-one_shot = true
-autostart = true
+BRICKS_TO_WIN"
 
-[node name="Platform positions" type="Node2D" parent="Platform"]
+[node name="Platform" parent="." instance=ExtResource( 3 )]
 
-[node name="PositionL" type="Position2D" parent="Platform/Platform positions"]
-position = Vector2( -80, -10 )
-
-[node name="PositionR" type="Position2D" parent="Platform/Platform positions"]
-position = Vector2( 80, -10 )
-
-[node name="PositionM" type="Position2D" parent="Platform/Platform positions"]
-position = Vector2( 0, -10 )
-
-[node name="Ball" type="KinematicBody2D" parent="."]
-position = Vector2( 99, 327 )
-collision_layer = 8
-collision_mask = 6
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Ball/CollisionShape2D"]
-modulate = Color( 0.572549, 0.12549, 0.733333, 1 )
-scale = Vector2( 0.0703125, 0.0703125 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Ball" parent="." instance=ExtResource( 4 )]
 
 [node name="Bricks" type="Node2D" parent="."]
 
-[node name="BrickW" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 134, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW2" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 245, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW2"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW2/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW3" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 362, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW3"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW3/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW4" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 473, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW4"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW4/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW5" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 589, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW5"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW5/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW6" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 700, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW6"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW6/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW7" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 817, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW7"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW7/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW8" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 928, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW8"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW8/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickW9" type="StaticBody2D" parent="Bricks"]
-position = Vector2( 928, 53 )
-scale = Vector2( 1.03213, 0.986351 )
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/BrickW9"]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricks/BrickW9/CollisionShape2D"]
-modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 99.6602, 100 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 3.032, 3.268, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="BrickW" parent="Bricks" instance=ExtResource( 2 )]
 
 [node name="Walls" type="Node2D" parent="."]
 __meta__ = {
@@ -362,4 +122,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="timeout" from="Platform/ThrowBallTimer" to="Platform" method="_on_ThrowBallTimer_timeout"]
+[node name="DeadZone" type="Area2D" parent="."]
+position = Vector2( 6, 545 )
+collision_layer = 0
+collision_mask = 8
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2( 506, 34 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_DeadZone_body_entered"]

@@ -12,7 +12,11 @@ onready var platform = $"../Platform"
 onready var platform_position_l = $"../Platform/Platform positions".get_child(0)
 onready var platform_position_r = $"../Platform/Platform positions".get_child(1)
 onready var platform_position_m = $"../Platform/Platform positions".get_child(2)
+onready var respawn_timer = $RespawnTimer
 
+
+
+signal ball_respawned
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	velocity = Vector2.UP.rotated(PI/4) * 5
@@ -20,12 +24,13 @@ func _ready():
 
 
 func _physics_process(delta):
-	print(velocity)
-	#print(platform_position_l.global_position,platform_position_r)
 	var collision = move_and_collide(velocity)
 	if collision:
 		if collision.get_collider().get_collision_layer() == 2: # 2 for Platform cant assign it with name 
 			bounce_of_platform()
+		elif collision.get_collider().get_collision_layer() == 4: # Fun fact that collision layer returns not an actual number but his 2^number-1
+			velocity = velocity.bounce(collision.normal)
+			collision.get_collider().die()
 		else:
 			velocity = velocity.bounce(collision.normal)
 			
@@ -42,3 +47,13 @@ func bounce_of_platform():
 
 	velocity = Vector2.UP * speed * 2
 	velocity = velocity.rotated(max_angle * normalized_hit_position)
+
+
+func die():
+	visible = false
+	respawn_timer.start()
+
+
+func _on_RespawnTimer_timeout():
+	visible = true
+	emit_signal("ball_respawned")
