@@ -36,5 +36,6 @@ func _on_ThrowBallTimer_timeout():
 func respawn_ball():
 	ball_captured = true
 	throw_ball_timer.start()
+	#ball.visible = true
 	
 

@@ -40,4 +40,5 @@ func show_deathscreen():
 func show_winscreen():
 	get_tree().paused = true
 	$WinScreen.visible = true
+	$WinScreen/CenterContainer/VBoxContainer/WinTime.text = "Congratulations! Your win time: %.3f" % global_vars.total_time
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
