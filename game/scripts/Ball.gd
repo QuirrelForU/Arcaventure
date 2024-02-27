@@ -17,6 +17,7 @@ onready var global_vars = get_node("/root/Global")
 signal ball_respawned
 signal update_life
 signal update_bricks
+signal lost_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,6 +62,8 @@ func die():
 		respawn_timer.start()
 		global_vars.life_count-=1
 		emit_signal("update_life")
+	else:
+		emit_signal("lost_game")
 	
 
 

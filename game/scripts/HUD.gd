@@ -8,11 +8,16 @@ onready var lifelabel = $Control/VBoxContainer/LifeLabel
 onready var brickslabel = $Control/VBoxContainer/BricksLabel
 onready var global_vars = get_node("/root/Global")
 onready var ball = $"../Ball"
-# Called when the node enters the scene tree for the first time.
+
+export var bricks_path : NodePath
+onready var bricks_node = get_node(bricks_path)
+
 func _ready():
 	ball.connect("update_life",self,"update_life_label")
 	ball.connect("update_bricks",self,"update_bricks_label")
-	bricks_amount = $"../Bricks".get_child_count()
+	ball.connect("lost_game",self,"show_deathscreen")
+	
+	bricks_amount = bricks_node.get_child_count()
 	lifelabel.text = "Life: %d" % [global_vars.life_count]
 	brickslabel.text = "Bricks: %d" % [bricks_amount]
 
@@ -20,6 +25,19 @@ func _ready():
 func update_life_label():
 	lifelabel.text = "Life: %d" % [global_vars.life_count]
 	
+	
 func update_bricks_label():
 	bricks_amount -=1
 	brickslabel.text = "Bricks: %d" % [bricks_amount]
+	if bricks_amount == 0:
+		show_winscreen()
+
+func show_deathscreen():
+	get_tree().paused = true
+	$DeathScreen.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+func show_winscreen():
+	get_tree().paused = true
+	$WinScreen.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

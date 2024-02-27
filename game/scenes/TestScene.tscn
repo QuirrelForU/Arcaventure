@@ -283,6 +283,7 @@ __meta__ = {
 [node name="HUD" type="CanvasLayer" parent="."]
 follow_viewport_enable = true
 script = ExtResource( 6 )
+bricks_path = NodePath("../Bricks")
 
 [node name="Control" type="Control" parent="HUD"]
 anchor_right = 1.0
@@ -336,13 +337,47 @@ margin_bottom = 7.0
 text = "PAUSED"
 
 [node name="DeathScreen" type="Control" parent="HUD"]
+pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="ColorRect" type="ColorRect" parent="HUD/DeathScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.435294, 0, 0, 0.670588 )
+
+[node name="Label" type="Label" parent="HUD/DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+text = "YOU LOOSE"
+
 [node name="WinScreen" type="Control" parent="HUD"]
+pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="ColorRect2" type="ColorRect" parent="HUD/WinScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.360784, 0.882353, 0.0941176, 0.403922 )
+
+[node name="Label" type="Label" parent="HUD/WinScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+text = "YOU WIN"
 
 [connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_DeadZone_body_entered"]
