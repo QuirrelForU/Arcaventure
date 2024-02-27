@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Arcaventure"
-run/main_scene="res://scenes/TestScene.tscn"
+run/main_scene="res://scenes/LevelFirst.tscn"
 boot_splash/show_image=false
 config/icon="res://icon.png"
 
