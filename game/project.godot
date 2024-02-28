@@ -11,13 +11,14 @@ config_version=4
 [application]
 
 config/name="Arcaventure"
-run/main_scene="res://Arkanoid/LevelFirst/LevelFirst.tscn"
+run/main_scene="res://BaseMenu/BaseMenu.tscn"
 boot_splash/show_image=false
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Arkanoid/LevelFirst/Global.gd"
+ChangeScene="*res://BaseMenu/ChangeScene.tscn"
 
 [display]
 
