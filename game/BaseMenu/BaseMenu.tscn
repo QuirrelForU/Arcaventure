@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://BaseMenu/Comp 1 (0;00;00;00).png" type="Texture" id=1]
-[ext_resource path="res://BaseMenu/BaseMenu.gd" type="Script" id=2]
 [ext_resource path="res://BaseMenu/PlusAnimated.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -9,7 +8,7 @@ resource_name = "PlusesSlide"
 length = 2.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("GridContainer:rect_position")
+tracks/0/path = NodePath("Background/GridPluses:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -55,175 +54,190 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -159, -99 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Background/GridPluses:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -166.88, -94.7037 ) ]
+}
 
 [node name="BaseMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
 
-[node name="GradientBack" type="TextureRect" parent="."]
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GradientBack" type="TextureRect" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridPluses" type="GridContainer" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -159.0
-margin_top = -99.0
-margin_right = 1266.0
-margin_bottom = 684.0
+margin_left = -166.88
+margin_top = -94.7037
+margin_right = 1258.12
+margin_bottom = 688.296
 custom_constants/vseparation = 60
 custom_constants/hseparation = 75
 columns = 20
 
-[node name="PlusAnimated" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated" parent="Background/GridPluses" instance=ExtResource( 3 )]
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated16" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated16" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_right = 75.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated17" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated17" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_right = 150.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated18" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated18" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_right = 225.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated19" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated19" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_right = 300.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated20" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated20" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_right = 375.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated6" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated6" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_right = 450.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated7" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated7" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_right = 525.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated8" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated8" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_right = 600.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated9" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated9" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_right = 675.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated10" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated10" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_right = 750.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated11" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated11" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_right = 825.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated12" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated12" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_right = 900.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated13" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated13" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_right = 975.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated14" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated14" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_right = 1050.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated15" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated15" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_right = 1125.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated2" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated2" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_right = 1200.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated3" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated3" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_right = 1275.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated4" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated4" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_right = 1350.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated5" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated5" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_right = 1425.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated21" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated21" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 60.0
 margin_bottom = 60.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated22" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated22" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 60.0
 margin_right = 75.0
@@ -232,7 +246,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated23" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated23" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 60.0
 margin_right = 150.0
@@ -241,7 +255,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated24" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated24" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 60.0
 margin_right = 225.0
@@ -250,7 +264,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated25" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated25" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 60.0
 margin_right = 300.0
@@ -259,7 +273,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated26" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated26" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 60.0
 margin_right = 375.0
@@ -268,7 +282,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated27" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated27" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 60.0
 margin_right = 450.0
@@ -277,7 +291,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated28" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated28" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 60.0
 margin_right = 525.0
@@ -286,7 +300,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated29" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated29" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 60.0
 margin_right = 600.0
@@ -295,7 +309,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated30" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated30" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 60.0
 margin_right = 675.0
@@ -304,7 +318,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated31" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated31" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 60.0
 margin_right = 750.0
@@ -313,7 +327,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated32" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated32" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 60.0
 margin_right = 825.0
@@ -322,7 +336,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated33" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated33" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 60.0
 margin_right = 900.0
@@ -331,7 +345,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated34" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated34" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 60.0
 margin_right = 975.0
@@ -340,7 +354,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated35" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated35" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 60.0
 margin_right = 1050.0
@@ -349,7 +363,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated36" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated36" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 60.0
 margin_right = 1125.0
@@ -358,7 +372,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated37" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated37" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 60.0
 margin_right = 1200.0
@@ -367,7 +381,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated38" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated38" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 60.0
 margin_right = 1275.0
@@ -376,7 +390,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated39" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated39" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 60.0
 margin_right = 1350.0
@@ -385,7 +399,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated40" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated40" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 60.0
 margin_right = 1425.0
@@ -394,14 +408,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated41" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated41" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 120.0
 margin_bottom = 120.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated42" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated42" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 120.0
 margin_right = 75.0
@@ -410,7 +424,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated43" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated43" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 120.0
 margin_right = 150.0
@@ -419,7 +433,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated44" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated44" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 120.0
 margin_right = 225.0
@@ -428,7 +442,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated45" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated45" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 120.0
 margin_right = 300.0
@@ -437,7 +451,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated46" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated46" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 120.0
 margin_right = 375.0
@@ -446,7 +460,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated47" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated47" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 120.0
 margin_right = 450.0
@@ -455,7 +469,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated48" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated48" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 120.0
 margin_right = 525.0
@@ -464,7 +478,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated49" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated49" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 120.0
 margin_right = 600.0
@@ -473,7 +487,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated50" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated50" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 120.0
 margin_right = 675.0
@@ -482,7 +496,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated51" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated51" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 120.0
 margin_right = 750.0
@@ -491,7 +505,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated52" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated52" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 120.0
 margin_right = 825.0
@@ -500,7 +514,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated53" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated53" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 120.0
 margin_right = 900.0
@@ -509,7 +523,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated54" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated54" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 120.0
 margin_right = 975.0
@@ -518,7 +532,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated55" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated55" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 120.0
 margin_right = 1050.0
@@ -527,7 +541,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated56" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated56" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 120.0
 margin_right = 1125.0
@@ -536,7 +550,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated57" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated57" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 120.0
 margin_right = 1200.0
@@ -545,7 +559,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated58" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated58" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 120.0
 margin_right = 1275.0
@@ -554,7 +568,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated59" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated59" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 120.0
 margin_right = 1350.0
@@ -563,7 +577,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated60" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated60" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 120.0
 margin_right = 1425.0
@@ -572,14 +586,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated61" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated61" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 180.0
 margin_bottom = 180.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated62" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated62" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 180.0
 margin_right = 75.0
@@ -588,7 +602,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated63" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated63" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 180.0
 margin_right = 150.0
@@ -597,7 +611,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated64" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated64" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 180.0
 margin_right = 225.0
@@ -606,7 +620,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated65" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated65" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 180.0
 margin_right = 300.0
@@ -615,7 +629,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated66" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated66" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 180.0
 margin_right = 375.0
@@ -624,7 +638,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated67" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated67" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 180.0
 margin_right = 450.0
@@ -633,7 +647,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated68" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated68" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 180.0
 margin_right = 525.0
@@ -642,7 +656,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated69" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated69" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 180.0
 margin_right = 600.0
@@ -651,7 +665,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated70" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated70" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 180.0
 margin_right = 675.0
@@ -660,7 +674,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated71" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated71" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 180.0
 margin_right = 750.0
@@ -669,7 +683,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated72" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated72" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 180.0
 margin_right = 825.0
@@ -678,7 +692,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated73" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated73" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 180.0
 margin_right = 900.0
@@ -687,7 +701,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated74" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated74" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 180.0
 margin_right = 975.0
@@ -696,7 +710,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated75" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated75" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 180.0
 margin_right = 1050.0
@@ -705,7 +719,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated76" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated76" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 180.0
 margin_right = 1125.0
@@ -714,7 +728,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated77" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated77" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 180.0
 margin_right = 1200.0
@@ -723,7 +737,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated78" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated78" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 180.0
 margin_right = 1275.0
@@ -732,7 +746,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated79" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated79" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 180.0
 margin_right = 1350.0
@@ -741,7 +755,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated80" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated80" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 180.0
 margin_right = 1425.0
@@ -750,14 +764,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated81" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated81" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 240.0
 margin_bottom = 240.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated82" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated82" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 240.0
 margin_right = 75.0
@@ -766,7 +780,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated83" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated83" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 240.0
 margin_right = 150.0
@@ -775,7 +789,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated84" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated84" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 240.0
 margin_right = 225.0
@@ -784,7 +798,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated85" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated85" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 240.0
 margin_right = 300.0
@@ -793,7 +807,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated86" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated86" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 240.0
 margin_right = 375.0
@@ -802,7 +816,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated87" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated87" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 240.0
 margin_right = 450.0
@@ -811,7 +825,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated88" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated88" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 240.0
 margin_right = 525.0
@@ -820,7 +834,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated89" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated89" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 240.0
 margin_right = 600.0
@@ -829,7 +843,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated90" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated90" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 240.0
 margin_right = 675.0
@@ -838,7 +852,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated91" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated91" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 240.0
 margin_right = 750.0
@@ -847,7 +861,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated92" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated92" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 240.0
 margin_right = 825.0
@@ -856,7 +870,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated93" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated93" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 240.0
 margin_right = 900.0
@@ -865,7 +879,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated94" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated94" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 240.0
 margin_right = 975.0
@@ -874,7 +888,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated95" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated95" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 240.0
 margin_right = 1050.0
@@ -883,7 +897,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated96" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated96" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 240.0
 margin_right = 1125.0
@@ -892,7 +906,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated97" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated97" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 240.0
 margin_right = 1200.0
@@ -901,7 +915,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated98" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated98" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 240.0
 margin_right = 1275.0
@@ -910,7 +924,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated99" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated99" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 240.0
 margin_right = 1350.0
@@ -919,7 +933,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated100" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated100" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 240.0
 margin_right = 1425.0
@@ -928,14 +942,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated101" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated101" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 300.0
 margin_bottom = 300.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated102" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated102" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 300.0
 margin_right = 75.0
@@ -944,7 +958,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated103" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated103" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 300.0
 margin_right = 150.0
@@ -953,7 +967,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated104" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated104" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 300.0
 margin_right = 225.0
@@ -962,7 +976,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated105" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated105" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 300.0
 margin_right = 300.0
@@ -971,7 +985,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated106" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated106" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 300.0
 margin_right = 375.0
@@ -980,7 +994,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated107" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated107" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 300.0
 margin_right = 450.0
@@ -989,7 +1003,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated108" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated108" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 300.0
 margin_right = 525.0
@@ -998,7 +1012,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated109" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated109" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 300.0
 margin_right = 600.0
@@ -1007,7 +1021,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated110" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated110" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 300.0
 margin_right = 675.0
@@ -1016,7 +1030,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated111" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated111" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 300.0
 margin_right = 750.0
@@ -1025,7 +1039,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated112" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated112" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 300.0
 margin_right = 825.0
@@ -1034,7 +1048,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated113" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated113" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 300.0
 margin_right = 900.0
@@ -1043,7 +1057,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated114" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated114" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 300.0
 margin_right = 975.0
@@ -1052,7 +1066,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated115" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated115" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 300.0
 margin_right = 1050.0
@@ -1061,7 +1075,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated116" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated116" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 300.0
 margin_right = 1125.0
@@ -1070,7 +1084,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated117" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated117" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 300.0
 margin_right = 1200.0
@@ -1079,7 +1093,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated118" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated118" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 300.0
 margin_right = 1275.0
@@ -1088,7 +1102,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated119" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated119" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 300.0
 margin_right = 1350.0
@@ -1097,7 +1111,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated120" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated120" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 300.0
 margin_right = 1425.0
@@ -1106,14 +1120,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated121" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated121" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 360.0
 margin_bottom = 360.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated122" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated122" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 360.0
 margin_right = 75.0
@@ -1122,7 +1136,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated123" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated123" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 360.0
 margin_right = 150.0
@@ -1131,7 +1145,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated124" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated124" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 360.0
 margin_right = 225.0
@@ -1140,7 +1154,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated125" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated125" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 360.0
 margin_right = 300.0
@@ -1149,7 +1163,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated126" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated126" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 360.0
 margin_right = 375.0
@@ -1158,7 +1172,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated127" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated127" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 360.0
 margin_right = 450.0
@@ -1167,7 +1181,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated128" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated128" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 360.0
 margin_right = 525.0
@@ -1176,7 +1190,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated129" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated129" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 360.0
 margin_right = 600.0
@@ -1185,7 +1199,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated130" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated130" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 360.0
 margin_right = 675.0
@@ -1194,7 +1208,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated131" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated131" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 360.0
 margin_right = 750.0
@@ -1203,7 +1217,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated132" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated132" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 360.0
 margin_right = 825.0
@@ -1212,7 +1226,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated133" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated133" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 360.0
 margin_right = 900.0
@@ -1221,7 +1235,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated134" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated134" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 360.0
 margin_right = 975.0
@@ -1230,7 +1244,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated135" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated135" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 360.0
 margin_right = 1050.0
@@ -1239,7 +1253,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated136" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated136" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 360.0
 margin_right = 1125.0
@@ -1248,7 +1262,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated137" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated137" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 360.0
 margin_right = 1200.0
@@ -1257,7 +1271,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated138" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated138" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 360.0
 margin_right = 1275.0
@@ -1266,7 +1280,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated139" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated139" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 360.0
 margin_right = 1350.0
@@ -1275,7 +1289,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated140" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated140" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 360.0
 margin_right = 1425.0
@@ -1284,14 +1298,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated141" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated141" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 420.0
 margin_bottom = 420.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated142" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated142" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 420.0
 margin_right = 75.0
@@ -1300,7 +1314,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated143" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated143" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 420.0
 margin_right = 150.0
@@ -1309,7 +1323,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated144" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated144" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 420.0
 margin_right = 225.0
@@ -1318,7 +1332,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated145" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated145" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 420.0
 margin_right = 300.0
@@ -1327,7 +1341,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated146" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated146" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 420.0
 margin_right = 375.0
@@ -1336,7 +1350,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated147" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated147" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 420.0
 margin_right = 450.0
@@ -1345,7 +1359,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated148" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated148" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 420.0
 margin_right = 525.0
@@ -1354,7 +1368,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated149" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated149" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 420.0
 margin_right = 600.0
@@ -1363,7 +1377,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated150" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated150" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 420.0
 margin_right = 675.0
@@ -1372,7 +1386,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated151" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated151" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 420.0
 margin_right = 750.0
@@ -1381,7 +1395,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated152" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated152" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 420.0
 margin_right = 825.0
@@ -1390,7 +1404,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated153" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated153" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 420.0
 margin_right = 900.0
@@ -1399,7 +1413,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated154" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated154" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 420.0
 margin_right = 975.0
@@ -1408,7 +1422,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated155" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated155" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 420.0
 margin_right = 1050.0
@@ -1417,7 +1431,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated156" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated156" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 420.0
 margin_right = 1125.0
@@ -1426,7 +1440,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated157" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated157" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 420.0
 margin_right = 1200.0
@@ -1435,7 +1449,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated158" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated158" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 420.0
 margin_right = 1275.0
@@ -1444,7 +1458,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated159" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated159" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 420.0
 margin_right = 1350.0
@@ -1453,7 +1467,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated160" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated160" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 420.0
 margin_right = 1425.0
@@ -1462,14 +1476,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated161" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated161" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 480.0
 margin_bottom = 480.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated162" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated162" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 480.0
 margin_right = 75.0
@@ -1478,7 +1492,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated163" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated163" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 480.0
 margin_right = 150.0
@@ -1487,7 +1501,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated164" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated164" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 480.0
 margin_right = 225.0
@@ -1496,7 +1510,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated165" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated165" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 480.0
 margin_right = 300.0
@@ -1505,7 +1519,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated166" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated166" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 480.0
 margin_right = 375.0
@@ -1514,7 +1528,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated167" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated167" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 480.0
 margin_right = 450.0
@@ -1523,7 +1537,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated168" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated168" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 480.0
 margin_right = 525.0
@@ -1532,7 +1546,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated169" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated169" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 480.0
 margin_right = 600.0
@@ -1541,7 +1555,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated170" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated170" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 480.0
 margin_right = 675.0
@@ -1550,7 +1564,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated171" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated171" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 480.0
 margin_right = 750.0
@@ -1559,7 +1573,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated172" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated172" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 480.0
 margin_right = 825.0
@@ -1568,7 +1582,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated173" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated173" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 480.0
 margin_right = 900.0
@@ -1577,7 +1591,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated174" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated174" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 480.0
 margin_right = 975.0
@@ -1586,7 +1600,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated175" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated175" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 480.0
 margin_right = 1050.0
@@ -1595,7 +1609,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated176" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated176" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 480.0
 margin_right = 1125.0
@@ -1604,7 +1618,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated177" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated177" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 480.0
 margin_right = 1200.0
@@ -1613,7 +1627,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated178" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated178" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 480.0
 margin_right = 1275.0
@@ -1622,7 +1636,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated179" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated179" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 480.0
 margin_right = 1350.0
@@ -1631,7 +1645,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated180" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated180" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 480.0
 margin_right = 1425.0
@@ -1640,14 +1654,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated181" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated181" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 540.0
 margin_bottom = 540.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated182" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated182" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 540.0
 margin_right = 75.0
@@ -1656,7 +1670,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated183" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated183" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 540.0
 margin_right = 150.0
@@ -1665,7 +1679,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated184" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated184" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 540.0
 margin_right = 225.0
@@ -1674,7 +1688,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated185" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated185" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 540.0
 margin_right = 300.0
@@ -1683,7 +1697,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated186" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated186" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 540.0
 margin_right = 375.0
@@ -1692,7 +1706,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated187" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated187" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 540.0
 margin_right = 450.0
@@ -1701,7 +1715,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated188" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated188" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 540.0
 margin_right = 525.0
@@ -1710,7 +1724,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated189" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated189" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 540.0
 margin_right = 600.0
@@ -1719,7 +1733,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated190" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated190" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 540.0
 margin_right = 675.0
@@ -1728,7 +1742,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated191" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated191" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 540.0
 margin_right = 750.0
@@ -1737,7 +1751,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated192" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated192" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 540.0
 margin_right = 825.0
@@ -1746,7 +1760,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated193" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated193" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 540.0
 margin_right = 900.0
@@ -1755,7 +1769,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated194" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated194" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 540.0
 margin_right = 975.0
@@ -1764,7 +1778,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated195" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated195" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 540.0
 margin_right = 1050.0
@@ -1773,7 +1787,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated196" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated196" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 540.0
 margin_right = 1125.0
@@ -1782,7 +1796,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated197" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated197" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 540.0
 margin_right = 1200.0
@@ -1791,7 +1805,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated198" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated198" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 540.0
 margin_right = 1275.0
@@ -1800,7 +1814,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated199" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated199" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 540.0
 margin_right = 1350.0
@@ -1809,7 +1823,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated200" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated200" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 540.0
 margin_right = 1425.0
@@ -1818,14 +1832,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated201" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated201" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 600.0
 margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated202" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated202" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 600.0
 margin_right = 75.0
@@ -1834,7 +1848,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated203" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated203" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 600.0
 margin_right = 150.0
@@ -1843,7 +1857,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated204" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated204" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 600.0
 margin_right = 225.0
@@ -1852,7 +1866,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated205" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated205" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 600.0
 margin_right = 300.0
@@ -1861,7 +1875,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated206" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated206" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 600.0
 margin_right = 375.0
@@ -1870,7 +1884,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated207" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated207" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 600.0
 margin_right = 450.0
@@ -1879,7 +1893,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated208" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated208" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 600.0
 margin_right = 525.0
@@ -1888,7 +1902,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated209" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated209" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 600.0
 margin_right = 600.0
@@ -1897,7 +1911,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated210" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated210" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 600.0
 margin_right = 675.0
@@ -1906,7 +1920,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated211" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated211" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 600.0
 margin_right = 750.0
@@ -1915,7 +1929,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated212" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated212" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 600.0
 margin_right = 825.0
@@ -1924,7 +1938,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated213" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated213" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 600.0
 margin_right = 900.0
@@ -1933,7 +1947,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated214" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated214" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 600.0
 margin_right = 975.0
@@ -1942,7 +1956,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated215" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated215" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 600.0
 margin_right = 1050.0
@@ -1951,7 +1965,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated216" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated216" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 600.0
 margin_right = 1125.0
@@ -1960,7 +1974,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated217" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated217" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 600.0
 margin_right = 1200.0
@@ -1969,7 +1983,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated218" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated218" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 600.0
 margin_right = 1275.0
@@ -1978,7 +1992,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated219" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated219" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 600.0
 margin_right = 1350.0
@@ -1987,7 +2001,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated220" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated220" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 600.0
 margin_right = 1425.0
@@ -1996,14 +2010,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated221" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated221" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 660.0
 margin_bottom = 660.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated222" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated222" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 660.0
 margin_right = 75.0
@@ -2012,7 +2026,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated223" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated223" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 660.0
 margin_right = 150.0
@@ -2021,7 +2035,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated224" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated224" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 660.0
 margin_right = 225.0
@@ -2030,7 +2044,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated225" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated225" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 660.0
 margin_right = 300.0
@@ -2039,7 +2053,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated226" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated226" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 660.0
 margin_right = 375.0
@@ -2048,7 +2062,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated227" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated227" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 660.0
 margin_right = 450.0
@@ -2057,7 +2071,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated228" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated228" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 660.0
 margin_right = 525.0
@@ -2066,7 +2080,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated229" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated229" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 660.0
 margin_right = 600.0
@@ -2075,7 +2089,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated230" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated230" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 660.0
 margin_right = 675.0
@@ -2084,7 +2098,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated231" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated231" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 660.0
 margin_right = 750.0
@@ -2093,7 +2107,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated232" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated232" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 660.0
 margin_right = 825.0
@@ -2102,7 +2116,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated233" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated233" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 660.0
 margin_right = 900.0
@@ -2111,7 +2125,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated234" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated234" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 660.0
 margin_right = 975.0
@@ -2120,7 +2134,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated235" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated235" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 660.0
 margin_right = 1050.0
@@ -2129,7 +2143,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated236" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated236" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 660.0
 margin_right = 1125.0
@@ -2138,7 +2152,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated237" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated237" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 660.0
 margin_right = 1200.0
@@ -2147,7 +2161,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated238" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated238" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 660.0
 margin_right = 1275.0
@@ -2156,7 +2170,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated239" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated239" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 660.0
 margin_right = 1350.0
@@ -2165,7 +2179,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated240" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated240" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 660.0
 margin_right = 1425.0
@@ -2174,14 +2188,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated241" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated241" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 720.0
 margin_bottom = 720.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated242" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated242" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 720.0
 margin_right = 75.0
@@ -2190,7 +2204,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated243" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated243" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 720.0
 margin_right = 150.0
@@ -2199,7 +2213,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated244" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated244" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 720.0
 margin_right = 225.0
@@ -2208,7 +2222,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated245" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated245" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 720.0
 margin_right = 300.0
@@ -2217,7 +2231,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated246" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated246" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 720.0
 margin_right = 375.0
@@ -2226,7 +2240,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated247" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated247" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 720.0
 margin_right = 450.0
@@ -2235,7 +2249,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated248" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated248" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 720.0
 margin_right = 525.0
@@ -2244,7 +2258,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated249" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated249" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 720.0
 margin_right = 600.0
@@ -2253,7 +2267,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated250" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated250" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 720.0
 margin_right = 675.0
@@ -2262,7 +2276,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated251" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated251" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 720.0
 margin_right = 750.0
@@ -2271,7 +2285,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated252" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated252" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 720.0
 margin_right = 825.0
@@ -2280,7 +2294,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated253" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated253" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 720.0
 margin_right = 900.0
@@ -2289,7 +2303,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated254" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated254" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 720.0
 margin_right = 975.0
@@ -2298,7 +2312,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated255" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated255" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 720.0
 margin_right = 1050.0
@@ -2307,7 +2321,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated256" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated256" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 720.0
 margin_right = 1125.0
@@ -2316,7 +2330,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated257" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated257" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 720.0
 margin_right = 1200.0
@@ -2325,7 +2339,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated258" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated258" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 720.0
 margin_right = 1275.0
@@ -2334,7 +2348,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated259" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated259" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 720.0
 margin_right = 1350.0
@@ -2343,7 +2357,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated260" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated260" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 720.0
 margin_right = 1425.0
@@ -2352,14 +2366,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated261" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated261" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_top = 780.0
 margin_bottom = 780.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated262" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated262" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 75.0
 margin_top = 780.0
 margin_right = 75.0
@@ -2368,7 +2382,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated263" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated263" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 150.0
 margin_top = 780.0
 margin_right = 150.0
@@ -2377,7 +2391,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated264" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated264" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 225.0
 margin_top = 780.0
 margin_right = 225.0
@@ -2386,7 +2400,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated265" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated265" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 780.0
 margin_right = 300.0
@@ -2395,7 +2409,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated266" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated266" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 375.0
 margin_top = 780.0
 margin_right = 375.0
@@ -2404,7 +2418,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated267" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated267" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 450.0
 margin_top = 780.0
 margin_right = 450.0
@@ -2413,7 +2427,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated268" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated268" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 525.0
 margin_top = 780.0
 margin_right = 525.0
@@ -2422,7 +2436,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated269" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated269" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 600.0
 margin_top = 780.0
 margin_right = 600.0
@@ -2431,7 +2445,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated270" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated270" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 675.0
 margin_top = 780.0
 margin_right = 675.0
@@ -2440,7 +2454,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated271" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated271" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 750.0
 margin_top = 780.0
 margin_right = 750.0
@@ -2449,7 +2463,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated272" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated272" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 825.0
 margin_top = 780.0
 margin_right = 825.0
@@ -2458,7 +2472,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated273" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated273" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 900.0
 margin_top = 780.0
 margin_right = 900.0
@@ -2467,7 +2481,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated274" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated274" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 975.0
 margin_top = 780.0
 margin_right = 975.0
@@ -2476,7 +2490,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated275" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated275" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1050.0
 margin_top = 780.0
 margin_right = 1050.0
@@ -2485,7 +2499,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated276" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated276" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1125.0
 margin_top = 780.0
 margin_right = 1125.0
@@ -2494,7 +2508,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated277" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated277" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1200.0
 margin_top = 780.0
 margin_right = 1200.0
@@ -2503,7 +2517,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated278" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated278" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1275.0
 margin_top = 780.0
 margin_right = 1275.0
@@ -2512,7 +2526,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated279" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated279" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1350.0
 margin_top = 780.0
 margin_right = 1350.0
@@ -2521,7 +2535,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlusAnimated280" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="PlusAnimated280" parent="Background/GridPluses" instance=ExtResource( 3 )]
 margin_left = 1425.0
 margin_top = 780.0
 margin_right = 1425.0
@@ -2530,7 +2544,8 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+root_node = NodePath("../..")
 autoplay = "PlusesSlide"
 anims/PlusesSlide = SubResource( 1 )
 anims/RESET = SubResource( 2 )
