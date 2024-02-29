@@ -466,12 +466,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="RetryButton" type="Button" parent="HUD/WinScreen/CenterContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 60.0
-margin_bottom = 68.0
+[node name="RetryButtonLoose" type="Button" parent="HUD/WinScreen/CenterContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 75.0
+margin_bottom = 44.0
 text = "Retry"
 
 [connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_DeadZone_body_entered"]
 [connection signal="pressed" from="HUD/DeathScreen/CenterContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
-[connection signal="pressed" from="HUD/WinScreen/CenterContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="HUD/WinScreen/CenterContainer/VBoxContainer/RetryButtonLoose" to="." method="_on_RetryButtonLoose_pressed"]
