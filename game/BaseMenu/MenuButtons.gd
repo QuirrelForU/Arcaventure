@@ -28,3 +28,23 @@ func _on_CloseCreditsButton_pressed():
 	$"../AnimationPlayer".play_backwards("Fade")
 	yield($"../AnimationPlayer","animation_finished")
 	$"../ColorRect".visible = false
+
+
+func _on_SettingsButton_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../Settings".visible = true
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
+
+
+func _on_CloseSettingsButton_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../Settings".visible = false
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false

@@ -234,6 +234,7 @@ text = "X"
 icon_align = 2
 
 [node name="Settings" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
@@ -316,6 +317,20 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 theme = ExtResource( 9 )
 
+[node name="CloseSettingsButton" parent="Settings" instance=ExtResource( 6 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -147.0
+margin_top = -157.0
+margin_right = -47.0
+margin_bottom = -57.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 7 )
+text = "X"
+icon_align = 2
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -330,9 +345,11 @@ anims/Fade = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [connection signal="pressed" from="MenuButtons/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/SettingsButton" to="MenuButtons" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/CreditsButton" to="MenuButtons" method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/ExitButton" to="MenuButtons" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Credits/CloseCreditsButton" to="MenuButtons" method="_on_CloseCreditsButton_pressed"]
 [connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
+[connection signal="pressed" from="Settings/CloseSettingsButton" to="MenuButtons" method="_on_CloseSettingsButton_pressed"]
