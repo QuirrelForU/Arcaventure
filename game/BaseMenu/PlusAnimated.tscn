@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/Vonique64.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/josefin-sans.regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Plusrotation"
-length = 5.0
+length = 10.0
 loop = true
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("PlusSymb:rect_rotation")
@@ -14,7 +14,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 401.707, -0.3, 0.566864, 0.4, 21.2353, 360, -0.3, -18.0555, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.8, 1.8 )
+"times": PoolRealArray( 2.2, 3, 4 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -47,16 +47,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -61.0
-margin_top = -73.0
-margin_right = 67.0
-margin_bottom = 84.0
-rect_pivot_offset = Vector2( 61, 73 )
+margin_left = -63.0
+margin_top = -80.0
+margin_right = 65.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 63.071, 80 )
 custom_colors/font_color = Color( 1, 1, 1, 0.0823529 )
 custom_fonts/font = SubResource( 3 )
 text = "+"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_lock_": true
-}
