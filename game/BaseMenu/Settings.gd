@@ -3,6 +3,9 @@ extends Control
 onready var res_option_button = $VBoxContainer/Res/OptionButton
 
 var is_borderless = false
+ 
+var resolution_key = "1920x1080"
+var fullscreen_mode = OS.window_fullscreen
 
 var resolutions: Dictionary = {
 			  "1920x1080": Vector2(1920, 1080),
