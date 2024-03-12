@@ -15,3 +15,7 @@ func _ready():
 
 func update_after_load():
 	pass
+
+
+func _on_savetest_pressed():
+	$SaverLoader.save_game()

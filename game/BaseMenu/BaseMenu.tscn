@@ -419,6 +419,10 @@ anims/RESET = SubResource( 6 )
 [node name="SaverLoader" type="Node" parent="."]
 script = ExtResource( 11 )
 
+[node name="savetest" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
 [connection signal="pressed" from="MenuButtons/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/SettingsButton" to="MenuButtons" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/CreditsButton" to="MenuButtons" method="_on_CreditsButton_pressed"]
@@ -429,3 +433,4 @@ script = ExtResource( 11 )
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
 [connection signal="pressed" from="Settings/CloseSettingsButton" to="MenuButtons" method="_on_CloseSettingsButton_pressed"]
+[connection signal="pressed" from="savetest" to="." method="_on_savetest_pressed"]

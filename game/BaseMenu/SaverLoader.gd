@@ -3,6 +3,7 @@ extends Node
 
 onready var profile_settings = $"../Settings"
 onready var profile_index_choosing = $"../ChoosingProfile"
+
 func save_game():
 	var saved_game := SavedGame.new()
 	

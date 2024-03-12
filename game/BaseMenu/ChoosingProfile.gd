@@ -23,7 +23,6 @@ func _on_ProfilesChoose_item_selected(index):
 
 func _set_profile_index(new_index):
 	profile_index = new_index
-	print("qq")
 	for p in profile_icons:
 		p.visible = false
 	profile_icons[new_index].visible = true
