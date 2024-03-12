@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://BaseMenu/Comp 1 (0;00;00;00).png" type="Texture" id=1]
 [ext_resource path="res://BaseMenu/BaseMenu.gd" type="Script" id=2]
-[ext_resource path="res://fonts/menu_buttons_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://fonts/Vonique64.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://BaseMenu/GridPluses.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BaseMenu/menu_button_with_sound.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "PlusesSlide"
@@ -42,26 +42,6 @@ tracks/0/keys = {
 size = 150
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxEmpty" id=7]
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="Theme" id=5]
-default_font = ExtResource( 3 )
-Button/styles/focus = SubResource( 7 )
-Button/styles/hover = SubResource( 6 )
-Button/styles/normal = SubResource( 4 )
-Button/styles/pressed = SubResource( 8 )
-
 [node name="BaseMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -86,8 +66,8 @@ __meta__ = {
 [node name="GridPluses" parent="Background" instance=ExtResource( 5 )]
 margin_left = -166.88
 margin_top = -94.7037
-margin_right = 4330.12
-margin_bottom = 2488.3
+margin_right = 12010.1
+margin_bottom = 6808.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../..")
@@ -125,48 +105,22 @@ margin_right = 1040.0
 margin_bottom = 321.0
 rect_min_size = Vector2( 0, 100 )
 
-[node name="ARKANOID" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_left = 320.0
+[node name="StartButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 331.0
-margin_right = 720.0
 margin_bottom = 408.0
-rect_min_size = Vector2( 400, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource( 5 )
 text = "PLAY"
 
-[node name="ARKANOID2" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_left = 320.0
-margin_top = 418.0
-margin_right = 720.0
-margin_bottom = 495.0
-rect_min_size = Vector2( 400, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource( 5 )
+[node name="SettingsButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 6 )]
 text = "SETTINGS"
 
-[node name="ARKANOID3" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_left = 320.0
+[node name="CreditsButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 505.0
-margin_right = 720.0
 margin_bottom = 582.0
-rect_min_size = Vector2( 400, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource( 5 )
 text = "CREDITS"
 
-[node name="ARKANOID4" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_left = 320.0
+[node name="ExitButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 592.0
-margin_right = 720.0
 margin_bottom = 669.0
-rect_min_size = Vector2( 400, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource( 5 )
 text = "EXIT"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/ARKANOID" to="." method="_on_ARKANOID_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
