@@ -8,14 +8,10 @@ func _on_StartButton_pressed():
 
 
 func _ready():
-	#$SaverLoader.load_game()
-	pass
+	$SaverLoader.load_game()
 	
 
 
 func update_after_load():
 	pass
 
-
-func _on_savetest_pressed():
-	$SaverLoader.save_game()

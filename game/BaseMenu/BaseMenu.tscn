@@ -403,6 +403,20 @@ custom_fonts/font = SubResource( 7 )
 text = "X"
 icon_align = 2
 
+[node name="SaveSettingsButton" parent="Settings" instance=ExtResource( 6 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -242.0
+margin_top = -157.0
+margin_right = -142.0
+margin_bottom = -57.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 7 )
+text = "V"
+icon_align = 2
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -419,10 +433,6 @@ anims/RESET = SubResource( 6 )
 [node name="SaverLoader" type="Node" parent="."]
 script = ExtResource( 11 )
 
-[node name="savetest" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
 [connection signal="pressed" from="MenuButtons/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/SettingsButton" to="MenuButtons" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/CreditsButton" to="MenuButtons" method="_on_CreditsButton_pressed"]
@@ -433,4 +443,4 @@ margin_bottom = 20.0
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
 [connection signal="pressed" from="Settings/CloseSettingsButton" to="MenuButtons" method="_on_CloseSettingsButton_pressed"]
-[connection signal="pressed" from="savetest" to="." method="_on_savetest_pressed"]
+[connection signal="pressed" from="Settings/SaveSettingsButton" to="Settings" method="_on_SaveSettingsButton_pressed"]

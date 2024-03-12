@@ -48,3 +48,7 @@ func _set_fullscreen_mode(new_fullscreen_state):
 	OS.window_fullscreen = fullscreen_mode
 	$VBoxContainer/Fullscreen2/FullScreenCheck.pressed = fullscreen_mode
 	res_option_button.disabled = fullscreen_mode
+
+
+func _on_SaveSettingsButton_pressed():
+	$"../SaverLoader".save_game()
