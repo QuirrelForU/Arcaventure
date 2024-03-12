@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=12 format=2]
+
+[ext_resource path="res://fonts/menu_buttons_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://BaseMenu/checkbox/checked.png" type="Texture" id=2]
+[ext_resource path="res://BaseMenu/checkbox/unchecked.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="ImageTexture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.227451, 0.00784314, 0.364706, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.172549, 0.027451, 0.266667, 0.894118 )
+
+[resource]
+default_font = ExtResource( 1 )
+Button/styles/focus = SubResource( 7 )
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 8 )
+CheckBox/fonts/font = ExtResource( 1 )
+CheckBox/icons/checked = ExtResource( 2 )
+CheckBox/icons/unchecked = ExtResource( 3 )
+CheckBox/styles/hover = SubResource( 11 )
+OptionButton/icons/arrow = SubResource( 10 )
+OptionButton/styles/disabled = SubResource( 12 )
+PopupMenu/styles/panel = SubResource( 9 )

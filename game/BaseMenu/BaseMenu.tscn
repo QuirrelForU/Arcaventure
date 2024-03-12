@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://BaseMenu/Comp 1 (0;00;00;00).png" type="Texture" id=1]
 [ext_resource path="res://BaseMenu/BaseMenu.gd" type="Script" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://BaseMenu/GridPluses.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BaseMenu/menu_button_with_sound.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/josefin-sans.regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://BaseMenu/Settings.gd" type="Script" id=8]
+[ext_resource path="res://BaseMenu/menu_theme.tres" type="Theme" id=9]
+[ext_resource path="res://BaseMenu/settings_font.tres" type="DynamicFont" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "PlusesSlide"
@@ -141,35 +144,60 @@ margin_right = 1040.0
 margin_bottom = 211.0
 custom_fonts/font = SubResource( 3 )
 text = "ARCAVENTURE"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label2" type="Label" parent="MenuButtons/VBoxContainer"]
 margin_top = 221.0
 margin_right = 1040.0
 margin_bottom = 321.0
 rect_min_size = Vector2( 0, 100 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StartButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 331.0
 margin_bottom = 408.0
+theme = ExtResource( 9 )
 text = "PLAY"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SettingsButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
+theme = ExtResource( 9 )
 text = "SETTINGS"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CreditsButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 505.0
 margin_bottom = 582.0
+theme = ExtResource( 9 )
 text = "CREDITS"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ExitButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 592.0
 margin_bottom = 669.0
+theme = ExtResource( 9 )
 text = "EXIT"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Credits" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ColorRect" type="ColorRect" parent="Credits"]
 anchor_right = 1.0
@@ -205,11 +233,97 @@ custom_fonts/font = SubResource( 7 )
 text = "X"
 icon_align = 2
 
+[node name="Settings" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.713726 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+anchor_left = 0.035
+anchor_top = 0.5
+anchor_right = 0.035
+anchor_bottom = 0.5
+margin_top = -436.0
+margin_right = 260.0
+margin_bottom = -214.0
+
+[node name="Res" type="HBoxContainer" parent="Settings/VBoxContainer"]
+margin_right = 840.0
+margin_bottom = 77.0
+custom_constants/separation = 42
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/Res"]
+margin_top = 3.0
+margin_right = 298.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 10 )
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="Settings/VBoxContainer/Res"]
+margin_left = 340.0
+margin_right = 840.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 500, 0 )
+theme = ExtResource( 9 )
+
+[node name="Fullscreen" type="HBoxContainer" parent="Settings/VBoxContainer"]
+visible = false
+margin_top = 81.0
+margin_right = 840.0
+margin_bottom = 158.0
+custom_constants/separation = 42
+
+[node name="Borderless" type="Label" parent="Settings/VBoxContainer/Fullscreen"]
+margin_top = 3.0
+margin_right = 312.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 10 )
+text = "Borderless"
+
+[node name="WindowedCheck" type="CheckBox" parent="Settings/VBoxContainer/Fullscreen"]
+margin_left = 354.0
+margin_right = 404.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 1, 1 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 9 )
+
+[node name="Fullscreen2" type="HBoxContainer" parent="Settings/VBoxContainer"]
+margin_top = 81.0
+margin_right = 840.0
+margin_bottom = 158.0
+custom_constants/separation = 42
+
+[node name="Fullscreen" type="Label" parent="Settings/VBoxContainer/Fullscreen2"]
+margin_top = 3.0
+margin_right = 324.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 10 )
+text = "Fullscreen"
+
+[node name="FullScreenCheck" type="CheckBox" parent="Settings/VBoxContainer/Fullscreen2"]
+margin_left = 366.0
+margin_right = 416.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 1, 1 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 9 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fade = SubResource( 5 )
@@ -219,3 +333,6 @@ anims/RESET = SubResource( 6 )
 [connection signal="pressed" from="MenuButtons/VBoxContainer/CreditsButton" to="MenuButtons" method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/ExitButton" to="MenuButtons" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Credits/CloseCreditsButton" to="MenuButtons" method="_on_CloseCreditsButton_pressed"]
+[connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
