@@ -2,10 +2,10 @@ extends Control
 
 onready var res_option_button = $VBoxContainer/Res/OptionButton
 
-var is_borderless = false
+var is_borderless = false 
  
-var resolution_key = "1920x1080"
-var fullscreen_mode = OS.window_fullscreen
+var resolution_key = "1920x1080" setget _set_resolution_key
+var fullscreen_mode = OS.window_fullscreen setget _set_fullscreen_mode
 
 var resolutions: Dictionary = {
 			  "1920x1080": Vector2(1920, 1080),
@@ -25,10 +25,14 @@ func AddResolutions():
 
 
 func _on_OptionButton_item_selected(index):
-	var size = resolutions.get(res_option_button.get_item_text(index))
-	OS.set_window_size(size)
+	self.resolution_key = res_option_button.get_item_text(index)
+
 	
 
+func _set_resolution_key(new_resolution):
+	resolution_key = new_resolution
+	var size = resolutions[resolution_key]
+	OS.set_window_size(size)
 
 func _on_WindowedCheck_pressed():
 	is_borderless = !is_borderless
@@ -36,7 +40,11 @@ func _on_WindowedCheck_pressed():
 
 
 func _on_FullScreenCheck_pressed():
-	OS.set_window_fullscreen(!OS.window_fullscreen) 
-	res_option_button.disabled = OS.window_fullscreen
+	self.fullscreen_mode = !OS.window_fullscreen
 	
 	
+func _set_fullscreen_mode(new_fullscreen_state):
+	fullscreen_mode = new_fullscreen_state
+	OS.window_fullscreen = fullscreen_mode
+	$VBoxContainer/Fullscreen2/FullScreenCheck.pressed = fullscreen_mode
+	res_option_button.disabled = fullscreen_mode

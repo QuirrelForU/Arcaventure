@@ -2,21 +2,17 @@ extends HBoxContainer
 
 
 onready var profiles_control = $ProfilesChoose
-onready var profile_icon_first = $First
-onready var profile_icon_second = $Second
-onready var profile_icon_third = $Third
 
 onready var profile_icons = [$First,$Second,$Third]
 
 var profiles : Dictionary = {"First":0,"Second":1,"Third":2}
 
-var profile_index setget _set_profile_index
+var profile_index = 0 setget _set_profile_index
 
 
 func _ready():
 	set_profiles()
 	
-
 
 func set_profiles():
 	for p in profiles:

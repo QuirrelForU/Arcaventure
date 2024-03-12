@@ -206,6 +206,9 @@ margin_bottom = -43.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="First" type="TextureRect" parent="ChoosingProfile"]
 margin_top = 13.0
@@ -215,6 +218,9 @@ rect_min_size = Vector2( 50, 50 )
 size_flags_vertical = 4
 texture = ExtResource( 13 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Second" type="TextureRect" parent="ChoosingProfile"]
 visible = false
@@ -226,6 +232,9 @@ rect_min_size = Vector2( 50, 50 )
 size_flags_vertical = 4
 texture = ExtResource( 14 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Third" type="TextureRect" parent="ChoosingProfile"]
 visible = false
@@ -237,6 +246,9 @@ rect_min_size = Vector2( 50, 50 )
 size_flags_vertical = 4
 texture = ExtResource( 15 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ProfilesChoose" type="OptionButton" parent="ChoosingProfile"]
 margin_left = 54.0
@@ -245,8 +257,11 @@ margin_bottom = 77.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource( 9 )
-align = 2
+align = 1
 icon_align = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Credits" type="Control" parent="."]
 visible = false
