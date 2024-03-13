@@ -1,7 +1,7 @@
 extends Node
 
 
-var life_count = 3 setget _set_life_count
+export var life_count = 3 setget _set_life_count
 var time = 0.0 setget _set_time
 
 var bricks_count setget _set_bricks_count
