@@ -7,10 +7,12 @@ enum enum_boosters {
 	MULTIPLY = 2,
 	INVINCIBILITY = 3
 }
+signal booster_signal(booster_type,brick_position)
 
 var booster_type = null
 
 func die():
-	print(booster_type,' ',enum_boosters.keys()[booster_type])
+	print(booster_type,' ',enum_boosters.keys()[booster_type],'',global_position)
+	emit_signal("booster_signal",booster_type,global_position)
 	queue_free()
 	

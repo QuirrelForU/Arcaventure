@@ -69,6 +69,7 @@ pause={
 2d_physics/layer_3="Brick"
 2d_physics/layer_4="Ball"
 2d_physics/layer_5="Walls"
+2d_physics/layer_6="Booster"
 
 [physics]
 
