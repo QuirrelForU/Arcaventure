@@ -14,7 +14,6 @@ onready var bricks_node = get_node(bricks_path)
 func _ready():
 	ball.connect("lost_game",self,"show_deathscreen")
 	player_stats.bricks_count = bricks_node.get_child_count()
-	#player_stat.balls_count = 
 	lifelabel.text = "Life: %d" % [player_stats.life_count]
 
 

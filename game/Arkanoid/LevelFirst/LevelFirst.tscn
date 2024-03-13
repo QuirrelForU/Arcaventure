@@ -612,6 +612,10 @@ text = "Retry"
 [node name="BoosterSpawner" type="Node" parent="."]
 script = ExtResource( 13 )
 
+[node name="RespawnBallTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_DeadZone_body_entered"]
 [connection signal="pressed" from="HUD/DeathScreen/CenterContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="HUD/WinScreen/CenterContainer/VBoxContainer/RetryButtonLoose" to="." method="_on_RetryButtonLoose_pressed"]
+[connection signal="timeout" from="RespawnBallTimer" to="Stats" method="_on_RespawnBallTimer_timeout"]

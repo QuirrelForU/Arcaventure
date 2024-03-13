@@ -12,6 +12,8 @@ var balls_count setget _set_balls_count
 func _set_life_count(new_life_count):
 	life_count = new_life_count
 	$"../HUD/Control/VBoxContainer/LifeLabel".text = "Life: %d" % [life_count]
+	if life_count == 0:
+		$"../HUD".show_deathscreen()
 
 func _set_time(new_time):
 	time = new_time
@@ -25,3 +27,10 @@ func _set_bricks_count(new_bricks_count):
 
 func _set_balls_count(new_balls_count):
 	balls_count = new_balls_count
+	print(balls_count)
+	if balls_count <= 0:
+		self.life_count-=1
+		$"../RespawnBallTimer".start()
+
+func _on_RespawnBallTimer_timeout():
+	$"../Balls".respawn()

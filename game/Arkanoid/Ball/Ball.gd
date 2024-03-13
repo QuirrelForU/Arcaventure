@@ -42,7 +42,7 @@ func _physics_process(delta):
 		elif collision.get_collider().get_collision_layer() == 4: # Fun fact that collision layer returns not an actual number but his 2^number-1
 			velocity = velocity.bounce(collision.normal)
 			collision.get_collider().die()
-			player_stats.balls_count -=1
+			player_stats.bricks_count -=1
 		else:
 			velocity = velocity.bounce(collision.normal)
 			
@@ -57,21 +57,23 @@ func bounce_of_platform():
 	velocity = velocity.rotated(max_angle * normalized_hit_position)	
 	
 func die():
-	velocity = Vector2.ZERO
-	speed_mult = speed_mult_min
-	visible = false
-	position = Vector2(-500,300)
-	$CollisionShape2D.set_deferred("disabled",true)
-	if player_stats.life_count  > 0 :
-		respawn_timer.start()
-		player_stats.life_count-=1
-	else:
-		emit_signal("lost_game")
+	player_stats.balls_count -=1
+	queue_free()
+#	velocity = Vector2.ZERO
+#	speed_mult = speed_mult_min
+#	visible = false
+#	position = Vector2(-500,300)
+#	$CollisionShape2D.set_deferred("disabled",true)
+#	if player_stats.life_count  > 0 :
+#		respawn_timer.start()
+#		player_stats.life_count-=1
+#	else:
+#		emit_signal("lost_game")
 	
 
 
-func _on_RespawnTimer_timeout():
-	visible = true
-	$CollisionShape2D.set_deferred("disabled",false)
-	emit_signal("ball_respawned")
+#func _on_RespawnTimer_timeout():
+#	visible = true
+#	$CollisionShape2D.set_deferred("disabled",false)
+#	emit_signal("ball_respawned")
 
