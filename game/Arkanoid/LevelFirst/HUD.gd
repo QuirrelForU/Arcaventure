@@ -6,7 +6,6 @@ var bricks_amount = null
 
 onready var lifelabel = $Control/VBoxContainer/LifeLabel
 onready var brickslabel = $Control/VBoxContainer/BricksLabel
-onready var global_vars = get_node("/root/Global")
 onready var ball = $"../Ball"
 onready var player_stats = $"../Stats"
 export var bricks_path : NodePath
@@ -35,7 +34,7 @@ func show_deathscreen():
 func show_winscreen():
 	get_tree().paused = true
 	$WinScreen.visible = true
-	$WinScreen/CenterContainer/VBoxContainer/WinTime.text = "Congratulations! Your win time: %.3f" % global_vars.total_time
+	$WinScreen/CenterContainer/VBoxContainer/WinTime.text = "Congratulations! Your win time: %.3f" % player_stats.time
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
