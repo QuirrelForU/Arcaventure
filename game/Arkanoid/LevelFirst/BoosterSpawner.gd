@@ -26,6 +26,8 @@ func _ready():
 
 func set_boosters():
 	var bricks_list = bricks_node.get_children()
+	# I need to come up with some better shit 
+	# Cuz I dont like this multiply if for weighted random
 	for brick in bricks_list:
 		brick.connect("booster_signal",self,"spawn_booster")
 		var choice = randf()

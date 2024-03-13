@@ -7,7 +7,7 @@ var speed_mult = 1.0
 var speed_mult_min = 1.0
 var speed_mult_acc = 0.1
 var lerp_speed = 0.8
-	
+var speed = 1.0
 
 onready var platform = $"../../Platform"
 
@@ -34,7 +34,7 @@ func _ready():
 
 func _physics_process(delta):
 	speed_mult = lerp(speed_mult,speed_mult_min,lerp_speed * delta)
-	var collision = move_and_collide(velocity * speed_mult)
+	var collision = move_and_collide(velocity * speed_mult * speed)
 	if collision:
 		speed_mult +=speed_mult_acc
 		if collision.get_collider().get_collision_layer() == 2: # 2 for Platform cant assign it with name 
@@ -59,21 +59,4 @@ func bounce_of_platform():
 func die():
 	player_stats.balls_count -=1
 	queue_free()
-#	velocity = Vector2.ZERO
-#	speed_mult = speed_mult_min
-#	visible = false
-#	position = Vector2(-500,300)
-#	$CollisionShape2D.set_deferred("disabled",true)
-#	if player_stats.life_count  > 0 :
-#		respawn_timer.start()
-#		player_stats.life_count-=1
-#	else:
-#		emit_signal("lost_game")
-	
-
-
-#func _on_RespawnTimer_timeout():
-#	visible = true
-#	$CollisionShape2D.set_deferred("disabled",false)
-#	emit_signal("ball_respawned")
 

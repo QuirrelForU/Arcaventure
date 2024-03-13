@@ -27,7 +27,6 @@ func _set_bricks_count(new_bricks_count):
 
 func _set_balls_count(new_balls_count):
 	balls_count = new_balls_count
-	print(balls_count)
 	if balls_count <= 0:
 		self.life_count-=1
 		$"../RespawnBallTimer".start()

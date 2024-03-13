@@ -11,6 +11,8 @@ var positionL setget ,_get_positionL
 var positionR setget ,_get_positionR
 var positionM setget ,_get_positionM
 
+export(float) var platform_size_scale 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	throw_ball_timer.start()
@@ -19,7 +21,11 @@ func _ready():
 	positionL = $"Platform positions/PositionL".global_position.x
 	positionR = $"Platform positions/PositionR".global_position.x
 	positionM = $"Platform positions/PositionM".global_position.x
-
+	
+	# apply modifiers from editor
+	if platform_size_scale:
+		scale.x = platform_size_scale
+	
 func _physics_process(delta):
 	if ball_captured:
 		ball.position = position
@@ -43,7 +49,6 @@ func _on_ThrowBallTimer_timeout():
 func respawn_ball():
 	ball_captured = true
 	throw_ball_timer.start()
-	#ball.visible = true
 	
 func _get_positionL():
 	positionL = $"Platform positions/PositionL".global_position.x
