@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Arkanoid/Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Arkanoid/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Arkanoid/arkanoid_hud_font.tres" type="DynamicFont" id=11]
 [ext_resource path="res://Arkanoid/boosters/BoosterLife.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Arkanoid/LevelFirst/BoosterSpawner.gd" type="Script" id=13]
+[ext_resource path="res://Arkanoid/LevelFirst/Stats.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 256, 255 )
@@ -25,6 +26,9 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource( 14 )
 
 [node name="Tex6" type="Sprite" parent="."]
 position = Vector2( 1002.75, 529 )

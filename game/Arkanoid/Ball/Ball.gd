@@ -14,8 +14,9 @@ onready var platform_position_l = $"../Platform/Platform positions".get_child(0)
 onready var platform_position_r = $"../Platform/Platform positions".get_child(1)
 onready var platform_position_m = $"../Platform/Platform positions".get_child(2)
 onready var respawn_timer = $RespawnTimer
-onready var global_vars = get_node("/root/Global")
 
+
+onready var player_stats = $"../Stats"
 
 signal ball_respawned
 signal update_life
@@ -48,7 +49,7 @@ func _physics_process(delta):
 
 func bounce_of_platform():
 	var platform_size = platform_position_r.global_position.x - platform_position_l.global_position.x
-#	var offset = position.x - 
+
 	var offset = position.x - platform_position_l.global_position.x
 	
 	var min_angle := PI/18
@@ -65,10 +66,10 @@ func die():
 	visible = false
 	position = Vector2(-500,300)
 	$CollisionShape2D.set_deferred("disabled",true)
-	if global_vars.life_count  > 0 :
+	#if global_vars.life_count  > 0 :
+	if player_stats.life_count  > 0 :
 		respawn_timer.start()
-		global_vars.life_count-=1
-		emit_signal("update_life")
+		player_stats.life_count-=1
 	else:
 		emit_signal("lost_game")
 	

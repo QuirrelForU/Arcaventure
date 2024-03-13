@@ -23,7 +23,7 @@ func set_boosters():
 	for brick in bricks_list:
 		brick.connect("booster_signal",self,"spawn_booster")
 		var choice = randf()
-		if choice < 1.05:
+		if choice < 0.05:
 			brick.booster_type = 1 # life
 		elif choice <0.1:
 			brick.booster_type = 2 # mult

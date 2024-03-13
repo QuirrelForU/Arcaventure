@@ -1,7 +1,7 @@
 extends Label
 
-onready var global_vars = get_node("/root/Global")
+onready var player_stats = $"../../../Stats"
+
 
 func _process(delta):
-	global_vars.total_time +=delta
-	text = "Time %.3f" % global_vars.total_time
+	player_stats.time +=delta
