@@ -6,17 +6,15 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52, 52 )
 
-[node name="BoosterInvincibility" type="Node2D"]
-script = ExtResource( 2 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="BoosterInvincibility" type="KinematicBody2D"]
 collision_layer = 32
 collision_mask = 2
+script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.495, 0.495 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D/CollisionShape2D"]
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )

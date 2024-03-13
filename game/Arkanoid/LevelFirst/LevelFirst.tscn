@@ -11,7 +11,7 @@
 [ext_resource path="res://Arkanoid/LevelFirst/HUD.gd" type="Script" id=9]
 [ext_resource path="res://Arkanoid/LevelFirst/TimeLabel.gd" type="Script" id=10]
 [ext_resource path="res://Arkanoid/arkanoid_hud_font.tres" type="DynamicFont" id=11]
-[ext_resource path="res://Arkanoid/boosters/BoosterLife.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Arkanoid/LevelFirst/Balls.gd" type="Script" id=12]
 [ext_resource path="res://Arkanoid/LevelFirst/BoosterSpawner.gd" type="Script" id=13]
 [ext_resource path="res://Arkanoid/LevelFirst/Stats.gd" type="Script" id=14]
 
@@ -41,7 +41,10 @@ __meta__ = {
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 577, 971 )
 
-[node name="Ball" parent="." instance=ExtResource( 1 )]
+[node name="Balls" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="Ball" parent="Balls" instance=ExtResource( 1 )]
 
 [node name="Bricks" type="Node2D" parent="."]
 __meta__ = {
@@ -608,9 +611,6 @@ text = "Retry"
 
 [node name="BoosterSpawner" type="Node" parent="."]
 script = ExtResource( 13 )
-
-[node name="BoosterLife" parent="BoosterSpawner" instance=ExtResource( 12 )]
-position = Vector2( 473, 339 )
 
 [connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_DeadZone_body_entered"]
 [connection signal="pressed" from="HUD/DeathScreen/CenterContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
