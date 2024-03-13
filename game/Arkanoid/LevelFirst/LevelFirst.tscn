@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Arkanoid/Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Arkanoid/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Arkanoid/LevelFirst/DeadZone.gd" type="Script" id=8]
 [ext_resource path="res://Arkanoid/LevelFirst/HUD.gd" type="Script" id=9]
 [ext_resource path="res://Arkanoid/LevelFirst/TimeLabel.gd" type="Script" id=10]
+[ext_resource path="res://Arkanoid/arkanoid_hud_font.tres" type="DynamicFont" id=11]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 256, 255 )
@@ -24,14 +25,15 @@ __meta__ = {
 }
 
 [node name="Tex6" type="Sprite" parent="."]
-position = Vector2( 524, 391 )
-scale = Vector2( 1.0791, 1 )
+position = Vector2( 1002.75, 529 )
+scale = Vector2( 2.01416, 1.26953 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 577, 971 )
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 
@@ -175,6 +177,126 @@ modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
 position = Vector2( 954, 134 )
 scale = Vector2( 1.032, 0.331 )
 
+[node name="BrickW28" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1065, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW29" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1175, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW30" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1285, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW31" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1395, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW32" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1505, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW33" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1615, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW34" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1725, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW35" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.231373, 0.415686, 0.956863, 1 )
+position = Vector2( 1835, 51 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW37" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1065, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW38" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1175, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW39" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1285, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW40" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1395, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW41" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1505, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW42" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1615, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW43" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1725, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW44" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.278431, 0.278431, 1 )
+position = Vector2( 1835, 93 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW46" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1065, 134 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW47" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1175, 134 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW48" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1285, 134 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW49" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1395, 134 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW50" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1505, 134 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW51" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1615, 134 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW52" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1725, 134 )
+scale = Vector2( 1.032, 0.331 )
+
+[node name="BrickW53" parent="Bricks" instance=ExtResource( 3 )]
+modulate = Color( 0.337255, 0.741176, 0.239216, 1 )
+position = Vector2( 1835, 134 )
+scale = Vector2( 1.032, 0.331 )
+
 [node name="Walls" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
@@ -182,7 +304,7 @@ __meta__ = {
 
 [node name="Wall" type="StaticBody2D" parent="Walls"]
 position = Vector2( -129, 309 )
-scale = Vector2( 0.5, 1.238 )
+scale = Vector2( 0.5, 3.073 )
 collision_layer = 16
 collision_mask = 8
 __meta__ = {
@@ -203,9 +325,9 @@ __meta__ = {
 }
 
 [node name="Wall3" type="StaticBody2D" parent="Walls"]
-position = Vector2( 503, 732 )
+position = Vector2( 684, 1208 )
 rotation = 1.57079
-scale = Vector2( 0.5, 2.478 )
+scale = Vector2( 0.5, 5.665 )
 collision_layer = 16
 collision_mask = 8
 __meta__ = {
@@ -228,7 +350,7 @@ __meta__ = {
 [node name="Wall4" type="StaticBody2D" parent="Walls"]
 position = Vector2( 538, -129 )
 rotation = 1.57079
-scale = Vector2( 0.5, 2.478 )
+scale = Vector2( 0.5, 6.045 )
 collision_layer = 16
 collision_mask = 8
 __meta__ = {
@@ -249,8 +371,8 @@ __meta__ = {
 }
 
 [node name="Wall2" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1154, 309 )
-scale = Vector2( 0.5, 1.238 )
+position = Vector2( 2048, 309 )
+scale = Vector2( 0.5, 3.589 )
 collision_layer = 16
 collision_mask = 8
 __meta__ = {
@@ -271,10 +393,14 @@ __meta__ = {
 }
 
 [node name="DeadZone" type="Area2D" parent="."]
-position = Vector2( 6, 545 )
+position = Vector2( 17, 997 )
+scale = Vector2( 1.859, 1.062 )
 collision_layer = 0
 collision_mask = 8
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
 position = Vector2( 506, 34 )
@@ -298,25 +424,26 @@ anchor_left = 0.028
 anchor_top = 0.991
 anchor_right = 0.028
 anchor_bottom = 0.991
-margin_top = -57.6
-margin_right = 103.0
+margin_left = -2.76
+margin_top = -75.28
+margin_right = 112.24
+margin_bottom = 1.71997
 custom_constants/separation = 29
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="LifeLabel" type="Label" parent="HUD/Control/VBoxContainer"]
-margin_right = 103.0
-margin_bottom = 14.0
+margin_right = 115.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
 text = "LIFE"
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BricksLabel" type="Label" parent="HUD/Control/VBoxContainer"]
-margin_top = 43.0
-margin_right = 103.0
-margin_bottom = 57.0
+margin_top = 53.0
+margin_right = 115.0
+margin_bottom = 77.0
+custom_fonts/font = ExtResource( 11 )
 text = "BRICKS_TO_WIN"
 __meta__ = {
 "_edit_lock_": true
@@ -330,6 +457,7 @@ anchor_bottom = 0.954
 margin_left = -20.0
 margin_top = -14.0
 margin_right = 20.0
+custom_fonts/font = ExtResource( 11 )
 text = "TIME"
 script = ExtResource( 10 )
 __meta__ = {
