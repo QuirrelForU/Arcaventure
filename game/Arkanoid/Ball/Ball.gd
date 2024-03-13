@@ -30,7 +30,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	print(speed_mult)
 	speed_mult = lerp(speed_mult,speed_mult_min,lerp_speed * delta)
 	var collision = move_and_collide(velocity * speed_mult)
 	if collision:
@@ -40,7 +39,6 @@ func _physics_process(delta):
 		elif collision.get_collider().get_collision_layer() == 4: # Fun fact that collision layer returns not an actual number but his 2^number-1
 			velocity = velocity.bounce(collision.normal)
 			collision.get_collider().die()
-			
 			emit_signal("update_bricks")
 		else:
 			velocity = velocity.bounce(collision.normal)
