@@ -45,8 +45,6 @@ func _physics_process(delta):
 			velocity = velocity.bounce(collision.normal)
 			
 
-
-
 func bounce_of_platform():
 	var platform_size = platform_position_r.global_position.x - platform_position_l.global_position.x
 
@@ -66,7 +64,6 @@ func die():
 	visible = false
 	position = Vector2(-500,300)
 	$CollisionShape2D.set_deferred("disabled",true)
-	#if global_vars.life_count  > 0 :
 	if player_stats.life_count  > 0 :
 		respawn_timer.start()
 		player_stats.life_count-=1

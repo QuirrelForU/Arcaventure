@@ -4,6 +4,7 @@ extends Node
 var life_count = 3 setget _set_life_count
 var time = 0.0 setget _set_time
 
+var bricks_count setget _set_bricks_count
 
 
 func _set_life_count(new_life_count):
@@ -13,3 +14,7 @@ func _set_life_count(new_life_count):
 func _set_time(new_time):
 	time = new_time
 	$"../HUD/Control/TimeLabel".text = "Time %.3f" % time
+
+func _set_bricks_count(new_bricks_count):
+	bricks_count = new_bricks_count
+	$"../HUD/Control/VBoxContainer/BricksLabel".text = "Bricks: %d" % [bricks_count] 

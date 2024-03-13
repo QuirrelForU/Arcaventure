@@ -14,16 +14,13 @@ onready var bricks_node = get_node(bricks_path)
 func _ready():
 	ball.connect("update_bricks",self,"update_bricks_label")
 	ball.connect("lost_game",self,"show_deathscreen")
-	
-	bricks_amount = bricks_node.get_child_count()
+	player_stats.bricks_count = bricks_node.get_child_count()
 	lifelabel.text = "Life: %d" % [player_stats.life_count]
-	brickslabel.text = "Bricks: %d" % [bricks_amount]
 
 	
 func update_bricks_label():
-	bricks_amount -=1
-	brickslabel.text = "Bricks: %d" % [bricks_amount]
-	if bricks_amount == 0:
+	player_stats.bricks_count -=1
+	if player_stats.bricks_count == 0:
 		show_winscreen()
 
 func show_deathscreen():
