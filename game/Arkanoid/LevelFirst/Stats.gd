@@ -8,11 +8,14 @@ var bricks_count setget _set_bricks_count
 
 var balls_count setget _set_balls_count
 
+var is_died = false
+var is_won = false
 
 func _set_life_count(new_life_count):
 	life_count = new_life_count
 	$"../HUD/Control/VBoxContainer/LifeLabel".text = "Life: %d" % [life_count]
 	if life_count == 0:
+		self.is_died = true
 		$"../HUD".show_deathscreen()
 
 func _set_time(new_time):
@@ -23,6 +26,7 @@ func _set_bricks_count(new_bricks_count):
 	bricks_count = new_bricks_count
 	$"../HUD/Control/VBoxContainer/BricksLabel".text = "Bricks: %d" % [bricks_count] 
 	if bricks_count == 0:
+		self.is_won = true
 		$"../HUD".show_winscreen()
 
 func _set_balls_count(new_balls_count):

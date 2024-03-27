@@ -2,10 +2,11 @@ extends Control
 
 
 var is_paused = false setget set_is_paused
-
+onready var stats = $"../../Stats"
 func _unhandled_input(event):
-	if event.is_action_pressed("pause"):
-		self.is_paused = !is_paused
+	if !stats.is_died and !stats.is_won:
+		if event.is_action_pressed("pause"):
+			self.is_paused = !is_paused
 
 
 

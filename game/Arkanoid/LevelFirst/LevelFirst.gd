@@ -8,12 +8,15 @@ func _ready():
 
 func _on_RetryButton_pressed():
 	player_stats.life_count = 3
+	player_stats.is_died = false
 	get_tree().paused = false
 	get_tree().change_scene("res://Arkanoid/LevelFirst/LevelFirst.tscn")
+	
 
 
 func _on_RetryButtonLoose_pressed():
 	player_stats.life_count = 3
+	player_stats.is_won = false
 	get_tree().paused = false
 	get_tree().change_scene("res://Arkanoid/LevelFirst/LevelFirst.tscn")
 
