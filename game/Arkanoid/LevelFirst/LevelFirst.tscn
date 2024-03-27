@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Arkanoid/Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Arkanoid/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Arkanoid/LevelFirst/BoosterSpawner.gd" type="Script" id=13]
 [ext_resource path="res://Arkanoid/LevelFirst/Stats.gd" type="Script" id=14]
 [ext_resource path="res://Arkanoid/boosters/pick_up.mp3" type="AudioStream" id=15]
+[ext_resource path="res://Arkanoid/sfx/failed.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 256, 255 )
@@ -39,8 +40,20 @@ __meta__ = {
 script = ExtResource( 14 )
 
 [node name="PickUP" type="AudioStreamPlayer" parent="Stats"]
+pause_mode = 2
 stream = ExtResource( 15 )
 volume_db = -40.0
+
+[node name="Failed" type="AudioStreamPlayer" parent="Stats"]
+pause_mode = 2
+stream = ExtResource( 16 )
+volume_db = -40.0
+
+[node name="Winn" type="AudioStreamPlayer" parent="Stats"]
+pause_mode = 2
+stream = ExtResource( 16 )
+volume_db = -40.0
+pitch_scale = 2.0
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 577, 971 )

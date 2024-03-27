@@ -29,6 +29,7 @@ func _set_balls_count(new_balls_count):
 	balls_count = new_balls_count
 	if balls_count <= 0:
 		self.life_count-=1
+		$Failed.play()
 		$"../RespawnBallTimer".start()
 
 func _on_RespawnBallTimer_timeout():

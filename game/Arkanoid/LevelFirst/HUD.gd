@@ -21,8 +21,10 @@ func show_deathscreen():
 	get_tree().paused = true
 	$DeathScreen.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$"../Stats/Failed".play()
 	
 func show_winscreen():
+	$"../Stats/Winn".play()
 	get_tree().paused = true
 	$WinScreen.visible = true
 	$WinScreen/CenterContainer/VBoxContainer/WinTime.text = "Congratulations! Your win time: %.3f" % player_stats.time
