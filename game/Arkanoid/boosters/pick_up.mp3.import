@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pick_up.mp3-e5d26dad9113b17d5d8881a1f0b6cf80.mp3str"
+
+[deps]
+
+source_file="res://Arkanoid/boosters/pick_up.mp3"
+dest_files=[ "res://.import/pick_up.mp3-e5d26dad9113b17d5d8881a1f0b6cf80.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

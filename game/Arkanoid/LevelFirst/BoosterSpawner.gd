@@ -58,6 +58,8 @@ func spawn_booster(booster_type,booster_position):
 		
 func lifebooster_taked():
 	player_stats.life_count +=1
+	$"../Stats/PickUP".play()
 
 func multiplybooster_taked():
 	balls_node.multiply()
+	$"../Stats/PickUP".play()
