@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "ArkanoidSettings",
+"language": "GDScript",
+"path": "res://BaseMenu/arkanoid_settings_resource.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Brick",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://BaseMenu/SaverLoader.gd"
 } ]
 _global_script_class_icons={
+"ArkanoidSettings": "",
 "Brick": "",
 "SavedGame": "",
 "SaverLoader": ""

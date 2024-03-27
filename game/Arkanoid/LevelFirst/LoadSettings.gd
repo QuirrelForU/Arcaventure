@@ -1,4 +1,4 @@
-extends Button
+extends Node
 
 
 # Declare member variables here. Examples:
