@@ -49,10 +49,10 @@ func _physics_process(delta):
 
 func bounce_of_platform():
 	
-	var offset = global_position.x - platform.positionL
 	var min_angle := PI/18
 	var max_angle := PI / 2
-	var normalized_hit_position = (global_position.x - platform.positionM) / platform.platform_size * 1.75
+	var normalized_hit_position = (global_position.x - platform.positionM) / platform.platform_size * 1.8
+	print(normalized_hit_position)
 	velocity = Vector2.UP * 10
 	velocity = velocity.rotated(max_angle * normalized_hit_position)	
 	

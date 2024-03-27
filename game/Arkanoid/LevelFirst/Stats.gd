@@ -2,7 +2,7 @@ extends Node
 
 var life_count = 3 setget _set_life_count
 var ball_speed_coef = null
-var platform_size_coef = 1.0
+var platform_size_coef = null 
 
 var time = 0.0 setget _set_time
 

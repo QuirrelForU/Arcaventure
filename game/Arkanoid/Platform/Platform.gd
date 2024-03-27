@@ -8,12 +8,11 @@ onready var ball = $"../Balls/Ball"
 onready var stats = $"../Stats"
 
 
-var platform_size
+var platform_size setget ,_get_platform_size
 var positionL setget ,_get_positionL
 var positionR setget ,_get_positionR
 var positionM setget ,_get_positionM
 
-export(float) var platform_size_scale 
 
 func _ready():
 	throw_ball_timer.start()
@@ -23,16 +22,13 @@ func _ready():
 	positionR = $"Platform positions/PositionR".global_position.x
 	positionM = $"Platform positions/PositionM".global_position.x
 	
-	# apply modifiers from editor
-	if platform_size_scale:
-		scale.x = platform_size_scale
+	#scale.x = stats.platform_size_coef
 	
 func _physics_process(delta):
 	
 	if stats.webcam_mode:
-		print('webcammode active')
 		position.x = get_global_mouse_position().x
-		position.x = clamp(position.x,80,get_viewport().size.x-80)
+		position.x = clamp(position.x,80*stats.platform_size_coef,get_viewport().size.x-80*stats.platform_size_coef)
 	if ball_captured:
 		$CollisionShape2D.disabled = true
 		ball.position = position
@@ -44,7 +40,7 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		move_local_x(event.relative.x)
-		position.x = clamp(position.x,80,get_viewport().size.x-80)
+		position.x = clamp(position.x,80*stats.platform_size_coef,get_viewport().size.x-80*stats.platform_size_coef)
 
 
 
@@ -69,3 +65,7 @@ func _get_positionM():
 func _get_positionR():
 	positionR = $"Platform positions/PositionR".global_position.x
 	return positionR 
+
+func _get_platform_size():
+	platform_size = $"Platform positions/PositionR".global_position.x - $"Platform positions/PositionL".global_position.x
+	return platform_size

@@ -25,6 +25,11 @@ func _on_RetryButtonLoose_pressed():
 func load_settings():
 		var game_settings : ArkanoidSettings = load("user://arkanoid_first_level.tres") as ArkanoidSettings
 		player_stats.webcam_mode = game_settings.webcam_mode
+		
 		player_stats.life_count = game_settings.life_count
+		
 		player_stats.ball_speed_coef = game_settings.ball_speed_coef
 		$Balls/Ball.speed = player_stats.ball_speed_coef
+		
+		player_stats.platform_size_coef = game_settings.platform_size_coef
+		$Platform.scale.x = player_stats.platform_size_coef
