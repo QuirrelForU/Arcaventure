@@ -6,6 +6,7 @@ var is_borderless = false
  
 var resolution_key = "1920x1080" setget _set_resolution_key
 var fullscreen_mode = OS.window_fullscreen setget _set_fullscreen_mode
+var resolution_index = 0
 
 var resolutions: Dictionary = {
 			  "1920x1080": Vector2(1920, 1080),
@@ -25,19 +26,21 @@ func AddResolutions():
 
 
 func _on_OptionButton_item_selected(index):
+	self.resolution_index = index
 	self.resolution_key = res_option_button.get_item_text(index)
-
+	
 	
 
 func _set_resolution_key(new_resolution):
 	resolution_key = new_resolution
 	var size = resolutions[resolution_key]
 	OS.set_window_size(size)
+	$VBoxContainer/Res/OptionButton.select(resolution_index)
 
 func _on_WindowedCheck_pressed():
 	is_borderless = !is_borderless
 	OS.window_borderless = is_borderless
-
+	
 
 func _on_FullScreenCheck_pressed():
 	self.fullscreen_mode = !OS.window_fullscreen
