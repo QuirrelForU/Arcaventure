@@ -48,3 +48,27 @@ func _on_CloseSettingsButton_pressed():
 	$"../AnimationPlayer".play_backwards("Fade")
 	yield($"../AnimationPlayer","animation_finished")
 	$"../ColorRect".visible = false
+
+
+func _on_StartButton_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	
+	$"../GameMenus".visible = true
+	
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
+
+
+func _on_CloseGameMenusButton_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	
+	$"../GameMenus".visible = false
+	
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false

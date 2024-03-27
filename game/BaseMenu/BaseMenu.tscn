@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://BaseMenu/Comp 1 (0;00;00;00).png" type="Texture" id=1]
 [ext_resource path="res://BaseMenu/BaseMenu.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://BaseMenu/profile_icons/first.png" type="Texture" id=13]
 [ext_resource path="res://BaseMenu/profile_icons/second.png" type="Texture" id=14]
 [ext_resource path="res://BaseMenu/profile_icons/third.png" type="Texture" id=15]
+[ext_resource path="res://BaseMenu/game_icons/Arkanoid.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "PlusesSlide"
@@ -116,8 +117,8 @@ __meta__ = {
 [node name="GridPluses" parent="Background" instance=ExtResource( 5 )]
 margin_left = -166.88
 margin_top = -94.7037
-margin_right = 31210.1
-margin_bottom = 17608.3
+margin_right = 33130.1
+margin_bottom = 18688.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../..")
@@ -305,6 +306,57 @@ custom_fonts/font = SubResource( 7 )
 text = "X"
 icon_align = 2
 
+[node name="GameMenus" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="GameMenus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.713726 )
+
+[node name="GridContainer" type="GridContainer" parent="GameMenus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 148.0
+margin_top = 120.0
+margin_right = -148.0
+margin_bottom = -120.0
+
+[node name="TextureButton" type="TextureButton" parent="GameMenus/GridContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture_normal = ExtResource( 16 )
+expand = true
+
+[node name="ArkanoidLevels" type="Control" parent="GameMenus"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="GameMenus/ArkanoidLevels"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.713726 )
+
+[node name="CloseGameMenusButton" parent="GameMenus" instance=ExtResource( 6 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -147.0
+margin_top = -157.0
+margin_right = -47.0
+margin_bottom = -57.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 7 )
+text = "X"
+icon_align = 2
+
 [node name="Settings" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -433,12 +485,13 @@ anims/RESET = SubResource( 6 )
 [node name="SaverLoader" type="Node" parent="."]
 script = ExtResource( 11 )
 
-[connection signal="pressed" from="MenuButtons/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/StartButton" to="MenuButtons" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/SettingsButton" to="MenuButtons" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/CreditsButton" to="MenuButtons" method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/ExitButton" to="MenuButtons" method="_on_ExitButton_pressed"]
 [connection signal="item_selected" from="ChoosingProfile/ProfilesChoose" to="ChoosingProfile" method="_on_ProfilesChoose_item_selected"]
 [connection signal="pressed" from="Credits/CloseCreditsButton" to="MenuButtons" method="_on_CloseCreditsButton_pressed"]
+[connection signal="pressed" from="GameMenus/CloseGameMenusButton" to="MenuButtons" method="_on_CloseGameMenusButton_pressed"]
 [connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]

@@ -5,6 +5,8 @@ var ball_captured  = true
 
 onready var throw_ball_timer = $ThrowBallTimer
 onready var ball = $"../Balls/Ball"
+onready var stats = $"../Stats"
+
 
 var platform_size
 var positionL setget ,_get_positionL
@@ -26,7 +28,14 @@ func _ready():
 	if platform_size_scale:
 		scale.x = platform_size_scale
 	
+	if stats.webcam_mode:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
 func _physics_process(delta):
+	
+	if stats.webcam_mode:
+		position.x = get_global_mouse_position().x
+		position.x = clamp(position.x,80,get_viewport().size.x-80)
 	if ball_captured:
 		$CollisionShape2D.disabled = true
 		ball.position = position
