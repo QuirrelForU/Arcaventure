@@ -60,7 +60,6 @@ position = Vector2( 577, 971 )
 
 [node name="Balls" type="Node2D" parent="."]
 script = ExtResource( 12 )
-ball_speed_scale = 2.0
 
 [node name="Ball" parent="Balls" instance=ExtResource( 1 )]
 

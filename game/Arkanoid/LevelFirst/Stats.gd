@@ -1,7 +1,9 @@
 extends Node
 
+var life_count = 3 setget _set_life_count
+var ball_speed_coef = null
+var platform_size_coef = 1.0
 
-export var life_count = 3 setget _set_life_count
 var time = 0.0 setget _set_time
 
 var bricks_count setget _set_bricks_count
