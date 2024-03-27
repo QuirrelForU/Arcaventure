@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://BaseMenu/Comp 1 (0;00;00;00).png" type="Texture" id=1]
 [ext_resource path="res://BaseMenu/BaseMenu.gd" type="Script" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://BaseMenu/game_icons/Arkanoid.png" type="Texture" id=16]
 [ext_resource path="res://BaseMenu/GameSettingsSaver.gd" type="Script" id=17]
 [ext_resource path="res://BaseMenu/GameMenus.gd" type="Script" id=18]
+[ext_resource path="res://BaseMenu/more_icons/plusbutton.png" type="Texture" id=19]
+[ext_resource path="res://BaseMenu/LifeCountLabel.gd" type="Script" id=20]
+[ext_resource path="res://BaseMenu/more_icons/minusbutton.png" type="Texture" id=21]
 
 [sub_resource type="Animation" id=1]
 resource_name = "PlusesSlide"
@@ -119,8 +122,8 @@ __meta__ = {
 [node name="GridPluses" parent="Background" instance=ExtResource( 5 )]
 margin_left = -166.88
 margin_top = -94.7037
-margin_right = 35050.1
-margin_bottom = 19768.3
+margin_right = 36970.1
+margin_bottom = 20848.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../..")
@@ -309,7 +312,6 @@ text = "X"
 icon_align = 2
 
 [node name="GameMenus" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 18 )
@@ -345,36 +347,88 @@ margin_right = 798.0
 margin_bottom = 540.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameMenus/VBoxContainer"]
-margin_right = 795.0
-margin_bottom = 100.0
+margin_right = 858.0
+margin_bottom = 146.0
 custom_constants/separation = 40
 
 [node name="Label" type="Label" parent="GameMenus/VBoxContainer/HBoxContainer"]
-margin_top = 14.0
+margin_top = 37.0
 margin_right = 181.0
-margin_bottom = 85.0
+margin_bottom = 108.0
 custom_fonts/font = ExtResource( 10 )
 text = "Level 1"
 
 [node name="ArkanoidLevel1" type="TextureButton" parent="GameMenus/VBoxContainer/HBoxContainer"]
 margin_left = 221.0
+margin_top = 23.0
 margin_right = 321.0
-margin_bottom = 100.0
+margin_bottom = 123.0
 rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
 texture_normal = ExtResource( 16 )
 expand = true
 
 [node name="SettingsList" type="VBoxContainer" parent="GameMenus/VBoxContainer/HBoxContainer"]
 margin_left = 361.0
-margin_right = 795.0
-margin_bottom = 100.0
+margin_right = 858.0
+margin_bottom = 146.0
 
 [node name="WebcamModeCheckbox" type="CheckBox" parent="GameMenus/VBoxContainer/HBoxContainer/SettingsList"]
-margin_right = 434.0
+margin_right = 497.0
 margin_bottom = 71.0
 theme = ExtResource( 9 )
 custom_fonts/font = ExtResource( 10 )
 text = "WebCam mode"
+
+[node name="LifeCount" type="HBoxContainer" parent="GameMenus/VBoxContainer/HBoxContainer/SettingsList"]
+margin_top = 75.0
+margin_right = 497.0
+margin_bottom = 146.0
+custom_constants/separation = 15
+
+[node name="Name" type="Label" parent="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount"]
+margin_right = 302.0
+margin_bottom = 71.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 10 )
+text = "Life count "
+
+[node name="LifeCountLabel" type="Label" parent="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount"]
+margin_left = 317.0
+margin_right = 367.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 10 )
+text = "3"
+align = 1
+valign = 1
+script = ExtResource( 20 )
+
+[node name="PlusLife" type="TextureButton" parent="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount"]
+margin_left = 382.0
+margin_top = 10.0
+margin_right = 432.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource( 19 )
+expand = true
+
+[node name="MinusLife" type="TextureButton" parent="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount"]
+margin_left = 447.0
+margin_top = 10.0
+margin_right = 497.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource( 21 )
+expand = true
 
 [node name="GameSettingsSaver" type="Node" parent="GameMenus"]
 script = ExtResource( 17 )
@@ -515,6 +569,8 @@ script = ExtResource( 11 )
 [connection signal="pressed" from="Credits/CloseCreditsButton" to="MenuButtons" method="_on_CloseCreditsButton_pressed"]
 [connection signal="pressed" from="GameMenus/CloseGameMenusButton" to="MenuButtons" method="_on_CloseGameMenusButton_pressed"]
 [connection signal="pressed" from="GameMenus/VBoxContainer/HBoxContainer/ArkanoidLevel1" to="GameMenus" method="_on_ArkanoidLevel1_pressed"]
+[connection signal="pressed" from="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount/PlusLife" to="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount/LifeCountLabel" method="_on_PlusLife_pressed"]
+[connection signal="pressed" from="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount/MinusLife" to="GameMenus/VBoxContainer/HBoxContainer/SettingsList/LifeCount/LifeCountLabel" method="_on_MinusLife_pressed"]
 [connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]

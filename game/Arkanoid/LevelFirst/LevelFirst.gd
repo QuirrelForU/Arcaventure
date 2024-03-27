@@ -25,3 +25,4 @@ func _on_RetryButtonLoose_pressed():
 func load_settings():
 		var game_settings : ArkanoidSettings = load("user://arkanoid_first_level.tres") as ArkanoidSettings
 		player_stats.webcam_mode = game_settings.webcam_mode
+		player_stats.life_count = game_settings.life_count
