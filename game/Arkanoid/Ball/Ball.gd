@@ -36,6 +36,7 @@ func _physics_process(delta):
 	speed_mult = lerp(speed_mult,speed_mult_min,lerp_speed * delta)
 	var collision = move_and_collide(velocity * speed_mult * speed)
 	if collision:
+		$AudioHit.play()
 		speed_mult +=speed_mult_acc
 		if collision.get_collider().get_collision_layer() == 2: # 2 for Platform cant assign it with name 
 			bounce_of_platform()
