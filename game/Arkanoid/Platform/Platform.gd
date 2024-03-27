@@ -28,6 +28,7 @@ func _ready():
 	
 func _physics_process(delta):
 	if ball_captured:
+		$CollisionShape2D.disabled = true
 		ball.position = position
 		ball.position.y -=30
 	
@@ -44,6 +45,7 @@ func _unhandled_input(event):
 func _on_ThrowBallTimer_timeout():
 	ball_captured = false
 	ball.velocity.y = -10
+	$CollisionShape2D.disabled = false
 
 
 func respawn_ball():
