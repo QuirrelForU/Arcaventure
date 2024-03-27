@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Arkanoid/Platform/Platform.gd" type="Script" id=1]
 [ext_resource path="res://textures/Simple Shapes/Square.png" type="Texture" id=2]
+[ext_resource path="res://Arkanoid/textures/BrickPixel.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 40, 10 )
@@ -20,10 +21,20 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+visible = false
 scale = Vector2( 80, 20 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 46.772, 2.623, 1, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="CollisionShape2D"]
+scale = Vector2( 7.352, 3.034 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 113.301, 100.231, 10.878, 6.97305 )
 __meta__ = {
 "_edit_lock_": true
 }
