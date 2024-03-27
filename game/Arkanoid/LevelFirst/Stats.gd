@@ -11,7 +11,7 @@ var balls_count setget _set_balls_count
 var is_died = false
 var is_won = false
 
-var webcam_mode = true
+var webcam_mode = null setget _set_webcam_mode
 
 func _set_life_count(new_life_count):
 	life_count = new_life_count
@@ -40,3 +40,12 @@ func _set_balls_count(new_balls_count):
 
 func _on_RespawnBallTimer_timeout():
 	$"../Balls".respawn()
+
+
+func _set_webcam_mode(new_webcammode):
+	webcam_mode = new_webcammode
+	if webcam_mode:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	else:	
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	

@@ -16,7 +16,6 @@ var positionM setget ,_get_positionM
 export(float) var platform_size_scale 
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	throw_ball_timer.start()
 	ball.connect("ball_respawned",self,"respawn_ball")
 	platform_size = $"Platform positions/PositionR".global_position.x - $"Platform positions/PositionL".global_position.x
@@ -28,12 +27,10 @@ func _ready():
 	if platform_size_scale:
 		scale.x = platform_size_scale
 	
-	if stats.webcam_mode:
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	
 func _physics_process(delta):
 	
 	if stats.webcam_mode:
+		print('webcammode active')
 		position.x = get_global_mouse_position().x
 		position.x = clamp(position.x,80,get_viewport().size.x-80)
 	if ball_captured:

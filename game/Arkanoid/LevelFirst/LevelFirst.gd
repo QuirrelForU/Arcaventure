@@ -4,6 +4,7 @@ extends Node2D
 onready var player_stats = $Stats
 
 func _ready():
+	load_settings()
 	player_stats.time = 0.0
 
 func _on_RetryButton_pressed():
@@ -21,3 +22,6 @@ func _on_RetryButtonLoose_pressed():
 	get_tree().change_scene("res://Arkanoid/LevelFirst/LevelFirst.tscn")
 
 
+func load_settings():
+		var game_settings : ArkanoidSettings = load("user://arkanoid_first_level.tres") as ArkanoidSettings
+		player_stats.webcam_mode = game_settings.webcam_mode
