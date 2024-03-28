@@ -22,3 +22,15 @@ func set_is_paused(value):
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+
+
+func _on_ResumeButton_pressed():
+	self.is_paused = false
+	
+
+
+func _on_MenuButton_pressed():
+	self.is_paused = false
+	#get_tree().change_scene("res://BaseMenu/BaseMenu.tscn")
+	ChangeScene.change_scene("res://BaseMenu/BaseMenu.tscn")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
