@@ -27,15 +27,15 @@ func _ready():
 func set_boosters():
 	var bricks_list = bricks_node.get_children()
 	# I need to come up with some better shit 
-	# Cuz I dont like this multiply if for weighted random
+	# Cuz I dont like this multiply if state for weighted random
 	for brick in bricks_list:
 		brick.connect("booster_signal",self,"spawn_booster")
 		var choice = randf()
-		if choice < 0.05:
+		if choice < 0.15:
 			brick.booster_type = 1 # life
-		elif choice <0.1:
+		elif choice <0.5:
 			brick.booster_type = 2 # mult
-		elif choice <1.15:
+		elif choice <1.45:
 			brick.booster_type = 3 # invinc
 		else:
 			brick.booster_type = 0 # noth
@@ -66,14 +66,15 @@ func lifebooster_taked():
 func multiplybooster_taked():
 	balls_node.multiply()
 	$"../Stats/PickUP".play()
+	balls_node.update_invincibility()
 
 func invincibilitybooster_taked():
 	deadzone.monitoring = false
 	$InvincibilityTimer.start()
-	balls_node.invincibility_on()
+	balls_node.is_invincibility = true
 	$"../Stats/PickUP".play()
 	
 
 func _on_InvincibilityTimer_timeout():
-	balls_node.invincibility_off()
+	balls_node.is_invincibility = false
 	deadzone.monitoring = true

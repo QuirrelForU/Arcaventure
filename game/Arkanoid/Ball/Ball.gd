@@ -65,3 +65,7 @@ func invincibility_on():
 	
 func invincibility_off():
 	$CollisionShape2D/RainbowShader.visible = false
+
+
+func turn_invincibility(is_active:bool):
+	$CollisionShape2D/RainbowShader.visible = is_active

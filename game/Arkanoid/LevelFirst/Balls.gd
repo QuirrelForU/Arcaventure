@@ -2,7 +2,7 @@ extends Node2D
 
 
 var ball_scene = preload("res://Arkanoid/Ball/Ball.tscn")
-
+var is_invincibility = false setget _set_is_invincibility
 onready var player_stats =$"../Stats"
 
 
@@ -30,10 +30,11 @@ func respawn():
 	player_stats.balls_count = 1
 
 
-func invincibility_on():
+func _set_is_invincibility(new_state):
+	is_invincibility = new_state
 	for ball in $".".get_children():
-		ball.invincibility_on()
+		ball.turn_invincibility(is_invincibility)
 
-func invincibility_off():
+func update_invincibility():
 	for ball in $".".get_children():
-		ball.invincibility_off()
+		ball.turn_invincibility(is_invincibility)
