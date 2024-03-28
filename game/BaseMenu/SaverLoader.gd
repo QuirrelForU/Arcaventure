@@ -20,3 +20,16 @@ func load_game():
 	profile_settings.resolution_key = saved_game.current_resolution
 	profile_settings.fullscreen_mode = saved_game.curren_fullscreen_mode
 	profile_index_choosing.profile_index = saved_game.current_profile
+
+
+func save_last_choice():
+	var last_session := LastSession.new()
+	last_session.choosed_profile = $"../ChoosingProfile".profile_index
+	ResourceSaver.save("user://last_session.tres",last_session)
+
+func load_last_choice():
+	if File.new().file_exists("user://last_session.tres"):
+		var last_session : LastSession = load("user://last_session.tres") as LastSession
+		$"../ChoosingProfile".profile_index = last_session.choosed_profile
+		$"../ChoosingProfile/ProfilesChoose".select(last_session.choosed_profile)
+		load_game()

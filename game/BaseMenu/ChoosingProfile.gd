@@ -20,7 +20,9 @@ func set_profiles():
 
 func _on_ProfilesChoose_item_selected(index):
 	self.profile_index = index
+	$"../SaverLoader".save_last_choice()
 	$"../SaverLoader".load_game()
+
 func _set_profile_index(new_index):
 	profile_index = new_index
 	for p in profile_icons:
