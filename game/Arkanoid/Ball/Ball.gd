@@ -38,7 +38,7 @@ func _physics_process(delta):
 		$AudioHit.play()
 		speed_mult +=speed_mult_acc
 		if collision.get_collider().get_collision_layer() == 2: # 2 for Platform cant assign it with name 
-			bounce_of_platform()
+			bounce_of_platform(collision)
 		elif collision.get_collider().get_collision_layer() == 4: # Fun fact that collision layer returns not an actual number but his 2^number-1
 			velocity = velocity.bounce(collision.normal)
 			collision.get_collider().die()
@@ -47,13 +47,16 @@ func _physics_process(delta):
 			velocity = velocity.bounce(collision.normal)
 			
 
-func bounce_of_platform():
+func bounce_of_platform(collision):
 	
 	var min_angle := PI/18
 	var max_angle := PI / 2
 	var normalized_hit_position = (global_position.x - platform.positionM) / platform.platform_size * 1.8
-	print(normalized_hit_position)
 	velocity = Vector2.UP * 10
+	print("global y pos",global_position.y)
+	print("global collider y pos",collision.get_collider().global_position.y)
+	if global_position.y > collision.get_collider().global_position.y:
+		velocity = Vector2.DOWN * 10
 	velocity = velocity.rotated(max_angle * normalized_hit_position)	
 	
 func die():
