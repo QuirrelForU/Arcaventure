@@ -60,3 +60,8 @@ func die():
 	player_stats.balls_count -=1
 	queue_free()
 
+func invincibility_on():
+	$CollisionShape2D/RainbowShader.visible = true
+	
+func invincibility_off():
+	$CollisionShape2D/RainbowShader.visible = false

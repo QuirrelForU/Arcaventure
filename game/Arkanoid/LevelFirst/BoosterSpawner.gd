@@ -9,7 +9,7 @@ extends Node
 #}
 
 onready var bricks_node = $"../Bricks"
-
+onready var deadzone = $"../DeadZone"
 var life_booster_scene = preload("res://Arkanoid/boosters/BoosterLife.tscn")
 var multiply_booster_scene = preload("res://Arkanoid/boosters/BoosterMultiply.tscn")
 var invincibility_booster_scene = preload("res://Arkanoid/boosters/BoosterInvincibility.tscn")
@@ -33,9 +33,9 @@ func set_boosters():
 		var choice = randf()
 		if choice < 0.05:
 			brick.booster_type = 1 # life
-		elif choice <1.1:
+		elif choice <0.1:
 			brick.booster_type = 2 # mult
-		elif choice <0.15:
+		elif choice <1.15:
 			brick.booster_type = 3 # invinc
 		else:
 			brick.booster_type = 0 # noth
@@ -54,7 +54,10 @@ func spawn_booster(booster_type,booster_position):
 		booster_instance.global_position = booster_position
 		level_scene.add_child(booster_instance)
 	elif booster_type == 3:
-		pass
+		booster_instance = invincibility_booster_scene.instance()
+		booster_instance.connect("invincibilitybooster_taked",self,"invincibilitybooster_taked")
+		booster_instance.global_position = booster_position
+		level_scene.add_child(booster_instance)
 		
 func lifebooster_taked():
 	player_stats.life_count +=1
@@ -63,3 +66,14 @@ func lifebooster_taked():
 func multiplybooster_taked():
 	balls_node.multiply()
 	$"../Stats/PickUP".play()
+
+func invincibilitybooster_taked():
+	deadzone.monitoring = false
+	$InvincibilityTimer.start()
+	balls_node.invincibility_on()
+	$"../Stats/PickUP".play()
+	
+
+func _on_InvincibilityTimer_timeout():
+	balls_node.invincibility_off()
+	deadzone.monitoring = true

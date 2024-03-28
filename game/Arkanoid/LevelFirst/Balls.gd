@@ -28,3 +28,12 @@ func respawn():
 	$"../Platform".respawn_ball()
 	$"../Platform".ball = new_ball
 	player_stats.balls_count = 1
+
+
+func invincibility_on():
+	for ball in $".".get_children():
+		ball.invincibility_on()
+
+func invincibility_off():
+	for ball in $".".get_children():
+		ball.invincibility_off()

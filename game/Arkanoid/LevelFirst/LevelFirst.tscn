@@ -601,6 +601,10 @@ text = "Retry"
 [node name="BoosterSpawner" type="Node" parent="."]
 script = ExtResource( 13 )
 
+[node name="InvincibilityTimer" type="Timer" parent="BoosterSpawner"]
+wait_time = 5.0
+one_shot = true
+
 [node name="RespawnBallTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -609,4 +613,5 @@ one_shot = true
 [connection signal="pressed" from="HUD/PauseScreen/CenterContainer/VBoxContainer/MenuButton" to="HUD/PauseScreen" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="HUD/DeathScreen/CenterContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="HUD/WinScreen/CenterContainer/VBoxContainer/RetryButtonLoose" to="." method="_on_RetryButtonLoose_pressed"]
+[connection signal="timeout" from="BoosterSpawner/InvincibilityTimer" to="BoosterSpawner" method="_on_InvincibilityTimer_timeout"]
 [connection signal="timeout" from="RespawnBallTimer" to="Stats" method="_on_RespawnBallTimer_timeout"]
