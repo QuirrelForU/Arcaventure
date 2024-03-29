@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Arkanoid/textures/Space Background_green.png" type="Texture" id=1]
+[ext_resource path="res://textures/Simple Shapes/Square.png" type="Texture" id=2]
+[ext_resource path="res://Arkanoid/LevelFirst/Brick.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 49.4124, 49.6781 )
+
+[node name="BrickW" type="StaticBody2D"]
+position = Vector2( 134, 53 )
+scale = Vector2( 1.03213, 0.986351 )
+collision_layer = 4
+collision_mask = 8
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+modulate = Color( 1, 1, 1, 0.105882 )
+scale = Vector2( 99.6602, 100 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 3.032, 3.268, 1, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BrickPixel" type="Sprite" parent="CollisionShape2D"]
+scale = Vector2( 8.39, 7.881 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1508.19, 12.7188, 11.8881, 12.6676 )

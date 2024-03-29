@@ -2,9 +2,8 @@
 
 [ext_resource path="res://Arkanoid/Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Arkanoid/Platform/Platform.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Arkanoid/LevelFirst/Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Arkanoid/LevelFirst/Brick2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/Simple Shapes/Square.png" type="Texture" id=4]
-[ext_resource path="res://Arkanoid/textures/Space Background_Blue.png" type="Texture" id=5]
 [ext_resource path="res://Arkanoid/LevelFirst/LevelThree.gd" type="Script" id=6]
 [ext_resource path="res://Arkanoid/LevelFirst/PauseScreen.gd" type="Script" id=7]
 [ext_resource path="res://Arkanoid/LevelFirst/DeadZone.gd" type="Script" id=8]
@@ -17,6 +16,7 @@
 [ext_resource path="res://Arkanoid/boosters/pick_up.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Arkanoid/sfx/failed.wav" type="AudioStream" id=16]
 [ext_resource path="res://BaseMenu/menu_theme.tres" type="Theme" id=17]
+[ext_resource path="res://Arkanoid/textures/Space Background_green.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 256, 255 )
@@ -32,7 +32,7 @@ __meta__ = {
 
 [node name="SpaceBackground" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
-texture = ExtResource( 5 )
+texture = ExtResource( 18 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -57,7 +57,7 @@ volume_db = -40.0
 pitch_scale = 2.0
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-modulate = Color( 0.129412, 0.741176, 0.929412, 1 )
+modulate = Color( 0.141176, 0.996078, 0.133333, 1 )
 position = Vector2( 577, 971 )
 
 [node name="Balls" type="Node2D" parent="."]
@@ -71,222 +71,345 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BrickW" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 170, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW27" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 60, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW19" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 282, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW20" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 394, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW21" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 506, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW34" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 154, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW35" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 266, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW36" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 378, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW37" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 490, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW38" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1440, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW39" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1552, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW40" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1664, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW41" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1776, 314 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW22" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1521, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW26" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1412, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW23" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1633, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW24" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1745, 40 )
-scale = Vector2( 1.032, 0.331 )
-
-[node name="BrickW25" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1857, 40 )
-scale = Vector2( 1.032, 0.331 )
-
 [node name="BrickW2" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 430, 591 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
+position = Vector2( 86, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW3" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 478, 591 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
+position = Vector2( 230, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW4" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 526, 591 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW28" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 823, 54 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW29" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 871, 54 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW30" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 919, 54 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW31" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 959, 54 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW32" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1007, 54 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW33" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1055, 54 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
+position = Vector2( 374, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW5" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1384, 591 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
+position = Vector2( 518, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW6" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1432, 591 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW7" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1480, 591 )
-rotation = 1.5708
-scale = Vector2( 0.818, 0.331 )
-
-[node name="BrickW8" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1138, 617 )
-scale = Vector2( 1.191, 0.31 )
-
-[node name="BrickW9" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1012, 617 )
-scale = Vector2( 1.191, 0.31 )
-
-[node name="BrickW12" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1100, 581 )
-scale = Vector2( 1.191, 0.31 )
-
-[node name="BrickW13" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 975, 581 )
-scale = Vector2( 1.191, 0.31 )
-
-[node name="BrickW14" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 849, 581 )
-scale = Vector2( 1.191, 0.31 )
-
-[node name="BrickW10" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 887, 617 )
-scale = Vector2( 1.191, 0.31 )
-
-[node name="BrickW11" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 761, 617 )
-scale = Vector2( 1.191, 0.31 )
+position = Vector2( 662, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW15" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1138, 545 )
-scale = Vector2( 1.191, 0.31 )
+position = Vector2( 76, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW16" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 1012, 545 )
-scale = Vector2( 1.191, 0.31 )
+position = Vector2( 220, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW17" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 887, 545 )
-scale = Vector2( 1.191, 0.31 )
+position = Vector2( 364, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="BrickW18" parent="Bricks" instance=ExtResource( 3 )]
-modulate = Color( 0.384314, 1, 0.956863, 1 )
-position = Vector2( 761, 545 )
-scale = Vector2( 1.191, 0.31 )
+position = Vector2( 508, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW20" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 76, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW21" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 220, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW22" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 364, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW24" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 76, 123 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW25" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 220, 123 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW26" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 364, 123 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW27" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 76, 167 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW28" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 220, 167 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW29" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 77, 208 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW23" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 508, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW19" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 652, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW30" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1259, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW31" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1403, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW32" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1547, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW33" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1691, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW34" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1403, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW35" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1547, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW36" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1691, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW37" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1547, 123 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW38" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1691, 123 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW39" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1835, 123 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW40" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1691, 167 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW41" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1835, 167 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW42" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1835, 208 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW43" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1835, 81 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW44" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1835, 36 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW7" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 806, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW8" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 950, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW9" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1094, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW55" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 580, 531 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW56" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 724, 531 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW57" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 868, 531 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW61" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 668, 573 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW62" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 812, 573 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW63" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 956, 573 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW66" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 748, 613 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW67" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 892, 613 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW68" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1036, 613 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW69" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1180, 613 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW64" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1100, 573 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW65" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1244, 573 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW58" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1012, 531 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW59" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1156, 531 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW60" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1300, 531 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW10" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1234, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW11" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1378, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW45" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1378, 443 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW46" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1378, 403 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW47" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1378, 363 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW51" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1234, 323 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW52" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1234, 283 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW53" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 656, 323 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW54" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 656, 283 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW48" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 518, 443 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW49" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 518, 403 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW50" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 518, 363 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW12" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1522, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW13" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1666, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
+
+[node name="BrickW14" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 1806, 483 )
+rotation = 3.14159
+scale = Vector2( 1.327, 0.304 )
 
 [node name="Walls" type="Node2D" parent="."]
 __meta__ = {
@@ -383,904 +506,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BrickWall14" type="StaticBody2D" parent="Walls"]
-position = Vector2( 679, 570 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall14"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall14/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall24" type="StaticBody2D" parent="Walls"]
-position = Vector2( 587, 307 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall24"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall24/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall25" type="StaticBody2D" parent="Walls"]
-position = Vector2( 587, 73 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall25"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall25/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall26" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1315, 307 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall26"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall26/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall27" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1315, 73 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall27"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall27/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall23" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1223, 570 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall23"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall23/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall52" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1038, 397 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall52"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall52/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall53" type="StaticBody2D" parent="Walls"]
-position = Vector2( 868, 397 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall53"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall53/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall15" type="StaticBody2D" parent="Walls"]
-position = Vector2( 70, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall15"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall15/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall16" type="StaticBody2D" parent="Walls"]
-position = Vector2( 206, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall16"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall16/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall17" type="StaticBody2D" parent="Walls"]
-position = Vector2( 342, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall17"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall17/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall18" type="StaticBody2D" parent="Walls"]
-position = Vector2( 478, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall18"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall18/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall19" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1438, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall19"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall19/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall20" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1574, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall20"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall20/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall21" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1710, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall21"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall21/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall22" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1846, 524 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall22"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall22/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall54" type="StaticBody2D" parent="Walls"]
-position = Vector2( 735, 120 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall54"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall54/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall55" type="StaticBody2D" parent="Walls"]
-position = Vector2( 871, 120 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall55"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall55/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall56" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1007, 120 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall56"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall56/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall57" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1143, 120 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall57"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall57/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall28" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1411, 356 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall28"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall28/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall29" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1547, 356 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall29"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall29/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1683, 356 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall30"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall30/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall47" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1795, 356 )
-scale = Vector2( 0.155, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall47"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall47/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall48" type="StaticBody2D" parent="Walls"]
-position = Vector2( 139, 356 )
-scale = Vector2( 0.155, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall48"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall48/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall49" type="StaticBody2D" parent="Walls"]
-position = Vector2( 254, 356 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall49"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall49/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall50" type="StaticBody2D" parent="Walls"]
-position = Vector2( 390, 356 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall50"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall50/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall51" type="StaticBody2D" parent="Walls"]
-position = Vector2( 510, 356 )
-scale = Vector2( 0.192, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall51"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall51/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall31" type="StaticBody2D" parent="Walls"]
-position = Vector2( 342, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall31"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall31/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall32" type="StaticBody2D" parent="Walls"]
-position = Vector2( 478, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall32"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall32/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall33" type="StaticBody2D" parent="Walls"]
-position = Vector2( 614, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall33"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall33/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall34" type="StaticBody2D" parent="Walls"]
-position = Vector2( 750, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall34"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall34/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall41" type="StaticBody2D" parent="Walls"]
-position = Vector2( 725, 484 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall41"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall41/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall45" type="StaticBody2D" parent="Walls"]
-position = Vector2( 627, 404 )
-rotation = 0.785397
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall45"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall45/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall46" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1275, 404 )
-rotation = -0.785398
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall46"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall46/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall42" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1178, 484 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall42"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall42/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall43" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1064, 484 )
-scale = Vector2( 0.174, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall43"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall43/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall44" type="StaticBody2D" parent="Walls"]
-position = Vector2( 841, 484 )
-scale = Vector2( 0.174, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall44"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall44/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall37" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1158, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall37"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall37/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall38" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1294, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall38"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall38/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall39" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1430, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall39"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall39/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall40" type="StaticBody2D" parent="Walls"]
-position = Vector2( 1566, 660 )
-scale = Vector2( 0.25, 0.071 )
-collision_layer = 16
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BrickWall40"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/BrickWall40/CollisionShape2D"]
-scale = Vector2( 20.808, 61.925 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 1065.04, 73.3981, 24.6345, 8.25896 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="DeadZone" type="Area2D" parent="."]
 position = Vector2( 17, 997 )
 scale = Vector2( 1.859, 1.062 )
 collision_layer = 0
 collision_mask = 8
-monitoring = false
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
