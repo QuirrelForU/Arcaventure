@@ -38,3 +38,7 @@ func _set_is_invincibility(new_state):
 func update_invincibility():
 	for ball in $".".get_children():
 		ball.turn_invincibility(is_invincibility)
+
+func kill_balls():
+	for ball in $".".get_children():
+		ball.die()

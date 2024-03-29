@@ -14,7 +14,7 @@ func _on_RetryButton_pressed():
 	get_tree().paused = false
 	balls_commander.kill_balls()
 	#get_tree().change_scene("res://Arkanoid/LevelFirst/LevelFirst.tscn")
-	ChangeScene.change_scene("res://Arkanoid/LevelFirst/LevelFirst.tscn")
+	ChangeScene.change_scene("res://Arkanoid/LevelFirst/LevelThree.tscn")
 
 
 func _on_RetryButtonLoose_pressed():
@@ -23,7 +23,7 @@ func _on_RetryButtonLoose_pressed():
 	get_tree().paused = false
 	balls_commander.kill_balls()
 	#get_tree().change_scene("res://Arkanoid/LevelFirst/LevelFirst.tscn")
-	ChangeScene.change_scene("res://Arkanoid/LevelFirst/LevelFirst.tscn")
+	ChangeScene.change_scene("res://Arkanoid/LevelFirst/LevelThree.tscn")
 
 func load_settings():
 		var game_settings : ArkanoidSettings = load("user://arkanoid_first_level.tres") as ArkanoidSettings

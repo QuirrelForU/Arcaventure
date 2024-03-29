@@ -5,7 +5,7 @@
 [ext_resource path="res://Arkanoid/LevelFirst/Brick.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/Simple Shapes/Square.png" type="Texture" id=4]
 [ext_resource path="res://Arkanoid/textures/Space Background_Blue.png" type="Texture" id=5]
-[ext_resource path="res://Arkanoid/LevelFirst/LevelSecond.gd" type="Script" id=6]
+[ext_resource path="res://Arkanoid/LevelFirst/LevelThree.gd" type="Script" id=6]
 [ext_resource path="res://Arkanoid/LevelFirst/PauseScreen.gd" type="Script" id=7]
 [ext_resource path="res://Arkanoid/LevelFirst/DeadZone.gd" type="Script" id=8]
 [ext_resource path="res://Arkanoid/LevelFirst/HUD.gd" type="Script" id=9]
