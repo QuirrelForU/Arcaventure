@@ -53,8 +53,6 @@ func bounce_of_platform(collision):
 	var max_angle := PI / 2
 	var normalized_hit_position = (global_position.x - platform.positionM) / platform.platform_size * 1.8
 	velocity = Vector2.UP * 10
-	print("global y pos",global_position.y)
-	print("global collider y pos",collision.get_collider().global_position.y)
 	if global_position.y > collision.get_collider().global_position.y:
 		velocity = Vector2.DOWN * 10
 	velocity = velocity.rotated(max_angle * normalized_hit_position)	

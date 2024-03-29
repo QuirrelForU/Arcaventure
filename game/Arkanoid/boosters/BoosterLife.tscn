@@ -8,7 +8,7 @@ extents = Vector2( 52, 52 )
 
 [node name="BoosterLife" type="KinematicBody2D"]
 collision_layer = 32
-collision_mask = 18
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
