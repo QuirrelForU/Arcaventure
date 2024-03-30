@@ -112,9 +112,16 @@ func _spawn_notes(to_spawn):
 		instance.initialize(lane)
 		add_child(instance)
 	if to_spawn > 1:
-		while rand == lane:
-			rand = randi() % 8
-		lane = rand
+		var neighbours = [lane - 1,lane + 1]
+#		var left_neighbour = lane - 1
+#		var right_neighbour = lane + 1
+		if neighbours[0] < 0:
+			lane = neighbours[1]
+		elif neighbours[1] > 7:
+			lane = neighbours[0]
+		else:
+			rand = randi() % 2
+			lane = neighbours[rand]
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
