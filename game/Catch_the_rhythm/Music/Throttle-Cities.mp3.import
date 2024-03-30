@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Throttle-Cities.mp3-89aaa369cd3779d218504bd6fb9746f6.mp3str"
+
+[deps]
+
+source_file="res://Catch_the_rhythm/Music/Throttle-Cities.mp3"
+dest_files=[ "res://.import/Throttle-Cities.mp3-89aaa369cd3779d218504bd6fb9746f6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

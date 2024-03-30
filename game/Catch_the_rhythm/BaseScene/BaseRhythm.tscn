@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/BaseRhythm.gd" type="Script" id=3]
+
+[node name="BaseRhythm" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Conductor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -40.0
+script = ExtResource( 2 )
+bpm = 114
+
+[node name="StartTimer" type="Timer" parent="Conductor"]
+one_shot = true
+
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
+[connection signal="timeout" from="Conductor/StartTimer" to="Conductor" method="_on_StartTimer_timeout"]
