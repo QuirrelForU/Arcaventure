@@ -9,7 +9,7 @@ var good = 0
 var okay = 0
 var missed = 0
 
-var bpm = 115
+var bpm = 114
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -33,7 +33,6 @@ func _ready():
 	$Conductor.play_from_beat(150,8)
 
 func _on_Conductor_measure(position):
-	print("measure " + str(position))
 	if position == 1:
 		_spawn_notes(spawn_1_beat)
 	elif position == 2:
@@ -45,7 +44,6 @@ func _on_Conductor_measure(position):
 
 func _on_Conductor_beat(position):
 	song_position_in_beats = position
-	print("beat " + str(song_position_in_beats))
 	if song_position_in_beats > 36:
 		spawn_1_beat = 1
 		spawn_2_beat = 1
@@ -57,13 +55,13 @@ func _on_Conductor_beat(position):
 		spawn_3_beat = 1
 		spawn_4_beat = 0
 	if song_position_in_beats > 132:
-		spawn_1_beat = 0
+		spawn_1_beat = 4
 		spawn_2_beat = 2
-		spawn_3_beat = 0
+		spawn_3_beat = 6
 		spawn_4_beat = 2
 	if song_position_in_beats > 162:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
+		spawn_1_beat = 4
+		spawn_2_beat = 4
 		spawn_3_beat = 1
 		spawn_4_beat = 1
 	if song_position_in_beats > 194:
@@ -109,13 +107,13 @@ func _on_Conductor_beat(position):
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
-		lane = randi() % 3
+		lane = randi() % 8
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
 	if to_spawn > 1:
 		while rand == lane:
-			rand = randi() % 3
+			rand = randi() % 8
 		lane = rand
 		instance = note.instance()
 		instance.initialize(lane)

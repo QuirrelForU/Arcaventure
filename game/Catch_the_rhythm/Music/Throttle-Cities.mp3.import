@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Throttle-Cities.mp3-89aaa369cd3779d218504bd6fb9746f6
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

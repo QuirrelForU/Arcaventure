@@ -3,10 +3,17 @@ extends Node2D
 const TARGET_Y = 1080
 const SPAWN_Y = -16
 const DIST_TO_TARGET = TARGET_Y - SPAWN_Y
-
-const LEFT_LANE_SPAWN = Vector2(120, SPAWN_Y)
-const CENTRE_LANE_SPAWN = Vector2(160, SPAWN_Y)
-const RIGHT_LANE_SPAWN = Vector2(200, SPAWN_Y)
+# Screen 1920 
+# space for squares 150 from each side
+# 1620 / 9 = 180
+const FIRS_LANE = Vector2(330, SPAWN_Y)
+const SECOND_LANE = Vector2(510, SPAWN_Y)
+const THIRD_LANE = Vector2(690, SPAWN_Y)
+const FOURTH_LANE = Vector2(870, SPAWN_Y)
+const FIFTH_LANE = Vector2(1050, SPAWN_Y)
+const SIXTH_LANE = Vector2(1230, SPAWN_Y)
+const SEVENTH_LANE = Vector2(1410, SPAWN_Y)
+const EIGHTH_LANE = Vector2(1590, SPAWN_Y)
 
 var speed = 0
 var hit = false
@@ -27,11 +34,21 @@ func _physics_process(delta):
 
 func initialize(lane):
 	if lane == 0:
-		position = LEFT_LANE_SPAWN
+		position = FIRS_LANE
 	elif lane == 1:
-		position = CENTRE_LANE_SPAWN
+		position = SECOND_LANE
 	elif lane == 2:
-		position = RIGHT_LANE_SPAWN
+		position = THIRD_LANE
+	elif lane == 3:
+		position = FOURTH_LANE
+	elif lane == 4:
+		position = FIFTH_LANE
+	elif lane == 5:
+		position = SIXTH_LANE
+	elif lane == 6:
+		position = SEVENTH_LANE
+	elif lane == 7:
+		position = EIGHTH_LANE
 	else:
 		printerr("Invalid lane set for note: " + str(lane))
 		return
