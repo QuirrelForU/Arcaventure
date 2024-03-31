@@ -7,7 +7,8 @@ func change_scene(target):
 	$AnimationPlayer.play("Dissolve")
 	target_scene = target
 	yield($AnimationPlayer,"animation_finished")
-	get_tree().change_scene(target)
+	if get_tree().change_scene(target) != OK:
+		print("Error changing scene")
 	$AnimationPlayer.play_backwards("Dissolve")
 	yield($AnimationPlayer,"animation_finished")
 	visible = false

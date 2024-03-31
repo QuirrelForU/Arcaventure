@@ -15,7 +15,7 @@ const MIN_DB = 110
 var spectrum
 
 func _ready():
-	for i in range(VU_COUNT):
+	for _i in range(VU_COUNT):
 		previous_lengths.append(0)
 	spectrum = AudioServer.get_bus_effect_instance(0, 0)
 

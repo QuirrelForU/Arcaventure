@@ -53,15 +53,10 @@ func initialize(lane):
 	speed = DIST_TO_TARGET / 2.0
 
 
-func destroy(score):
-	$AnimatedSprite.visible = false
-	$Timer.start()
-	hit = true
-
 
 func _on_Timer_timeout():
 	queue_free()
 
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	queue_free()
