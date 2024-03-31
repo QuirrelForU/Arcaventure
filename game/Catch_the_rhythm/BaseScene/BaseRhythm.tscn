@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/BaseRhythm.gd" type="Script" id=3]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle.gd" type="Script" id=4]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -23,6 +24,10 @@ one_shot = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="AudioCircle" type="Node2D" parent="."]
+position = Vector2( 960, 540 )
+script = ExtResource( 4 )
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
