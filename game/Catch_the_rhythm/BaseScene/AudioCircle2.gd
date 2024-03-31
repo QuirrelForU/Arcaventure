@@ -2,15 +2,16 @@ extends Node2D
 
 const VU_COUNT = 100
 const FREQ_MAX = 11050.0
-const WIDTH = 2
-const OUTER_RADIUS = 500  # Outer radius of the circle
-const INNER_RADIUS = 50  # Inner radius of the circle
+const WIDTH = 5
+const OUTER_RADIUS = 800  # Outer radius of the circle
+const INNER_RADIUS = 200  # Inner radius of the circle
 const CIRCLE_CENTER = Vector2(0, 0)  # Center of the circle
 const LERP_SPEED = 0.015
 const MIN_BAR_LENGTH = 1
+const ROTATE_DEG = 0.005
 
 var previous_lengths = []
-const MIN_DB = 100
+const MIN_DB = 110
 var spectrum
 
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 	spectrum = AudioServer.get_bus_effect_instance(0, 0)
 
 func _process(_delta):
+	rotate(deg2rad(ROTATE_DEG))
 	update()
 
 func _draw():

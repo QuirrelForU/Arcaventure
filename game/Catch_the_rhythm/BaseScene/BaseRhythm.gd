@@ -29,8 +29,8 @@ var instance
 
 func _ready():
 	randomize()
-	#$Conductor.play_with_beat_offset(8)
-	$Conductor.play_from_beat(150,8)
+	$Conductor.play_with_beat_offset(8)
+	#$Conductor.play_from_beat(150,8)
 
 func _on_Conductor_measure(position):
 	if position == 1:
