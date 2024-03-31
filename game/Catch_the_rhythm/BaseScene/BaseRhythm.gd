@@ -1,13 +1,5 @@
 extends Node2D
 
-var score = 0
-var combo = 0
-
-var max_combo = 0
-var great = 0
-var good = 0
-var okay = 0
-var missed = 0
 
 var bpm = 114
 
@@ -27,11 +19,13 @@ var note = load("res://Catch_the_rhythm/BaseScene/Note.tscn")
 var instance
 
 
+onready var stats = $Stats
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	randomize()
-	$Conductor.play_with_beat_offset(8)
-	#$Conductor.play_from_beat(150,8)
+	#$Conductor.play_with_beat_offset(8)
+	$Conductor.play_from_beat(330,8)
 
 func _on_Conductor_measure(position):
 	if position == 1:
@@ -44,6 +38,7 @@ func _on_Conductor_measure(position):
 		_spawn_notes(spawn_4_beat)
 
 func _on_Conductor_beat(position):
+	print(position)
 	song_position_in_beats = position
 	if song_position_in_beats > 36:
 		spawn_1_beat = 1
@@ -90,19 +85,9 @@ func _on_Conductor_beat(position):
 		spawn_2_beat = 2
 		spawn_3_beat = 2
 		spawn_4_beat = 1
-	if song_position_in_beats > 388:
-		spawn_1_beat = 1
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	if song_position_in_beats > 396:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	if song_position_in_beats > 404:
-		if get_tree().change_scene("res://Scenes/End.tscn") != OK:
-			print ("Error changing scene to End")
+	if song_position_in_beats == 350:
+		pass
+		#ChangeScene.change_scene("res://BaseMenu/BaseMenu.tscn")
 
 
 
@@ -110,12 +95,12 @@ func _spawn_notes(to_spawn):
 	if to_spawn > 0:
 		lane = randi() % 8
 		instance = note.instance()
+		instance.connect("catched",self,"note_catched")
+		instance.connect("missed",self,"note_missed")
 		instance.initialize(lane)
 		add_child(instance)
 	if to_spawn > 1:
 		var neighbours = [lane - 1,lane + 1]
-#		var left_neighbour = lane - 1
-#		var right_neighbour = lane + 1
 		if neighbours[0] < 0:
 			lane = neighbours[1]
 		elif neighbours[1] > 7:
@@ -129,32 +114,9 @@ func _spawn_notes(to_spawn):
 		
 
 
-func increment_score(by):
-	if by > 0:
-		combo += 1
-	else:
-		combo = 0
-	
-	if by == 3:
-		great += 1
-	elif by == 2:
-		good += 1
-	elif by == 1:
-		okay += 1
-	else:
-		missed += 1
-	
-	
-	score += by * combo
-	$Label.text = str(score)
-	if combo > 0:
-		$Combo.text = str(combo) + " combo!"
-		if combo > max_combo:
-			max_combo = combo
-	else:
-		$Combo.text = ""
+func note_catched():
+	stats.catched +=1
 
 
-func reset_combo():
-	combo = 0
-	$Combo.text = ""
+func note_missed():
+	stats.missed +=1

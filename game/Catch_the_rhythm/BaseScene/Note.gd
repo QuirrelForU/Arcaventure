@@ -19,6 +19,9 @@ var speed = 0
 var hit = false
 
 
+signal catched
+signal missed
+
 func _ready():
 	pass
 
@@ -27,6 +30,7 @@ func _physics_process(delta):
 	position.y += speed * delta
 	if position.y > 1300:
 		queue_free()
+		emit_signal("missed")
 
 
 func initialize(lane):
@@ -54,9 +58,6 @@ func initialize(lane):
 
 
 
-func _on_Timer_timeout():
-	queue_free()
-
-
 func _on_Area2D_body_entered(_body):
+	emit_signal("catched")
 	queue_free()

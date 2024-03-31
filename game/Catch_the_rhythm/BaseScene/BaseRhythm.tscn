@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/BaseRhythm.gd" type="Script" id=3]
 [ext_resource path="res://Catch_the_rhythm/platform/MusicPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/FPS.gd" type="Script" id=5]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/Stats.gd" type="Script" id=6]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
 
 [sub_resource type="Environment" id=1]
@@ -17,6 +18,9 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource( 6 )
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
@@ -49,7 +53,20 @@ __meta__ = {
 
 [node name="MusicPlatform" parent="." instance=ExtResource( 4 )]
 modulate = Color( 1.5, 1.5, 1.5, 1 )
-position = Vector2( 79, 993 )
+position = Vector2( 80, 993 )
+
+[node name="Catched" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Catched: "
+
+[node name="Missed" type="Label" parent="."]
+margin_top = 19.0
+margin_right = 54.0
+margin_bottom = 33.0
+text = "Missed: "
+
+[node name="HUD" type="CanvasLayer" parent="."]
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
