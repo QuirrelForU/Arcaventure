@@ -3,7 +3,7 @@
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/BaseRhythm.gd" type="Script" id=3]
-[ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle.gd" type="Script" id=4]
+[ext_resource path="res://Catch_the_rhythm/platform/MusicPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/FPS.gd" type="Script" id=5]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
 
@@ -14,6 +14,9 @@ glow_hdr_threshold = 1.5
 
 [node name="BaseRhythm" type="Node2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
@@ -27,19 +30,26 @@ one_shot = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
-[node name="AudioCircle" type="Node2D" parent="."]
-visible = false
-position = Vector2( 960, 540 )
-script = ExtResource( 4 )
-
 [node name="FPS" type="Label" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AudioCircle2" type="Node2D" parent="."]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
 position = Vector2( 960, 540 )
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MusicPlatform" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+position = Vector2( 79, 993 )
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

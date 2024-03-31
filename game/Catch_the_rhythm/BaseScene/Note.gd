@@ -1,6 +1,6 @@
 extends Node2D
 
-const TARGET_Y = 1080
+const TARGET_Y = 993 #1080
 const SPAWN_Y = -16
 const DIST_TO_TARGET = TARGET_Y - SPAWN_Y
 # Screen 1920 
@@ -25,7 +25,7 @@ func _ready():
 
 func _physics_process(delta):
 	position.y += speed * delta
-	if position.y > 1080:
+	if position.y > 1300:
 		queue_free()
 
 
@@ -60,4 +60,8 @@ func destroy(score):
 
 
 func _on_Timer_timeout():
+	queue_free()
+
+
+func _on_Area2D_body_entered(body):
 	queue_free()

@@ -28,6 +28,7 @@ var instance
 
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	randomize()
 	$Conductor.play_with_beat_offset(8)
 	#$Conductor.play_from_beat(150,8)
