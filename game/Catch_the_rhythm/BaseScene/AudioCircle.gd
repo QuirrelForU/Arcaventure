@@ -1,6 +1,6 @@
 extends Node2D
 
-const VU_COUNT = 100
+const VU_COUNT = 16
 const FREQ_MAX = 5000
 
 const MAX_HEIGHT = 500
@@ -30,7 +30,7 @@ func _draw():
 		
 	prev_small_radius = small_radius
 	
-	for i in range(VU_COUNT):	
+	for i in range(VU_COUNT):
 		# calculating height of sample
 		var hz = (i + 1) * FREQ_MAX / VU_COUNT;
 		var magnitude: float = spectrum.get_magnitude_for_frequency_range(prev_hz, hz).length()

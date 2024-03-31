@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/BaseRhythm.gd" type="Script" id=3]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle.gd" type="Script" id=4]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/FPS.gd" type="Script" id=5]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/AudioVisual.gd" type="Script" id=6]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -26,8 +29,23 @@ one_shot = true
 environment = SubResource( 1 )
 
 [node name="AudioCircle" type="Node2D" parent="."]
+visible = false
 position = Vector2( 960, 540 )
 script = ExtResource( 4 )
+
+[node name="FPS" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 5 )
+
+[node name="AudioVisual" type="Node2D" parent="."]
+visible = false
+position = Vector2( 960, 540 )
+script = ExtResource( 6 )
+
+[node name="AudioCircle2" type="Node2D" parent="."]
+position = Vector2( 960, 540 )
+script = ExtResource( 7 )
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

@@ -24,12 +24,9 @@ func _ready():
 
 
 func _physics_process(delta):
-	if !hit:
-		position.y += speed * delta
-		if position.y > 1080:
-			queue_free()
-	else:
-		$Node2D.position.y -= speed * delta
+	position.y += speed * delta
+	if position.y > 1080:
+		queue_free()
 
 
 func initialize(lane):
