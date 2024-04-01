@@ -9,10 +9,13 @@ var spawn_2_beat = 0
 var spawn_3_beat = 1
 var spawn_4_beat = 0
 
+
+var lanes_weights = [100,1,1,1,1,1,1,1]
 var lane = 0
 var rand = 0
 var note = load("res://Catch_the_rhythm/BaseScene/Note.tscn")
 var instance
+
 
 
 onready var stats = $Stats
@@ -88,7 +91,8 @@ func _on_Conductor_beat(position):
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
-		lane = randi() % 8
+		#lane = randi() % 8
+		lane = _weighted_choice(lanes_weights)
 		instance = note.instance()
 		instance.connect("catched",self,"note_catched")
 		instance.connect("missed",self,"note_missed")
@@ -108,6 +112,17 @@ func _spawn_notes(to_spawn):
 		add_child(instance)
 		
 
+# Function to select an item based on weights
+func _weighted_choice(weights):
+	var total = 0
+	for i in range(weights.size()):
+		total += weights[i]
+	var rand_val = randf() * total
+	for i in range(weights.size()):
+		rand_val -= weights[i]
+		if rand_val <= 0:
+			return i
+	return weights.size() - 1
 
 func note_catched():
 	stats.catched +=1
@@ -115,3 +130,5 @@ func note_catched():
 
 func note_missed():
 	stats.missed +=1
+
+
