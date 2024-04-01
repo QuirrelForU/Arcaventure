@@ -28,9 +28,9 @@ func _ready():
 
 func _physics_process(delta):
 	position.y += speed * delta
-	if position.y > 1300:
-		queue_free()
-		emit_signal("missed")
+#	if position.y > 1300:
+#		queue_free()
+#		emit_signal("missed")
 
 func initialize(lane):
 	if lane == 0:
@@ -55,9 +55,3 @@ func initialize(lane):
 	
 	speed = DIST_TO_TARGET / 2.1052#0.52#2.0, so here you set a time to reach a distn, but the time should be
 	# multiply by secs per bit 60 / 114 * 4 = 2.1052..
-
-
-
-func _on_Area2D_body_entered(_body):
-	emit_signal("catched")
-	queue_free()

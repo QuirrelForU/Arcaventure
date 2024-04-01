@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -7,11 +7,15 @@
 [ext_resource path="res://Catch_the_rhythm/BaseScene/FPS.gd" type="Script" id=5]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Stats.gd" type="Script" id=6]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/NoteDestroy.gd" type="Script" id=8]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
 glow_enabled = true
 glow_hdr_threshold = 1.5
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1000, 10 )
 
 [node name="BaseRhythm" type="Node2D"]
 script = ExtResource( 3 )
@@ -68,6 +72,15 @@ text = "Missed: "
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+[node name="NoteDestroy" type="Area2D" parent="."]
+position = Vector2( 988, 1200 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoteDestroy"]
+shape = SubResource( 2 )
+
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
 [connection signal="timeout" from="Conductor/StartTimer" to="Conductor" method="_on_StartTimer_timeout"]
+[connection signal="note_catched" from="MusicPlatform" to="." method="_on_MusicPlatform_note_catched"]
+[connection signal="area_entered" from="NoteDestroy" to="NoteDestroy" method="_on_NoteDestroy_area_entered"]

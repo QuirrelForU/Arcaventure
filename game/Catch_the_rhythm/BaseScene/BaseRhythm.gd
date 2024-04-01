@@ -4,13 +4,13 @@ var song_position = 0.0
 var song_position_in_beats = 0
 var last_spawned_beat = 0
 
-var spawn_1_beat = 0
+var spawn_1_beat = 1
 var spawn_2_beat = 0
 var spawn_3_beat = 1
 var spawn_4_beat = 0
 
 
-var lanes_weights = [100,1,1,1,1,1,1,1]
+var lanes_weights = [1,1,1,1,1,1,1,1] # size of array equals to nunmber of lanes (8)
 var lane = 0
 var rand = 0
 var note = load("res://Catch_the_rhythm/BaseScene/Note.tscn")
@@ -23,8 +23,8 @@ onready var stats = $Stats
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	randomize()
-	$Conductor.play_with_beat_offset(8)
-	#$Conductor.play_from_beat(330,8)
+	#$Conductor.play_with_beat_offset(8)
+	$Conductor.play_from_beat(115,8)
 
 func _on_Conductor_measure(position):
 	if position == 1:
@@ -37,16 +37,17 @@ func _on_Conductor_measure(position):
 		_spawn_notes(spawn_4_beat)
 
 func _on_Conductor_beat(position):
+	print(position)
 	song_position_in_beats = position
 	if song_position_in_beats > 36:
 		spawn_1_beat = 1
 		spawn_2_beat = 1
 		spawn_3_beat = 1
 		spawn_4_beat = 1
-	if song_position_in_beats > 98:
+	if song_position_in_beats > 116:
 		spawn_1_beat = 2
 		spawn_2_beat = 0
-		spawn_3_beat = 1
+		spawn_3_beat = 2
 		spawn_4_beat = 0
 	if song_position_in_beats > 132:
 		spawn_1_beat = 4
@@ -54,35 +55,40 @@ func _on_Conductor_beat(position):
 		spawn_3_beat = 6
 		spawn_4_beat = 2
 	if song_position_in_beats > 162:
-		spawn_1_beat = 4
-		spawn_2_beat = 4
+		spawn_1_beat = 0
+		spawn_2_beat = 0
 		spawn_3_beat = 1
 		spawn_4_beat = 1
 	if song_position_in_beats > 194:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
+		spawn_1_beat = 1
+		spawn_2_beat = 1
 		spawn_3_beat = 1
-		spawn_4_beat = 2
+		spawn_4_beat = 1
 	if song_position_in_beats > 228:
 		spawn_1_beat = 0
 		spawn_2_beat = 2
 		spawn_3_beat = 1
 		spawn_4_beat = 2
-	if song_position_in_beats > 258:
-		spawn_1_beat = 1
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
+	if song_position_in_beats > 255:
+		spawn_1_beat = 2
+		spawn_2_beat = 0
+		spawn_3_beat = 2
+		spawn_4_beat = 0
 	if song_position_in_beats > 288:
 		spawn_1_beat = 0
 		spawn_2_beat = 2
 		spawn_3_beat = 0
 		spawn_4_beat = 2
-	if song_position_in_beats > 322:
-		spawn_1_beat = 3
-		spawn_2_beat = 2
-		spawn_3_beat = 2
-		spawn_4_beat = 1
+	if song_position_in_beats > 330:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 0
+	if song_position_in_beats > 340:
+		spawn_1_beat = 0
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 0
 	if song_position_in_beats == 350:
 		pass
 		#ChangeScene.change_scene("res://BaseMenu/BaseMenu.tscn")
@@ -94,8 +100,6 @@ func _spawn_notes(to_spawn):
 		#lane = randi() % 8
 		lane = _weighted_choice(lanes_weights)
 		instance = note.instance()
-		instance.connect("catched",self,"note_catched")
-		instance.connect("missed",self,"note_missed")
 		instance.initialize(lane)
 		add_child(instance)
 	if to_spawn > 1:
@@ -124,11 +128,8 @@ func _weighted_choice(weights):
 			return i
 	return weights.size() - 1
 
-func note_catched():
+
+
+
+func _on_MusicPlatform_note_catched():
 	stats.catched +=1
-
-
-func note_missed():
-	stats.missed +=1
-
-
