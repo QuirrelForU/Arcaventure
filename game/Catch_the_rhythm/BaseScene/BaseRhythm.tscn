@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -8,10 +8,13 @@
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Stats.gd" type="Script" id=6]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/NoteDestroy.gd" type="Script" id=8]
+[ext_resource path="res://textures/ColorAtlas/BaseColor.png" type="Texture" id=9]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
 glow_enabled = true
+glow_intensity = 0.11
+glow_blend_mode = 1
 glow_hdr_threshold = 1.5
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -19,6 +22,16 @@ extents = Vector2( 1000, 10 )
 
 [node name="BaseRhythm" type="Node2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 1920, 1080 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 76, 63, 1, 1 )
 __meta__ = {
 "_edit_lock_": true
 }

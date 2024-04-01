@@ -55,7 +55,7 @@ func _on_StartButton_pressed():
 	$"../AnimationPlayer".play("Fade")
 	yield($"../AnimationPlayer","animation_finished")
 	
-	$"../GameMenus".visible = true
+	$"../ChooseGame".visible = true
 	
 	$"../AnimationPlayer".play_backwards("Fade")
 	yield($"../AnimationPlayer","animation_finished")
@@ -68,7 +68,36 @@ func _on_CloseGameMenusButton_pressed():
 	yield($"../AnimationPlayer","animation_finished")
 	
 	$"../GameMenus".visible = false
+	$"../ChooseGame".visible = true
 	
 	$"../AnimationPlayer".play_backwards("Fade")
 	yield($"../AnimationPlayer","animation_finished")
 	$"../ColorRect".visible = false
+
+
+func _on_CloseChooseGameButton2_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+
+	$"../ChooseGame".visible = false
+	
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
+
+
+func _on_ChooseArkanoid_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+
+	$"../ChooseGame".visible = false
+	$"../GameMenus".visible = true
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
+
+
+func _on_ChooseCatchTheRhytm_pressed():
+	ChangeScene.change_scene("res://Catch_the_rhythm/BaseScene/BaseRhythm.tscn")

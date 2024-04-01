@@ -4,7 +4,7 @@ var song_position = 0.0
 var song_position_in_beats = 0
 var last_spawned_beat = 0
 
-var spawn_1_beat = 1
+var spawn_1_beat = 0
 var spawn_2_beat = 0
 var spawn_3_beat = 1
 var spawn_4_beat = 0
@@ -23,8 +23,8 @@ onready var stats = $Stats
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	randomize()
-	#$Conductor.play_with_beat_offset(8)
-	$Conductor.play_from_beat(115,8)
+	$Conductor.play_with_beat_offset(8)
+	#$Conductor.play_from_beat(115,8)
 
 func _on_Conductor_measure(position):
 	if position == 1:
