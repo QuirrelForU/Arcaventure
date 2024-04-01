@@ -32,7 +32,6 @@ func _physics_process(delta):
 		queue_free()
 		emit_signal("missed")
 
-
 func initialize(lane):
 	if lane == 0:
 		position = FIRS_LANE
@@ -54,7 +53,8 @@ func initialize(lane):
 		printerr("Invalid lane set for note: " + str(lane))
 		return
 	
-	speed = DIST_TO_TARGET / 2.0
+	speed = DIST_TO_TARGET / 2.1052#0.52#2.0, so here you set a time to reach a distn, but the time should be
+	# multiply by secs per bit 60 / 114 * 4 = 2.1052..
 
 
 
