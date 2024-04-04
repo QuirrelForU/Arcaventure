@@ -3,7 +3,7 @@ extends Node
 
 var missed = 0 setget _set_missed
 var catched = 0 setget _set_catched
-
+var webcam_mode = false
 
 func _set_missed(new_value):
 	missed = new_value

@@ -52,6 +52,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ChangeScene="*res://BaseMenu/ChangeScene.tscn"
+Globals="*res://Globals.gd"
 
 [display]
 
