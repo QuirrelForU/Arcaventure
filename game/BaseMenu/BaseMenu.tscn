@@ -665,7 +665,6 @@ expand = true
 script = ExtResource( 17 )
 
 [node name="Settings" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
@@ -748,6 +747,28 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 theme = ExtResource( 9 )
 
+[node name="Fullscreen3" type="HBoxContainer" parent="Settings/VBoxContainer"]
+margin_top = 162.0
+margin_right = 840.0
+margin_bottom = 239.0
+custom_constants/separation = 42
+
+[node name="Fullscreen" type="Label" parent="Settings/VBoxContainer/Fullscreen3"]
+margin_top = 3.0
+margin_right = 324.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 10 )
+text = "Fullscreen"
+
+[node name="FullScreenCheck" type="CheckBox" parent="Settings/VBoxContainer/Fullscreen3"]
+margin_left = 366.0
+margin_right = 416.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 1, 1 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 9 )
+
 [node name="CloseSettingsButton" parent="Settings" instance=ExtResource( 6 )]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -814,5 +835,6 @@ script = ExtResource( 11 )
 [connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/Fullscreen3/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
 [connection signal="pressed" from="Settings/CloseSettingsButton" to="MenuButtons" method="_on_CloseSettingsButton_pressed"]
 [connection signal="pressed" from="Settings/SaveSettingsButton" to="Settings" method="_on_SaveSettingsButton_pressed"]
