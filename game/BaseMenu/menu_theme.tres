@@ -1,10 +1,12 @@
-[gd_resource type="Theme" load_steps=17 format=2]
+[gd_resource type="Theme" load_steps=19 format=2]
 
 [ext_resource path="res://fonts/menu_buttons_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://BaseMenu/checkbox/checked.png" type="Texture" id=2]
 [ext_resource path="res://BaseMenu/checkbox/unchecked.png" type="Texture" id=3]
 [ext_resource path="res://BaseMenu/slider/arrow.png" type="Texture" id=4]
 [ext_resource path="res://BaseMenu/slider/slider_back.png" type="Texture" id=5]
+[ext_resource path="res://BaseMenu/slider/arrow_pressed.png" type="Texture" id=6]
+[ext_resource path="res://BaseMenu/slider/arrow_hold.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
@@ -50,8 +52,8 @@ CheckBox/icons/checked = ExtResource( 2 )
 CheckBox/icons/unchecked = ExtResource( 3 )
 CheckBox/styles/hover = SubResource( 11 )
 HSlider/icons/grabber = ExtResource( 4 )
-HSlider/icons/grabber_disabled = ExtResource( 4 )
-HSlider/icons/grabber_highlight = ExtResource( 4 )
+HSlider/icons/grabber_disabled = ExtResource( 7 )
+HSlider/icons/grabber_highlight = ExtResource( 6 )
 HSlider/styles/grabber_area = SubResource( 13 )
 HSlider/styles/grabber_area_highlight = SubResource( 14 )
 HSlider/styles/slider = SubResource( 15 )

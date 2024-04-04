@@ -684,20 +684,21 @@ margin_right = 260.0
 margin_bottom = -214.0
 
 [node name="Res" type="HBoxContainer" parent="Settings/VBoxContainer"]
-margin_right = 840.0
+margin_right = 892.0
 margin_bottom = 77.0
 custom_constants/separation = 42
 
 [node name="Label" type="Label" parent="Settings/VBoxContainer/Res"]
 margin_top = 3.0
-margin_right = 298.0
+margin_right = 350.0
 margin_bottom = 74.0
+rect_min_size = Vector2( 350, 0 )
 custom_fonts/font = ExtResource( 10 )
 text = "Resolution"
 
 [node name="OptionButton" type="OptionButton" parent="Settings/VBoxContainer/Res"]
-margin_left = 340.0
-margin_right = 840.0
+margin_left = 392.0
+margin_right = 892.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 500, 0 )
 theme = ExtResource( 9 )
@@ -727,46 +728,45 @@ theme = ExtResource( 9 )
 
 [node name="Fullscreen2" type="HBoxContainer" parent="Settings/VBoxContainer"]
 margin_top = 81.0
-margin_right = 840.0
+margin_right = 892.0
 margin_bottom = 158.0
 custom_constants/separation = 42
 
 [node name="Fullscreen" type="Label" parent="Settings/VBoxContainer/Fullscreen2"]
 margin_top = 3.0
-margin_right = 324.0
+margin_right = 350.0
 margin_bottom = 74.0
+rect_min_size = Vector2( 350, 0 )
 custom_fonts/font = ExtResource( 10 )
 text = "Fullscreen"
 
 [node name="FullScreenCheck" type="CheckBox" parent="Settings/VBoxContainer/Fullscreen2"]
-margin_left = 366.0
-margin_right = 416.0
+margin_left = 392.0
+margin_right = 442.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 1, 1 )
 size_flags_horizontal = 2
 size_flags_vertical = 2
 theme = ExtResource( 9 )
 
-[node name="Fullscreen3" type="HBoxContainer" parent="Settings/VBoxContainer"]
+[node name="Volume" type="HBoxContainer" parent="Settings/VBoxContainer"]
 margin_top = 162.0
-margin_right = 840.0
-margin_bottom = 239.0
+margin_right = 892.0
+margin_bottom = 233.0
 custom_constants/separation = 42
 
-[node name="Fullscreen" type="Label" parent="Settings/VBoxContainer/Fullscreen3"]
-margin_top = 3.0
-margin_right = 324.0
-margin_bottom = 74.0
+[node name="Volume" type="Label" parent="Settings/VBoxContainer/Volume"]
+margin_right = 350.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 350, 0 )
 custom_fonts/font = ExtResource( 10 )
-text = "Fullscreen"
+text = "Volume"
 
-[node name="FullScreenCheck" type="CheckBox" parent="Settings/VBoxContainer/Fullscreen3"]
-margin_left = 366.0
-margin_right = 416.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 1, 1 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
+[node name="VolumeSlider" type="HSlider" parent="Settings/VBoxContainer/Volume"]
+margin_left = 392.0
+margin_right = 792.0
+margin_bottom = 71.0
+size_flags_vertical = 1
 theme = ExtResource( 9 )
 
 [node name="CloseSettingsButton" parent="Settings" instance=ExtResource( 6 )]
@@ -835,6 +835,5 @@ script = ExtResource( 11 )
 [connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
-[connection signal="pressed" from="Settings/VBoxContainer/Fullscreen3/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
 [connection signal="pressed" from="Settings/CloseSettingsButton" to="MenuButtons" method="_on_CloseSettingsButton_pressed"]
 [connection signal="pressed" from="Settings/SaveSettingsButton" to="Settings" method="_on_SaveSettingsButton_pressed"]
