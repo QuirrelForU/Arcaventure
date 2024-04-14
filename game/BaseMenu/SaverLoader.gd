@@ -11,7 +11,10 @@ func save_game():
 	saved_game.curren_fullscreen_mode = profile_settings.fullscreen_mode
 	saved_game.current_profile = profile_index_choosing.profile_index
 	saved_game.current_resolution_index = profile_settings.resolution_index
-	ResourceSaver.save("user://savegame_" + str(profile_index_choosing.profile_index)+".tres",saved_game)
+	saved_game.current_volume = Globals.volume
+	
+	if ResourceSaver.save("user://savegame_" + str(profile_index_choosing.profile_index)+".tres",saved_game) != OK:
+		print("Error when trying to save a settings")
 
 
 func load_game():
@@ -20,12 +23,15 @@ func load_game():
 	profile_settings.resolution_key = saved_game.current_resolution
 	profile_settings.fullscreen_mode = saved_game.curren_fullscreen_mode
 	profile_index_choosing.profile_index = saved_game.current_profile
+	Globals.volume = saved_game.current_volume
+	$"../Settings/VBoxContainer/Volume".update_value()
 
 
 func save_last_choice():
 	var last_session := LastSession.new()
 	last_session.choosed_profile = $"../ChoosingProfile".profile_index
-	ResourceSaver.save("user://last_session.tres",last_session)
+	if ResourceSaver.save("user://last_session.tres",last_session) != OK:
+		print("Error when trying to save a last session")
 
 func load_last_choice():
 	if File.new().file_exists("user://last_session.tres"):
