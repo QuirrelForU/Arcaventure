@@ -6,3 +6,4 @@ func _on_NoteDestroy_area_entered(area):
 	stats.missed +=1
 	stats.combo = 1.0
 	stats.score -=75
+	stats.max_combo_counter == 0

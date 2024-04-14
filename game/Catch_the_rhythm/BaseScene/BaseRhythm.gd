@@ -23,8 +23,8 @@ func _ready():
 	load_settings()
 	
 	randomize()
-	$Conductor.play_with_beat_offset(8)
-	#$Conductor.play_from_beat(115,8)
+	#$Conductor.play_with_beat_offset(8)
+	$Conductor.play_from_beat(300,8)
 
 func load_settings():
 	var game_settings : CatchTheRhythmSettings = load("user://catch_the_rhythm.tres") as CatchTheRhythmSettings
@@ -97,8 +97,7 @@ func _on_Conductor_beat(position):
 		spawn_3_beat = 0
 		spawn_4_beat = 0
 	if song_position_in_beats == 350:
-		pass
-		#ChangeScene.change_scene("res://BaseMenu/BaseMenu.tscn")
+		$HUD/WinScreen.show_winscreen()
 
 
 
@@ -140,3 +139,4 @@ func _on_MusicPlatform_note_catched():
 	stats.catched +=1
 	stats.score += 25 * stats.combo
 	stats.combo +=0.125
+	stats.max_combo_counter +=1
