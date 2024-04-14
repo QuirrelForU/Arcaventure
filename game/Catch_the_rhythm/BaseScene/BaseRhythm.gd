@@ -21,11 +21,19 @@ var instance
 onready var stats = $Stats
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	load_settings()
+	
 	randomize()
 	$Conductor.play_with_beat_offset(8)
 	#$Conductor.play_from_beat(115,8)
 
+func load_settings():
+	var game_settings : CatchTheRhythmSettings = load("user://catch_the_rhythm.tres") as CatchTheRhythmSettings
+	stats.webcam_mode = game_settings.webcam_mode
+	if stats.webcam_mode:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func _on_Conductor_measure(position):
 	if position == 1:
 		_spawn_notes(spawn_1_beat)

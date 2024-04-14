@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Arkanoid/LevelFirst/Brick.gd"
 }, {
 "base": "Resource",
+"class": "CatchTheRhythmSettings",
+"language": "GDScript",
+"path": "res://Catch_the_rhythm/catch_the_rhythm_resource.gd"
+}, {
+"base": "Resource",
 "class": "LastSession",
 "language": "GDScript",
 "path": "res://BaseMenu/last_session_resource.gd"
@@ -37,6 +42,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "ArkanoidSettings": "",
 "Brick": "",
+"CatchTheRhythmSettings": "",
 "LastSession": "",
 "SavedGame": "",
 "SaverLoader": ""

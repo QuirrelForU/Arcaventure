@@ -97,6 +97,7 @@ shape = SubResource( 2 )
 
 [node name="PauseScreen" type="Control" parent="HUD"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -774, 324 )

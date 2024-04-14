@@ -100,4 +100,25 @@ func _on_ChooseArkanoid_pressed():
 
 
 func _on_ChooseCatchTheRhytm_pressed():
-	ChangeScene.change_scene("res://Catch_the_rhythm/BaseScene/BaseRhythm.tscn")
+	#ChangeScene.change_scene("res://Catch_the_rhythm/BaseScene/BaseRhythm.tscn")
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	
+	$"../ChooseGame".visible = false
+	$"../CatchTheRhythmMenu".visible = true
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
+
+
+func _on_CloseCatchTheRhythmMenu_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	
+	$"../ChooseGame".visible = true
+	$"../CatchTheRhythmMenu".visible = false
+	$"../AnimationPlayer".play_backwards("Fade")
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
