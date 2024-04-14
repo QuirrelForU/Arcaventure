@@ -1,16 +1,9 @@
 extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var volume = 1.0 setget _set_volume
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _set_volume(new_volume):
+	volume = new_volume
+	AudioServer.set_bus_volume_db(0,linear2db(volume)*1.5)

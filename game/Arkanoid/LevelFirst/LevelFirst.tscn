@@ -43,17 +43,14 @@ script = ExtResource( 14 )
 [node name="PickUP" type="AudioStreamPlayer" parent="Stats"]
 pause_mode = 2
 stream = ExtResource( 15 )
-volume_db = -40.0
 
 [node name="Failed" type="AudioStreamPlayer" parent="Stats"]
 pause_mode = 2
 stream = ExtResource( 16 )
-volume_db = -40.0
 
 [node name="Winn" type="AudioStreamPlayer" parent="Stats"]
 pause_mode = 2
 stream = ExtResource( 16 )
-volume_db = -40.0
 pitch_scale = 2.0
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
@@ -441,6 +438,7 @@ __meta__ = {
 
 [node name="PauseScreen" type="Control" parent="HUD"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )

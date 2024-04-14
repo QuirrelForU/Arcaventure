@@ -10,7 +10,7 @@ var spawn_3_beat = 1
 var spawn_4_beat = 0
 
 
-var lanes_weights = [1,1,1,1,1,1,1,1] # size of array equals to nunmber of lanes (8)
+var lanes_weights = [1,1,1,1,1,1,1,1]#[1,0,0,0,0,0,0,0] # size of array equals to nunmber of lanes (8)
 var lane = 0
 var rand = 0
 var note = load("res://Catch_the_rhythm/BaseScene/Note.tscn")
@@ -37,7 +37,6 @@ func _on_Conductor_measure(position):
 		_spawn_notes(spawn_4_beat)
 
 func _on_Conductor_beat(position):
-	print(position)
 	song_position_in_beats = position
 	if song_position_in_beats > 36:
 		spawn_1_beat = 1

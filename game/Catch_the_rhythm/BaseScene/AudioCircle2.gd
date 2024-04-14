@@ -11,13 +11,13 @@ const MIN_BAR_LENGTH = 1
 const ROTATE_DEG = 0.005
 
 var previous_lengths = []
-const MIN_DB = 110
+const MIN_DB = 80
 var spectrum
 
 func _ready():
 	for _i in range(VU_COUNT):
 		previous_lengths.append(0)
-	spectrum = AudioServer.get_bus_effect_instance(0, 0)
+	spectrum = AudioServer.get_bus_effect_instance(4, 0)
 
 func _process(_delta):
 	rotate(deg2rad(ROTATE_DEG))

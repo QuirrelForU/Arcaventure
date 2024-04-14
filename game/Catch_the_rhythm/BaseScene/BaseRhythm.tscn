@@ -43,7 +43,8 @@ script = ExtResource( 6 )
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -30.0
+mix_target = 2
+bus = "RhythmMusic"
 script = ExtResource( 2 )
 bpm = 114
 

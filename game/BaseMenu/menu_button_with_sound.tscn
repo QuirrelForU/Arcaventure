@@ -37,7 +37,6 @@ script = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -40.0
 bus = "Buttons"
 
 [connection signal="pressed" from="." to="." method="_on_ARKANOID2_pressed"]
