@@ -136,7 +136,7 @@ func _weighted_choice(weights):
 	return weights.size() - 1
 
 
-
-
 func _on_MusicPlatform_note_catched():
 	stats.catched +=1
+	stats.score += 25 * stats.combo
+	stats.combo +=0.125
