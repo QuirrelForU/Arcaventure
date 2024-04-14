@@ -10,7 +10,6 @@ var spawn_3_beat = 1
 var spawn_4_beat = 0
 
 
-var lanes_weights = [1,1,1,1,1,1,1,1]#[1,0,0,0,0,0,0,0] # size of array equals to nunmber of lanes (8)
 var lane = 0
 var rand = 0
 var note = load("res://Catch_the_rhythm/BaseScene/Note.tscn")
@@ -34,6 +33,7 @@ func load_settings():
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	stats.wheights = game_settings.random_wheights
 func _on_Conductor_measure(position):
 	if position == 1:
 		_spawn_notes(spawn_1_beat)
@@ -105,7 +105,7 @@ func _on_Conductor_beat(position):
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
 		#lane = randi() % 8
-		lane = _weighted_choice(lanes_weights)
+		lane = _weighted_choice(stats.wheights)
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)

@@ -17,8 +17,20 @@ func save_arkanoid_settings():
 
 func save_catch_the_rhythm_settings():
 	var new_rhythm_settings = CatchTheRhythmSettings.new()
-	new_rhythm_settings.webcam_mode = $"../CatchTheRhythmMenu/VBoxContainer/HBoxContainer2/WebcamMode".pressed
 
+	var random_wheights = [
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox".value,
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox2".value,
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox3".value,
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox4".value,
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox5".value,
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox6".value,
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox7".value,
+		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox8".value,
+	]
+
+	new_rhythm_settings.webcam_mode = $"../CatchTheRhythmMenu/VBoxContainer/HBoxContainer2/WebcamMode".pressed
+	new_rhythm_settings.random_wheights = random_wheights
 	if ResourceSaver.save("user://catch_the_rhythm.tres",new_rhythm_settings) != OK:
 		print("Error when trying to save a game settings")
 

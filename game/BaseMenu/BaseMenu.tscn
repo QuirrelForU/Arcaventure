@@ -131,8 +131,8 @@ __meta__ = {
 [node name="GridPluses" parent="Background" instance=ExtResource( 5 )]
 margin_left = -166.88
 margin_top = -94.7037
-margin_right = 75370.1
-margin_bottom = 42448.3
+margin_right = 77290.1
+margin_bottom = 43528.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../..")
@@ -706,6 +706,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 alignment = 2
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": true
 }
 
@@ -713,6 +714,9 @@ __meta__ = {
 margin_right = 1820.0
 margin_bottom = 200.0
 custom_constants/separation = 81
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer"]
 margin_top = 61.0
@@ -746,10 +750,46 @@ margin_bottom = 77.0
 theme = ExtResource( 9 )
 text = "difficulties"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
+[node name="Label2" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 204.0
 margin_right = 1820.0
-margin_bottom = 404.0
+margin_bottom = 281.0
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label3" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
+margin_top = 285.0
+margin_right = 1820.0
+margin_bottom = 362.0
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label4" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
+margin_top = 366.0
+margin_right = 1820.0
+margin_bottom = 443.0
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label5" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
+margin_top = 447.0
+margin_right = 1820.0
+margin_bottom = 524.0
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
+margin_top = 528.0
+margin_right = 1820.0
+margin_bottom = 728.0
 
 [node name="WebcamMode" type="CheckBox" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer2"]
 margin_top = 61.0
@@ -771,6 +811,96 @@ theme = ExtResource( 9 )
 text = "WEBCAM MODE"
 align = 1
 valign = 1
+
+[node name="Label" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
+margin_top = 732.0
+margin_right = 1820.0
+margin_bottom = 809.0
+theme = ExtResource( 9 )
+text = "Line randoms"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WheightRandoms" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
+margin_top = 813.0
+margin_right = 1820.0
+margin_bottom = 894.0
+custom_constants/separation = 48
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SpinBox" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_right = 111.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
+
+[node name="SpinBox2" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_left = 159.0
+margin_right = 270.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
+
+[node name="SpinBox3" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_left = 318.0
+margin_right = 429.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
+
+[node name="SpinBox4" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_left = 477.0
+margin_right = 588.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
+
+[node name="SpinBox5" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_left = 636.0
+margin_right = 747.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
+
+[node name="SpinBox6" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_left = 795.0
+margin_right = 906.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
+
+[node name="SpinBox7" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_left = 954.0
+margin_right = 1065.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
+
+[node name="SpinBox8" type="SpinBox" parent="CatchTheRhythmMenu/VBoxContainer/WheightRandoms"]
+margin_left = 1113.0
+margin_right = 1224.0
+margin_bottom = 81.0
+theme = ExtResource( 9 )
+max_value = 500.0
+value = 1.0
+align = 1
 
 [node name="Settings" type="Control" parent="."]
 visible = false
