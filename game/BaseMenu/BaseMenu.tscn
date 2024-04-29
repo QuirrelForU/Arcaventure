@@ -154,7 +154,7 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuButtons"]
 margin_left = 440.0
 margin_right = 1480.0
-margin_bottom = 669.0
+margin_bottom = 756.0
 custom_constants/separation = 10
 __meta__ = {
 "_edit_lock_": true
@@ -187,7 +187,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="LeaderboardsButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
+margin_left = 318.0
+margin_right = 721.0
+theme = ExtResource( 9 )
+text = "LEADERBOARDS"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="SettingsButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 505.0
+margin_bottom = 582.0
 theme = ExtResource( 9 )
 text = "SETTINGS"
 __meta__ = {
@@ -195,8 +206,8 @@ __meta__ = {
 }
 
 [node name="CreditsButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 505.0
-margin_bottom = 582.0
+margin_top = 592.0
+margin_bottom = 669.0
 theme = ExtResource( 9 )
 text = "CREDITS"
 __meta__ = {
@@ -204,8 +215,8 @@ __meta__ = {
 }
 
 [node name="ExitButton" parent="MenuButtons/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 592.0
-margin_bottom = 669.0
+margin_top = 679.0
+margin_bottom = 756.0
 theme = ExtResource( 9 )
 text = "EXIT"
 __meta__ = {
@@ -667,6 +678,7 @@ texture_normal = ExtResource( 21 )
 expand = true
 
 [node name="CatchTheRhythmMenu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )
@@ -784,7 +796,7 @@ text = "Name "
 
 [node name="PlayerName" type="LineEdit" parent="CatchTheRhythmMenu/VBoxContainer/PlayerNameInput"]
 margin_left = 175.0
-margin_right = 675.0
+margin_right = 425.0
 margin_bottom = 81.0
 rect_min_size = Vector2( 250, 0 )
 theme = ExtResource( 9 )
@@ -1063,6 +1075,30 @@ custom_fonts/font = SubResource( 7 )
 text = "V"
 icon_align = 2
 
+[node name="Leaderboards" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Leaderboards"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.713726 )
+
+[node name="CloseLeaderboardsButton" parent="Leaderboards" instance=ExtResource( 6 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -147.0
+margin_top = -157.0
+margin_right = -47.0
+margin_bottom = -57.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 7 )
+text = "X"
+icon_align = 2
+
 [node name="GameSettingsSaver" type="Node" parent="."]
 script = ExtResource( 17 )
 
@@ -1083,6 +1119,7 @@ anims/RESET = SubResource( 6 )
 script = ExtResource( 11 )
 
 [connection signal="pressed" from="MenuButtons/VBoxContainer/StartButton" to="MenuButtons" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/LeaderboardsButton" to="MenuButtons" method="_on_LeaderboardsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/SettingsButton" to="MenuButtons" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/CreditsButton" to="MenuButtons" method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/ExitButton" to="MenuButtons" method="_on_ExitButton_pressed"]
@@ -1111,3 +1148,4 @@ script = ExtResource( 11 )
 [connection signal="pressed" from="Settings/VBoxContainer/Volume/Soundtest_button" to="Settings/VBoxContainer/Volume" method="_on_Soundtest_button_pressed"]
 [connection signal="pressed" from="Settings/CloseSettingsButton" to="MenuButtons" method="_on_CloseSettingsButton_pressed"]
 [connection signal="pressed" from="Settings/SaveSettingsButton" to="Settings" method="_on_SaveSettingsButton_pressed"]
+[connection signal="pressed" from="Leaderboards/CloseLeaderboardsButton" to="MenuButtons" method="_on_CloseLeaderboardsButton_pressed"]

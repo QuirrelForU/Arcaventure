@@ -122,3 +122,31 @@ func _on_CloseCatchTheRhythmMenu_pressed():
 	$"../AnimationPlayer".play_backwards("Fade")
 	yield($"../AnimationPlayer","animation_finished")
 	$"../ColorRect".visible = false
+
+
+
+
+func _on_LeaderboardsButton_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	
+	yield($"../AnimationPlayer","animation_finished")
+	
+	$"../Leaderboards".visible = true
+	$"../AnimationPlayer".play_backwards("Fade")
+	
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
+
+
+func _on_CloseLeaderboardsButton_pressed():
+	$"../ColorRect".visible = true
+	$"../AnimationPlayer".play("Fade")
+	
+	yield($"../AnimationPlayer","animation_finished")
+	
+	$"../Leaderboards".visible = false
+	$"../AnimationPlayer".play_backwards("Fade")
+	
+	yield($"../AnimationPlayer","animation_finished")
+	$"../ColorRect".visible = false
