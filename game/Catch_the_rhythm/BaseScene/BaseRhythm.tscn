@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Catch_the_rhythm/winscreen_font.tres" type="DynamicFont" id=19]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/WinScreen.gd" type="Script" id=20]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/NoteParticles.gd" type="Script" id=21]
+[ext_resource path="res://fonts/josefin-sans.regular.ttf" type="DynamicFontData" id=22]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -28,6 +29,14 @@ glow_enabled = true
 glow_intensity = 0.11
 glow_blend_mode = 1
 glow_hdr_threshold = 1.5
+
+[sub_resource type="DynamicFont" id=21]
+size = 100
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 100
+font_data = ExtResource( 22 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1000, 10 )
@@ -202,11 +211,14 @@ __meta__ = {
 position = Vector2( 80, 993 )
 
 [node name="Catched" type="Label" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
 text = "Catched: "
 
 [node name="Missed" type="Label" parent="."]
+visible = false
 margin_top = 19.0
 margin_right = 54.0
 margin_bottom = 33.0
@@ -216,7 +228,8 @@ text = "Missed: "
 margin_top = 36.0
 margin_right = 54.0
 margin_bottom = 50.0
-text = "Missed: "
+custom_fonts/font = SubResource( 22 )
+text = "Score: "
 
 [node name="NoteDestroy" type="Area2D" parent="."]
 position = Vector2( 988, 1200 )
