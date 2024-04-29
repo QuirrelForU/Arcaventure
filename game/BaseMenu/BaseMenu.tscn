@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://BaseMenu/Comp 1 (0;00;00;00).png" type="Texture" id=1]
 [ext_resource path="res://BaseMenu/BaseMenu.gd" type="Script" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Arkanoid/boosters/pick_up.mp3" type="AudioStream" id=28]
 [ext_resource path="res://BaseMenu/game_icons/CatchTheRhytm2.png" type="Texture" id=29]
 [ext_resource path="res://BaseMenu/CatchTheRhythmMenu.gd" type="Script" id=30]
+[ext_resource path="res://BaseMenu/PlayerNameInput.gd" type="Script" id=31]
 
 [sub_resource type="Animation" id=1]
 resource_name = "PlusesSlide"
@@ -666,7 +667,6 @@ texture_normal = ExtResource( 21 )
 expand = true
 
 [node name="CatchTheRhythmMenu" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )
@@ -733,6 +733,7 @@ margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
+disabled = true
 texture_normal = ExtResource( 29 )
 expand = true
 
@@ -759,7 +760,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label3" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
+[node name="Label4" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 285.0
 margin_right = 1820.0
 margin_bottom = 362.0
@@ -768,28 +769,40 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label4" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
+[node name="PlayerNameInput" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 366.0
 margin_right = 1820.0
-margin_bottom = 443.0
+margin_bottom = 447.0
+script = ExtResource( 31 )
+
+[node name="Label" type="Label" parent="CatchTheRhythmMenu/VBoxContainer/PlayerNameInput"]
+margin_top = 2.0
+margin_right = 171.0
+margin_bottom = 79.0
 theme = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
+text = "Name "
+
+[node name="PlayerName" type="LineEdit" parent="CatchTheRhythmMenu/VBoxContainer/PlayerNameInput"]
+margin_left = 175.0
+margin_right = 675.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 250, 0 )
+theme = ExtResource( 9 )
+align = 2
 
 [node name="Label5" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
-margin_top = 447.0
+margin_top = 451.0
 margin_right = 1820.0
-margin_bottom = 524.0
+margin_bottom = 528.0
 theme = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
-margin_top = 528.0
+margin_top = 532.0
 margin_right = 1820.0
-margin_bottom = 728.0
+margin_bottom = 732.0
 
 [node name="WebcamMode" type="CheckBox" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer2"]
 margin_top = 61.0
@@ -813,9 +826,9 @@ align = 1
 valign = 1
 
 [node name="Label" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
-margin_top = 732.0
+margin_top = 736.0
 margin_right = 1820.0
-margin_bottom = 809.0
+margin_bottom = 813.0
 theme = ExtResource( 9 )
 text = "Line randoms"
 __meta__ = {
@@ -823,9 +836,9 @@ __meta__ = {
 }
 
 [node name="WheightRandoms" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
-margin_top = 813.0
+margin_top = 817.0
 margin_right = 1820.0
-margin_bottom = 894.0
+margin_bottom = 898.0
 custom_constants/separation = 48
 __meta__ = {
 "_edit_lock_": true
@@ -1090,6 +1103,7 @@ script = ExtResource( 11 )
 [connection signal="pressed" from="GameMenus/VBoxContainer/HBoxContainer/SettingsList/PlatformSize/MinusSize" to="GameMenus/VBoxContainer/HBoxContainer/SettingsList/PlatformSize/PlatformSize" method="_on_MinusSize_pressed"]
 [connection signal="pressed" from="CatchTheRhythmMenu/CloseCatchTheRhythmMenu" to="MenuButtons" method="_on_CloseCatchTheRhythmMenu_pressed"]
 [connection signal="pressed" from="CatchTheRhythmMenu/VBoxContainer/HBoxContainer/StartCatchTheRhythm1" to="CatchTheRhythmMenu" method="_on_StartCatchTheRhythm1_pressed"]
+[connection signal="text_changed" from="CatchTheRhythmMenu/VBoxContainer/PlayerNameInput/PlayerName" to="CatchTheRhythmMenu/VBoxContainer/PlayerNameInput" method="_on_PlayerName_text_changed"]
 [connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen2/FullScreenCheck" to="Settings" method="_on_FullScreenCheck_pressed"]
