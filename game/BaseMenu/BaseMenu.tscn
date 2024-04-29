@@ -132,8 +132,8 @@ __meta__ = {
 [node name="GridPluses" parent="Background" instance=ExtResource( 5 )]
 margin_left = -166.88
 margin_top = -94.7037
-margin_right = 84970.1
-margin_bottom = 47848.3
+margin_right = 86890.1
+margin_bottom = 48928.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../..")
@@ -1076,7 +1076,6 @@ text = "V"
 icon_align = 2
 
 [node name="Leaderboards" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 

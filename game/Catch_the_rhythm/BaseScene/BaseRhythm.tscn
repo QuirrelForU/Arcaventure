@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://Catch_the_rhythm/BaseScene/WinScreen.gd" type="Script" id=20]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/NoteParticles.gd" type="Script" id=21]
 [ext_resource path="res://fonts/josefin-sans.regular.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://Catch_the_rhythm/Effects/floaty_64.png" type="Texture" id=23]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/Glowing.gd" type="Script" id=24]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -29,6 +31,36 @@ glow_enabled = true
 glow_intensity = 0.11
 glow_blend_mode = 1
 glow_hdr_threshold = 1.5
+
+[sub_resource type="CanvasItemMaterial" id=23]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=24]
+offsets = PoolRealArray( 0, 0.289474, 0.597744, 1 )
+colors = PoolColorArray( 0.180392, 0, 0.443137, 1, 0.529412, 0, 0.639216, 1, 0.196078, 1, 0.980392, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=25]
+gradient = SubResource( 24 )
+
+[sub_resource type="ParticlesMaterial" id=26]
+emission_shape = 2
+emission_box_extents = Vector3( 100, 1, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -100, 0 )
+initial_velocity = 50.0
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 50.0
+angle = 360.0
+color_ramp = SubResource( 25 )
+anim_speed = 0.7
 
 [sub_resource type="DynamicFont" id=21]
 size = 100
@@ -209,6 +241,15 @@ __meta__ = {
 
 [node name="MusicPlatform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 993 )
+
+[node name="Glowing" type="Particles2D" parent="MusicPlatform"]
+material = SubResource( 23 )
+amount = 1
+explosiveness = 0.07
+local_coords = false
+process_material = SubResource( 26 )
+texture = ExtResource( 23 )
+script = ExtResource( 24 )
 
 [node name="Catched" type="Label" parent="."]
 visible = false
@@ -410,6 +451,7 @@ script = ExtResource( 21 )
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
 [connection signal="timeout" from="Conductor/StartTimer" to="Conductor" method="_on_StartTimer_timeout"]
 [connection signal="note_catched" from="MusicPlatform" to="." method="_on_MusicPlatform_note_catched"]
+[connection signal="note_catched" from="MusicPlatform" to="MusicPlatform/Glowing" method="_on_MusicPlatform_note_catched"]
 [connection signal="area_entered" from="NoteDestroy" to="NoteDestroy" method="_on_NoteDestroy_area_entered"]
 [connection signal="pressed" from="HUD/PauseScreen/CenterContainer/VBoxContainer/ResumeButton" to="HUD/PauseScreen" method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="HUD/PauseScreen/CenterContainer/VBoxContainer/MenuButton" to="HUD/PauseScreen" method="_on_MenuButton_pressed"]

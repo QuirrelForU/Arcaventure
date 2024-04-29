@@ -1,25 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[sub_resource type="ParticlesMaterial" id=1]
+[ext_resource path="res://Catch_the_rhythm/Effects/offset_glow.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="ParticlesMaterial" id=2]
 lifetime_randomness = 1.0
 emission_shape = 1
-emission_sphere_radius = 1.0
+emission_sphere_radius = 14.85
 flag_disable_z = true
 spread = 180.0
-gravity = Vector3( 0, 50, 0 )
-initial_velocity = 50.0
+gravity = Vector3( 0, -150, 0 )
+initial_velocity = 1000.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-angle = 175.4
-angle_random = 1.0
 
 [node name="Catched" type="Particles2D"]
+material = SubResource( 1 )
 position = Vector2( 0, -7.62939e-06 )
-scale = Vector2( 7, 7 )
 emitting = false
-amount = 15
-lifetime = 2.0
+amount = 25
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 1 )
+process_material = SubResource( 2 )
+texture = ExtResource( 1 )

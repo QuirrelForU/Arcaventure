@@ -9,7 +9,11 @@ func spawn_effect(effect_position):
 	instance.global_position = effect_position
 	instance.emitting = true
 	var normalized_combo = (stats.combo - 1.0) / (3.0 - 1.0)
-	var random_color = random_float(0.0,0.17)
+	var random_color = null
+	if randi() % 2 == 0:
+		random_color = random_float(0.47397,0.5068)
+	else:
+		random_color = random_float(0.75616,0.78082)
 	instance.modulate = Color.from_hsv(random_color,normalized_combo,1.0,1.0)
 	add_child(instance)
 
