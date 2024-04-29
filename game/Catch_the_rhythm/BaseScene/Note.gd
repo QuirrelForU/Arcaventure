@@ -17,14 +17,10 @@ const EIGHTH_LANE = Vector2(1590, SPAWN_Y)
 
 var speed = 0
 var hit = false
-
+var time_to_target = 2.1052
 
 signal catched
 signal missed
-
-func _ready():
-	pass
-
 
 func _physics_process(delta):
 	position.y += speed * delta
@@ -53,5 +49,5 @@ func initialize(lane):
 		printerr("Invalid lane set for note: " + str(lane))
 		return
 	
-	speed = DIST_TO_TARGET / 2.1052#0.52#2.0, so here you set a time to reach a distn, but the time should be
+	speed = DIST_TO_TARGET / time_to_target #0.52#2.0, so here you set a time to reach a distn, but the time should be
 	# multiply by secs per bit 60 / 114 * 4 = 2.1052..

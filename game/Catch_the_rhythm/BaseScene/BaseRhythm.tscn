@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://fonts/menu_buttons_font.tres" type="DynamicFont" id=18]
 [ext_resource path="res://Catch_the_rhythm/winscreen_font.tres" type="DynamicFont" id=19]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/WinScreen.gd" type="Script" id=20]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/NoteParticles.gd" type="Script" id=21]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -389,6 +390,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource( 20 )
 text = "Retry"
+
+[node name="NoteParticles" type="Node" parent="."]
+script = ExtResource( 21 )
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
