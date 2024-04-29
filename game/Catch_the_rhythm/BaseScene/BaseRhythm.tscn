@@ -199,7 +199,6 @@ __meta__ = {
 }
 
 [node name="MusicPlatform" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1.5, 1.5, 1.5, 1 )
 position = Vector2( 80, 993 )
 
 [node name="Catched" type="Label" parent="."]
