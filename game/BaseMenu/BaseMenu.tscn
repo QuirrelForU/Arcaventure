@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://BaseMenu/Comp 1 (0;00;00;00).png" type="Texture" id=1]
 [ext_resource path="res://BaseMenu/BaseMenu.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://BaseMenu/game_icons/CatchTheRhytm2.png" type="Texture" id=29]
 [ext_resource path="res://BaseMenu/CatchTheRhythmMenu.gd" type="Script" id=30]
 [ext_resource path="res://BaseMenu/PlayerNameInput.gd" type="Script" id=31]
+[ext_resource path="res://BaseMenu/Leaderboards.gd" type="Script" id=32]
 
 [sub_resource type="Animation" id=1]
 resource_name = "PlusesSlide"
@@ -132,8 +133,8 @@ __meta__ = {
 [node name="GridPluses" parent="Background" instance=ExtResource( 5 )]
 margin_left = -166.88
 margin_top = -94.7037
-margin_right = 90730.1
-margin_bottom = 51088.3
+margin_right = 92650.1
+margin_bottom = 52168.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../..")
@@ -678,6 +679,7 @@ texture_normal = ExtResource( 21 )
 expand = true
 
 [node name="CatchTheRhythmMenu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )
@@ -1080,8 +1082,10 @@ text = "V"
 icon_align = 2
 
 [node name="Leaderboards" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 32 )
 
 [node name="ColorRect" type="ColorRect" parent="Leaderboards"]
 anchor_right = 1.0

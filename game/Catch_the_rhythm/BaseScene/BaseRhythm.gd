@@ -23,8 +23,8 @@ func _ready():
 	load_settings()
 	
 	randomize()
-	#$Conductor.play_with_beat_offset(8)
-	$Conductor.play_from_beat(300,8)
+	$Conductor.play_with_beat_offset(8)
+	#$Conductor.play_from_beat(300,8)
 
 func load_settings():
 	var game_settings : CatchTheRhythmSettings = load("user://catch_the_rhythm.tres") as CatchTheRhythmSettings
