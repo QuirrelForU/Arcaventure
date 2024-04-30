@@ -4,6 +4,13 @@ signal note_catched
 
 onready var stats = $"../Stats"
 onready var particles = $"../NoteParticles"
+export var size_mult = 1.0
+
+
+
+
+func _ready():
+	$".".scale.x *=size_mult
 
 func _physics_process(delta):
 	if stats.webcam_mode:
@@ -17,7 +24,7 @@ func _unhandled_input(event):
 	
 	if event is InputEventMouseMotion:
 		move_local_x(event.relative.x)
-		position.x = clamp(position.x,80,get_viewport().size.x-80)
+		position.x = clamp(position.x,80*size_mult,get_viewport().size.x-80*size_mult)
 
 
 

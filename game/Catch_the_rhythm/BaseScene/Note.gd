@@ -17,7 +17,7 @@ const EIGHTH_LANE = Vector2(1590, SPAWN_Y)
 
 var speed = 0
 var hit = false
-var time_to_target = 2.1052
+export var time_to_target = 2.1052
 
 signal catched
 signal missed
