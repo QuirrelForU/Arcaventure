@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Marshmello - FLY.mp3-a87b816a6fd225e50f0545d90c568c76.mp3str"
+
+[deps]
+
+source_file="res://Catch_the_rhythm/SecondLevel/ost/Marshmello - FLY.mp3"
+dest_files=[ "res://.import/Marshmello - FLY.mp3-a87b816a6fd225e50f0545d90c568c76.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

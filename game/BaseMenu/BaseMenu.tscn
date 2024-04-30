@@ -679,7 +679,6 @@ texture_normal = ExtResource( 21 )
 expand = true
 
 [node name="CatchTheRhythmMenu" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )
@@ -742,6 +741,30 @@ text = "LEVEL FIRST"
 [node name="StartCatchTheRhythm1" type="TextureButton" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer"]
 margin_left = 378.0
 margin_right = 578.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 29 )
+expand = true
+
+[node name="StartCatchTheRhythmEasy" type="TextureButton" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 659.0
+margin_right = 859.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 29 )
+expand = true
+
+[node name="StartCatchTheRhythmHard" type="TextureButton" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 659.0
+margin_right = 859.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 4
@@ -1181,6 +1204,9 @@ script = ExtResource( 11 )
 [connection signal="pressed" from="GameMenus/VBoxContainer/HBoxContainer/SettingsList/PlatformSize/MinusSize" to="GameMenus/VBoxContainer/HBoxContainer/SettingsList/PlatformSize/PlatformSize" method="_on_MinusSize_pressed"]
 [connection signal="pressed" from="CatchTheRhythmMenu/CloseCatchTheRhythmMenu" to="MenuButtons" method="_on_CloseCatchTheRhythmMenu_pressed"]
 [connection signal="pressed" from="CatchTheRhythmMenu/VBoxContainer/HBoxContainer/StartCatchTheRhythm1" to="CatchTheRhythmMenu" method="_on_StartCatchTheRhythm1_pressed"]
+[connection signal="pressed" from="CatchTheRhythmMenu/VBoxContainer/HBoxContainer/StartCatchTheRhythmEasy" to="CatchTheRhythmMenu" method="_on_StartCatchTheRhythm2_pressed"]
+[connection signal="pressed" from="CatchTheRhythmMenu/VBoxContainer/HBoxContainer/StartCatchTheRhythmHard" to="CatchTheRhythmMenu" method="_on_StartCatchTheRhythm3_pressed"]
+[connection signal="item_selected" from="CatchTheRhythmMenu/VBoxContainer/HBoxContainer/VBoxContainer/Difficulties" to="CatchTheRhythmMenu" method="_on_Difficulties_item_selected"]
 [connection signal="text_changed" from="CatchTheRhythmMenu/VBoxContainer/PlayerNameInput/PlayerName" to="CatchTheRhythmMenu/VBoxContainer/PlayerNameInput" method="_on_PlayerName_text_changed"]
 [connection signal="item_selected" from="Settings/VBoxContainer/Res/OptionButton" to="Settings" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Settings/VBoxContainer/Fullscreen/WindowedCheck" to="Settings" method="_on_WindowedCheck_pressed"]
