@@ -17,7 +17,7 @@ func save_arkanoid_settings():
 
 func save_catch_the_rhythm_settings():
 	var new_rhythm_settings = CatchTheRhythmSettings.new()
-
+	
 	var random_wheights = [
 		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox".value,
 		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox2".value,
@@ -28,7 +28,7 @@ func save_catch_the_rhythm_settings():
 		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox7".value,
 		$"../CatchTheRhythmMenu/VBoxContainer/WheightRandoms/SpinBox8".value,
 	]
-
+	new_rhythm_settings.name = $"../CatchTheRhythmMenu/VBoxContainer/PlayerNameInput/PlayerName".text
 	new_rhythm_settings.webcam_mode = $"../CatchTheRhythmMenu/VBoxContainer/HBoxContainer2/WebcamMode".pressed
 	new_rhythm_settings.random_wheights = random_wheights
 	if ResourceSaver.save("user://catch_the_rhythm.tres",new_rhythm_settings) != OK:

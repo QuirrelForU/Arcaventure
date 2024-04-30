@@ -11,6 +11,9 @@ var webcam_mode = false
 
 var wheights = [1,1,1,1,1,1,1,1]
 
+
+var player_name = ""
+
 func _set_missed(new_value):
 	missed = new_value
 	$"../Missed".text = "Missed: %d" % [missed]

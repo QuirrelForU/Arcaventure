@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/Music/Throttle-Cities.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://fonts/josefin-sans.regular.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Catch_the_rhythm/Effects/floaty_64.png" type="Texture" id=23]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Glowing.gd" type="Script" id=24]
+[ext_resource path="res://Catch_the_rhythm/BaseScene/LeaderBoardsSaver.gd" type="Script" id=25]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -446,6 +447,9 @@ text = "Retry"
 
 [node name="NoteParticles" type="Node" parent="."]
 script = ExtResource( 21 )
+
+[node name="LeaderBoardsSaver" type="Node" parent="."]
+script = ExtResource( 25 )
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

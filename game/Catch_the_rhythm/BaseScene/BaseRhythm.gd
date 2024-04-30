@@ -29,6 +29,7 @@ func _ready():
 func load_settings():
 	var game_settings : CatchTheRhythmSettings = load("user://catch_the_rhythm.tres") as CatchTheRhythmSettings
 	stats.webcam_mode = game_settings.webcam_mode
+	stats.player_name = game_settings.name
 	if stats.webcam_mode:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	else:
@@ -98,6 +99,7 @@ func _on_Conductor_beat(position):
 		spawn_4_beat = 0
 	if song_position_in_beats == 350:
 		$HUD/WinScreen.show_winscreen()
+		$LeaderBoardsSaver.save_leaderboards()
 
 
 
