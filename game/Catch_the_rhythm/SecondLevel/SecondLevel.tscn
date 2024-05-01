@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Catch_the_rhythm/SecondLevel/ost/Marshmello - FLY.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
-[ext_resource path="res://Catch_the_rhythm/BaseScene/BaseRhythm.gd" type="Script" id=3]
+[ext_resource path="res://Catch_the_rhythm/SecondLevel/SecondLevel.gd" type="Script" id=3]
 [ext_resource path="res://Catch_the_rhythm/platform/MusicPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/FPS.gd" type="Script" id=5]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Stats.gd" type="Script" id=6]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/NoteDestroy.gd" type="Script" id=8]
-[ext_resource path="res://textures/ColorAtlas/BaseColor.png" type="Texture" id=9]
+[ext_resource path="res://Catch_the_rhythm/SecondLevel/test123.gd" type="Script" id=9]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/PauseScreen.gd" type="Script" id=10]
 [ext_resource path="res://BaseMenu/menu_theme.tres" type="Theme" id=11]
 [ext_resource path="res://BaseMenu/slider/arrow_hold.png" type="Texture" id=12]
@@ -202,20 +202,10 @@ __meta__ = {
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
+mouse_filter = 2
 stream = ExtResource( 26 )
 autoplay = true
 script = ExtResource( 27 )
-
-[node name="Background" type="Sprite" parent="."]
-visible = false
-position = Vector2( 960, 540 )
-scale = Vector2( 1920, 1080 )
-texture = ExtResource( 9 )
-region_enabled = true
-region_rect = Rect2( 76, 63, 1, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource( 6 )
@@ -460,6 +450,9 @@ script = ExtResource( 21 )
 
 [node name="LeaderBoardsSaver" type="Node" parent="."]
 script = ExtResource( 25 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 9 )
 
 [connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]

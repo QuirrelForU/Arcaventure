@@ -706,14 +706,14 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CatchTheRhythmMenu"]
-anchor_left = 0.0520417
+anchor_left = 0.043
 anchor_top = 0.076
-anchor_right = 0.0520417
+anchor_right = 0.043
 anchor_bottom = 0.076
 margin_left = 0.0799866
 margin_top = -0.0799942
-margin_right = 1820.08
-margin_bottom = 403.92
+margin_right = 1600.08
+margin_bottom = 939.92
 size_flags_horizontal = 0
 size_flags_vertical = 0
 alignment = 2
@@ -723,7 +723,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
-margin_right = 1820.0
+margin_right = 1600.0
 margin_bottom = 200.0
 custom_constants/separation = 81
 __meta__ = {
@@ -776,7 +776,7 @@ expand = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 204.0
-margin_right = 1820.0
+margin_right = 1600.0
 margin_bottom = 404.0
 custom_constants/separation = 81
 __meta__ = {
@@ -840,7 +840,7 @@ text = "DIFFICULTIES"
 
 [node name="PlayerNameInput" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 489.0
-margin_right = 1820.0
+margin_right = 1600.0
 margin_bottom = 570.0
 script = ExtResource( 31 )
 
@@ -866,7 +866,7 @@ selecting_enabled = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 574.0
-margin_right = 1820.0
+margin_right = 1600.0
 margin_bottom = 774.0
 
 [node name="WebcamMode" type="CheckBox" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer2"]
@@ -892,7 +892,7 @@ valign = 1
 
 [node name="Label" type="Label" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 778.0
-margin_right = 1820.0
+margin_right = 1600.0
 margin_bottom = 855.0
 theme = ExtResource( 9 )
 text = "Line randoms"
@@ -902,7 +902,7 @@ __meta__ = {
 
 [node name="WheightRandoms" type="HBoxContainer" parent="CatchTheRhythmMenu/VBoxContainer"]
 margin_top = 859.0
-margin_right = 1820.0
+margin_right = 1600.0
 margin_bottom = 940.0
 custom_constants/separation = 48
 __meta__ = {

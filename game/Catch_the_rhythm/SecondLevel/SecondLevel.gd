@@ -23,8 +23,8 @@ func _ready():
 	load_settings()
 	
 	randomize()
-	$Conductor.play_with_beat_offset(8)
-	#$Conductor.play_from_beat(300,8)
+	#$Conductor.play_with_beat_offset(8)
+	$Conductor.play_from_beat(300,8)
 
 func load_settings():
 	var game_settings : CatchTheRhythmSettings = load("user://catch_the_rhythm.tres") as CatchTheRhythmSettings
@@ -46,47 +46,43 @@ func _on_Conductor_measure(position):
 		_spawn_notes(spawn_4_beat)
 
 func _on_Conductor_beat(position):
+	print(position)
 	song_position_in_beats = position
 	if song_position_in_beats > 36:
 		spawn_1_beat = 1
-		spawn_2_beat = 1
-		spawn_3_beat = 1
-		spawn_4_beat = 1
-	if song_position_in_beats > 116:
-		spawn_1_beat = 2
 		spawn_2_beat = 0
-		spawn_3_beat = 2
-		spawn_4_beat = 0
-	if song_position_in_beats > 132:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
 		spawn_3_beat = 0
-		spawn_4_beat = 2
-	if song_position_in_beats > 162:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 1
 		spawn_4_beat = 1
-	if song_position_in_beats > 194:
+	if song_position_in_beats > 70:
 		spawn_1_beat = 1
 		spawn_2_beat = 1
-		spawn_3_beat = 1
+		spawn_3_beat = 0
 		spawn_4_beat = 1
-	if song_position_in_beats > 228:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
-	if song_position_in_beats > 255:
+	if song_position_in_beats > 100:
 		spawn_1_beat = 2
 		spawn_2_beat = 0
 		spawn_3_beat = 2
 		spawn_4_beat = 0
-	if song_position_in_beats > 288:
+	if song_position_in_beats > 150:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 1
+	if song_position_in_beats > 187:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 0
+		spawn_4_beat = 1
+	if song_position_in_beats > 215:
 		spawn_1_beat = 0
 		spawn_2_beat = 2
 		spawn_3_beat = 0
 		spawn_4_beat = 2
+	if song_position_in_beats > 300:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 0
 	if song_position_in_beats > 330:
 		spawn_1_beat = 1
 		spawn_2_beat = 0
@@ -97,7 +93,7 @@ func _on_Conductor_beat(position):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats == 350:
+	if song_position_in_beats > 345:
 		$HUD/WinScreen.show_winscreen()
 		$LeaderBoardsSaver.save_leaderboards()
 

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Marshmello - FLY.mp3-a87b816a6fd225e50f0545d90c568c7
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
