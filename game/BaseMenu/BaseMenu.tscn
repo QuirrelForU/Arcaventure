@@ -133,8 +133,8 @@ __meta__ = {
 [node name="GridPluses" parent="Background" instance=ExtResource( 5 )]
 margin_left = -166.88
 margin_top = -94.7037
-margin_right = 98410.1
-margin_bottom = 55408.3
+margin_right = 102250.0
+margin_bottom = 57568.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../..")
@@ -793,7 +793,7 @@ theme = ExtResource( 9 )
 text = "LEVEL SECOND"
 
 [node name="StartCatchTheRhythm2" type="TextureButton" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer3"]
-modulate = Color( 0.286275, 0.792157, 0.784314, 1 )
+modulate = Color( 0.94902, 0.560784, 0.94902, 1 )
 margin_left = 581.0
 margin_right = 781.0
 margin_bottom = 200.0

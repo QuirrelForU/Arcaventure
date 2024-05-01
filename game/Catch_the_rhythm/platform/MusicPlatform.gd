@@ -15,7 +15,7 @@ func _ready():
 func _physics_process(delta):
 	if stats.webcam_mode:
 		position.x = get_global_mouse_position().x
-		position.x = clamp(position.x,80,get_viewport().size.x-80)
+		position.x = clamp(position.x,80*size_mult,get_viewport().size.x-80*size_mult)
 
 
 
