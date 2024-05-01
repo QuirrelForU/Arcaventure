@@ -23,8 +23,8 @@ func _ready():
 	load_settings()
 	
 	randomize()
-	#$Conductor.play_with_beat_offset(8)
-	$Conductor.play_from_beat(300,8)
+	$Conductor.play_with_beat_offset(9)
+	#$Conductor.play_from_beat(300,8)
 
 func load_settings():
 	var game_settings : CatchTheRhythmSettings = load("user://catch_the_rhythm.tres") as CatchTheRhythmSettings
@@ -93,7 +93,7 @@ func _on_Conductor_beat(position):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats > 345:
+	if song_position_in_beats == 345:
 		$HUD/WinScreen.show_winscreen()
 		$LeaderBoardsSaver.save_leaderboards()
 
@@ -104,6 +104,7 @@ func _spawn_notes(to_spawn):
 		#lane = randi() % 8
 		lane = _weighted_choice(stats.wheights)
 		instance = note.instance()
+		instance.time_to_target = 2.2222
 		instance.initialize(lane)
 		add_child(instance)
 	if to_spawn > 1:
@@ -116,6 +117,7 @@ func _spawn_notes(to_spawn):
 			rand = randi() % 2
 			lane = neighbours[rand]
 		instance = note.instance()
+		instance.time_to_target = 2.2222
 		instance.initialize(lane)
 		add_child(instance)
 		

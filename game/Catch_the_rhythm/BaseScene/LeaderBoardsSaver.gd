@@ -11,6 +11,10 @@ func save_leaderboards():
 	else:
 		new_leaderboards.name_time = {}
 
-	new_leaderboards.name_time[stats.player_name] = stats.score
+	if stats.player_name in new_leaderboards.name_time.keys():
+		if stats.score > new_leaderboards.name_time[stats.player_name]:
+			new_leaderboards.name_time[stats.player_name] = stats.score
+	else:
+		new_leaderboards.name_time[stats.player_name] = stats.score
 	if ResourceSaver.save("user://catch_the_rhythm_leaderboards.tres",new_leaderboards) != OK:
 		print("Error when trying to save a last session")

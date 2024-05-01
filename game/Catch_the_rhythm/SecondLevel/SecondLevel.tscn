@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/SecondLevel/ost/Marshmello - FLY.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Stats.gd" type="Script" id=6]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/NoteDestroy.gd" type="Script" id=8]
-[ext_resource path="res://Catch_the_rhythm/SecondLevel/test123.gd" type="Script" id=9]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/PauseScreen.gd" type="Script" id=10]
 [ext_resource path="res://BaseMenu/menu_theme.tres" type="Theme" id=11]
 [ext_resource path="res://BaseMenu/slider/arrow_hold.png" type="Texture" id=12]
@@ -450,9 +449,6 @@ script = ExtResource( 21 )
 
 [node name="LeaderBoardsSaver" type="Node" parent="."]
 script = ExtResource( 25 )
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource( 9 )
 
 [connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
