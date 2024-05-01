@@ -37,11 +37,13 @@ func _on_Difficulties_item_selected(index):
 
 
 func _on_StartCatchTheRhythmEasy_pressed():
-	pass # Replace with function body.
+	game_setting_saver.save_catch_the_rhythm_settings()
+	ChangeScene.change_scene("res://Catch_the_rhythm/BaseScene/BaseRhythmEasy.gd")
 
 
 func _on_StartCatchTheRhythmHard_pressed():
-	pass # Replace with function body.
+	game_setting_saver.save_catch_the_rhythm_settings()
+	ChangeScene.change_scene("res://Catch_the_rhythm/BaseScene/BaseRhythmHard.tscn")
 
 
 func _on_StartCatchTheRhythm2_pressed():

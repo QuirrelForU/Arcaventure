@@ -15,5 +15,5 @@ func _on_PlayerName_text_changed(new_text):
 		$"../HBoxContainer/StartCatchTheRhythmEasy".disabled = false
 		$"../HBoxContainer/StartCatchTheRhythmHard".disabled = false
 		$"../HBoxContainer3/StartCatchTheRhythm2".disabled = false
-		$"../HBoxContainer3/StartCatchTheRhythmEasy2".disable = false
+		$"../HBoxContainer3/StartCatchTheRhythmEasy2".disabled = false
 		$"../HBoxContainer3/StartCatchTheRhythmHard2".disabled = false
