@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Catch_the_rhythm/SecondLevel/ost/Marshmello - FLY.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
-[ext_resource path="res://Catch_the_rhythm/SecondLevel/SecondLevel.gd" type="Script" id=3]
+[ext_resource path="res://Catch_the_rhythm/SecondLevel/SecondLevelHard.gd" type="Script" id=3]
 [ext_resource path="res://Catch_the_rhythm/platform/MusicPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/FPS.gd" type="Script" id=5]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Stats.gd" type="Script" id=6]

@@ -793,7 +793,7 @@ theme = ExtResource( 9 )
 text = "LEVEL SECOND"
 
 [node name="StartCatchTheRhythm2" type="TextureButton" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer3"]
-modulate = Color( 0.94902, 0.560784, 0.94902, 1 )
+modulate = Color( 0.917647, 0.529412, 0.996078, 1 )
 margin_left = 581.0
 margin_right = 781.0
 margin_bottom = 200.0
@@ -806,7 +806,7 @@ expand = true
 
 [node name="StartCatchTheRhythmEasy2" type="TextureButton" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer3"]
 visible = false
-modulate = Color( 0.286275, 0.792157, 0.784314, 1 )
+modulate = Color( 0.917647, 0.529412, 0.996078, 1 )
 margin_left = 659.0
 margin_right = 859.0
 margin_bottom = 200.0
@@ -819,7 +819,7 @@ expand = true
 
 [node name="StartCatchTheRhythmHard2" type="TextureButton" parent="CatchTheRhythmMenu/VBoxContainer/HBoxContainer3"]
 visible = false
-modulate = Color( 0.286275, 0.792157, 0.784314, 1 )
+modulate = Color( 0.917647, 0.529412, 0.996078, 1 )
 margin_left = 659.0
 margin_right = 859.0
 margin_bottom = 200.0

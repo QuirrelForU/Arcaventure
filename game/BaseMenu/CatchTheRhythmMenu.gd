@@ -52,8 +52,10 @@ func _on_StartCatchTheRhythm2_pressed():
 
 
 func _on_StartCatchTheRhythmEasy2_pressed():
-	pass # Replace with function body.
+	game_setting_saver.save_catch_the_rhythm_settings()
+	ChangeScene.change_scene("res://Catch_the_rhythm/SecondLevel/SecondLevelEasy.tscn")
 
 
 func _on_StartCatchTheRhythmHard2_pressed():
-	pass # Replace with function body.
+	game_setting_saver.save_catch_the_rhythm_settings()
+	ChangeScene.change_scene("res://Catch_the_rhythm/SecondLevel/SecondLevelHard.tscn")
