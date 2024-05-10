@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/SecondLevel/ost/Marshmello - FLY.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Stats.gd" type="Script" id=6]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/AudioCircle2.gd" type="Script" id=7]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/NoteDestroy.gd" type="Script" id=8]
+[ext_resource path="res://Catch_the_rhythm/SecondLevel/background/BackStatic.png" type="Texture" id=9]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/PauseScreen.gd" type="Script" id=10]
 [ext_resource path="res://BaseMenu/menu_theme.tres" type="Theme" id=11]
 [ext_resource path="res://BaseMenu/slider/arrow_hold.png" type="Texture" id=12]
@@ -198,7 +199,17 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 1920, 1080 )
+texture = ExtResource( 9 )
+expand = true
+
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 2
