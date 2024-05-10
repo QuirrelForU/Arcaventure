@@ -204,6 +204,7 @@ margin_bottom = 1080.0
 mouse_filter = 2
 stream = ExtResource( 26 )
 autoplay = true
+paused = true
 script = ExtResource( 27 )
 
 [node name="Stats" type="Node" parent="."]
