@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Catch_the_rhythm/SecondLevel/ost/Marshmello - FLY.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Conductor.gd" type="Script" id=2]
@@ -25,8 +25,6 @@
 [ext_resource path="res://Catch_the_rhythm/Effects/floaty_64.png" type="Texture" id=23]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/Glowing.gd" type="Script" id=24]
 [ext_resource path="res://Catch_the_rhythm/BaseScene/LeaderBoardsSaver.gd" type="Script" id=25]
-[ext_resource path="res://Catch_the_rhythm/SecondLevel/video/720.webm" type="VideoStream" id=26]
-[ext_resource path="res://Catch_the_rhythm/SecondLevel/BackgroundVideo.gd" type="Script" id=27]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -205,17 +203,9 @@ anchor_bottom = 1.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_min_size = Vector2( 1920, 1080 )
+mouse_filter = 2
 texture = ExtResource( 9 )
 expand = true
-
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
-visible = false
-margin_right = 1920.0
-margin_bottom = 1080.0
-mouse_filter = 2
-stream = ExtResource( 26 )
-autoplay = true
-script = ExtResource( 27 )
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource( 6 )
@@ -461,7 +451,6 @@ script = ExtResource( 21 )
 [node name="LeaderBoardsSaver" type="Node" parent="."]
 script = ExtResource( 25 )
 
-[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
 [connection signal="timeout" from="Conductor/StartTimer" to="Conductor" method="_on_StartTimer_timeout"]
